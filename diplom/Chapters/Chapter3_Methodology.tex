@@ -1,0 +1,124 @@
+\chapter{СУДАЛГААНЫ АРГА ЗҮЙ}
+
+\section{Системийн ерөнхий тойм}
+
+Энэхүү хэсэгт системийн бүтэц, дата урсгал, pipeline-ын ажиллагааг диаграмаар харуулав.
+Датаг хэрхэн цуглуулах, боловсруулах, 3D reconstruction хийх алхмуудыг тайлбарлана.
+
+\subsection{Системийн Flow Diagram}
+
+Системийн ажиллагааны үндсэн урсгалыг доорх диаграммаар харуулав:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    scale=0.95, transform shape,
+    node distance=1cm,
+    startstop/.style={rectangle, rounded corners, minimum width=2.5cm, minimum height=0.7cm, draw=black, fill=red!20, align=center, font=\small},
+    process/.style={rectangle, minimum width=2.5cm, minimum height=0.7cm, draw=black, fill=blue!20, align=center, font=\small},
+    decision/.style={diamond, minimum width=2cm, minimum height=0.9cm, draw=black, fill=yellow!20, align=center, aspect=2, font=\small},
+    io/.style={trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2.2cm, minimum height=0.6cm, draw=black, fill=green!20, align=center, font=\small},
+    arrow/.style={thick,->,>=stealth}
+]
+    % Nodes
+    \node (start) [startstop] {Эхлэх};
+    \node (capture) [io, below=of start] {Олон 2D зураг\\камераар авах};
+    \node (preprocess) [process, below=of capture] {Өгөгдлийг цэвэрлэх\\(жишээ: өнгө засах, шилжилт тохируулах)};
+    \node (colmap) [process, below=of preprocess] {COLMAP ашиглан\\Feature extraction and Sparse/ Dense reconstruction};
+    \node (convert) [process, below=of colmap] {COLMAP файлыг\\OpenMVS форматаар хөрвүүлэх};
+    \node (openmvs) [process, below=of convert] {OpenMVS-д ажиллуулах\\Dense reconstruction, Mesh generation, Texture mapping};
+    \node (output) [io, below=of openmvs] {3D загварыг .ply, .obj гэх мэт форматаар гаргах};
+    \node (end) [startstop, below=of output] {Дуусах};
+
+    % Arrows
+    \draw [arrow] (start) -- (capture);
+    \draw [arrow] (capture) -- (preprocess);
+    \draw [arrow] (preprocess) -- (colmap);
+    \draw [arrow] (colmap) -- (convert);
+    \draw [arrow] (convert) -- (openmvs);
+    \draw [arrow] (openmvs) -- (output);
+    \draw [arrow] (output) -- (end);
+\end{tikzpicture}
+\caption{Ажиллагааны Flow Diagram}
+\label{fig:flow_diagram}
+\end{figure}
+
+\clearpage
+\subsection{Өгөгдөл цуглуулах арга}
+3D дахин бүтээх туршилтад ашиглах 2D зургуудыг тодорхой хяналттай орчинд авсан. Камер нь тогтмол байрлал болон фокусын урттай байхаар тохируулж, объектын эргэн тойронд тогтмол өнцгөөр олон зураг авахын тулд эргэдэг тавцан ашиглав. Гэрлийн нөхцөлийг тогтмол байлгах үүднээс хаалттай гэрлийн хайрцаг (controlled lighting box) хэрэглэж, орчны сүүдэрлэл болон specular reflection-оос зайлсхийв. Зургуудыг $1920 \times 1080$ хэмжээтэй, JPEG форматаар хадгалсан ба нийтдээ туршилт бүрд 40–80 зураг авсан.
+
+\subsection{Урьдчилсан боловсруулалт}
+Зургуудыг SfM болон MVS алгоритмуудын шаардлага хангахаар урьдчилан боловсруулав. Үүнд:
+\begin{itemize}
+    \item Зургийн хэмжээг нэг стандартад тааруулж дахин хэмжээсжүүлсэн;
+    \item Хэрэв шаардлагатай бол Gaussian blur removal болон дэнситэйжүүлэлт хийсэн;
+    \item Өнгөний тогтвортой байдлыг хангах зорилгоор white balance болон color normalization хийсэн;
+    \item Controlled lighting орчны давуу талыг ашиглан гэрлийн ялгааг минимал түвшинд барьсан.
+\end{itemize}
+Эдгээр алхмууд нь фичер илрүүлэлт болон тохиролтын чанарыг шууд сайжруулах зорилготой.
+
+\subsection{Фичер илрүүлэлт ба тохиролт (SIFT / SuperPoint)}
+3D дахин бүтээх үндсэн алхам нь олон зураг дээр нийтлэг цэгүүдийг илрүүлэх явдал юм. Төслийн явцад уламжлалт SIFT алгоритмыг ашиглан keypoint илрүүлж, descriptor үүсгэсэн. Зарим туршилтад SuperPoint нейрон сүлжээний суурьтай фичер илрүүлэгчийг ашиглаж, хоёр аргын гүйцэтгэлийг харьцуулсан. Тохиролтыг FLANN ба BFMatcher алгоритмуудын тусламжтай хийж, чанаргүй тохиролтыг Lowe's Ratio Test ашиглан шүүв. Үр дүнд нь зураг хоорондын найдвартай keypoint correspondence-уудын багц үүссэн.
+
+\subsection{Камерын параметр тооцоолол}
+Камерын intrinsic параметрүүдийг checkerboard ашиглан OpenCV-ийн calibration toolkit-ээр тооцоолсон. Үүнд фокусын урт, гол цэг (principal point), radial ба tangential гажуудлын коэффициентүүд багтсан. Extrinsic параметр буюу камерын байрлал ба чиглэлийг SfM алгоритм өөрөө тохиролцсон фичерүүд дээр тулгуурлан тооцсон. Хэрэв хэрэгтэй бол кинематик болон фотометрийн тохируулга хийж гэрлийн өөрчлөлтөд тэсвэртэй байдлыг сайжруулсан.
+
+\subsection{Structure-from-Motion (SfM)}
+SfM үе шат нь олон зурагнаас камерын байрлал болон sparse point cloud үүсгэнэ. Энэ үе шат дараах алхмуудтай:
+\begin{itemize}
+    \item Зураг хоорондын best pair сонгох;
+    \item Essential болон Fundamental matrix тооцоолох;
+    \item Камерын эхний байрлал тогтоох;
+    \item Инкрементал байдлаар дараагийн зургуудыг нэмэх;
+    \item Sparse point cloud үүсгэх.
+\end{itemize}
+Энэ алхмын гол үр дүн нь объектын үндсэн геометрийн дүрслэл бүхий сийрэг цэгэн загвар юм.
+
+\subsection{Multi-View Stereo (MVS)}
+SfM-ээс гарсан камерын байрлал болон сийрэг цэгүүд дээр тулгуурлан нягт (dense) цэгэн өгөгдлийг MVS ашиглан сэргээв. Энэ үе шат нь:
+\begin{itemize}
+    \item Зураг бүрт depth map тооцоолох;
+    \item Зураг хоорондын depth map-уудыг нэгтгэх;
+    \item Нягт цэгэн облак үүсгэх.
+\end{itemize}
+Үр дүнд нь өндөр нарийвчлалтай гадаргуугийн геометр сэргээгдэнэ.
+
+\subsection{Point Cloud цэвэрлэгээ ба шүүлт}
+Нягт point cloud нь дуу чимээтэй байдаг тул дараах боловсруулалтуудыг хийсэн:
+\begin{itemize}
+    \item Statistical Outlier Removal (SOR);
+    \item Radius-based filtering;
+    \item Normal estimation.
+\end{itemize}
+Эдгээр цэвэрлэгээ нь mesh reconstruction-ийн чанарт шууд нөлөөлнө.
+
+\subsection{Mesh Reconstruction}
+Цэвэрлэгдсэн цэгэн өгөгдлөөс 3D mesh үүсгэхдээ Poisson Surface Reconstruction алгоритм ашигласан. Үүссэн mesh дээр:
+\begin{itemize}
+    \item Mesh decimation;
+    \item Hole filling;
+    \item Texture baking
+\end{itemize}
+хийж, 3D загварын харагдах байдал болон гүйцэтгэлийг сайжруулсан.
+
+\subsection{Гүйцэтгэл ба үнэлгээний арга}
+Сэргээгдсэн 3D загварын чанарыг дараах үзүүлэлтүүдээр үнэлсэн:
+\begin{itemize}
+    \item Chamfer Distance — point cloud хоорондын дундаж зай;
+    \item RMSE — сэргээгдсэн болон ground truth геометрийн хоорондын алдаа;
+    \item Visual evaluation — харааны зөрүү, гадаргуугийн эвдрэл;
+    \item COLMAP baseline-тэй харьцуулалт — манай pipeline-ийн давуу болон сул талыг тогтоох зорилготой.
+\end{itemize}
+
+\subsection{Туршилтын орчин}
+Туршилтуудыг дараах техник хангамжийн орчинд гүйцэтгэсэн:
+\begin{itemize}
+    \item GPU: NVIDIA RTX 4060
+    \item CPU: Intel Core i9 (15th Gen)
+    \item RAM: 16 GB
+    \item Програмын сангууд: COLMAP, OpenMVS, OpenCV, PyTorch (хэрэглэвэл)
+\end{itemize}
+Эдгээр үзүүлэлт нь pipeline-ийн хурд, гүйцэтгэлд нөлөөлсөн тул тэмдэглэн авсан.
+
+\clearpage
+

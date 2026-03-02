@@ -1,0 +1,129 @@
+\chapter{ҮР ДҮН}
+
+Энэ бүлэг нь зураг авалт, өгөгдлийн урьдчилсан боловсруулалт, фичер илрүүлэлт ба тохиролт, SfM реконструкц, мөн OpenMVS дээр хийсэн анхан шатны туршилтын үр дүнг танилцуулна.
+
+\section{Өгөгдлийн цуглуулгын үр дүн}
+
+3D сэргээн босголтын туршилтад нийт 47 зураг авсан. Камерын байрлал, өнцөг, гэрэлтүүлэг тогтвортой байсан нь:
+
+\begin{itemize}
+    \item Feature detection илүү тогтвортой болох
+    \item Exposure болон white balance–ийн ялгааг багасгах
+    \item SfM-д камерын поз илүү зөв тодорхойлогдох
+\end{itemize}
+
+Дараах жишээ зургууд нь датасетийн бүтэц, гэрэлтүүлэг, өнцгийг харуулж байна.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{Pictures/templeR0013.png}
+\end{subfigure}
+\begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{Pictures/templeR0016.png}
+\end{subfigure}
+\begin{subfigure}{0.32\textwidth}
+    \includegraphics[width=\linewidth]{Pictures/templeR0024.png}
+\end{subfigure}
+\caption{Зураг авалтын датасетийн жишээ зургууд}
+\label{fig:dataset_samples}
+\end{figure}
+
+% \section{Урьдчилсан боловсруулалтын үр дүн}
+
+% Зургууд дээр дараах боловсруулалтуудыг хийсэн:
+
+% \begin{itemize}
+%     \item Хэмжээг нэг стандартад оруулах
+%     \item Сарнилт болон илүүдэл фоныг арилгах
+%     \item Exposure болон өнгөний тэнцвэржилт (color normalization)
+% \end{itemize}
+
+% Доорх зураг урьдчилсан боловсруулалтын өмнөх болон дараах төлвийг харуулна.
+
+% \begin{figure}[htbp]
+% \centering
+% \begin{subfigure}{0.48\textwidth}
+%     \includegraphics[width=\linewidth]{Pictures/NMCT.png}
+%     \caption{Өмнө}
+% \end{subfigure}
+% \begin{subfigure}{0.48\textwidth}
+%     \includegraphics[width=\linewidth]{Pictures/NMCT.png}
+%     \caption{Дараа}
+% \end{subfigure}
+% \caption{Урьдчилсан боловсруулалтын өмнөх ба дараах харьцуулалт}
+% \label{fig:preprocess_comparison}
+% \end{figure}
+
+% \section{Фичер илрүүлэлт ба тохиролтын үр дүн}
+
+% Фичер илрүүлэлтэд \textbf{SIFT} ашигласан. Туршилтаар дараах давуу талууд ажиглагдав:
+
+% \begin{itemize}
+%     \item Тогтвортой гэрэлтүүлэгтэй үед keypoint илрүүлэлт маш сайн байсан
+%     \item Өөр өнцгөөс авсан зургууд дээр ч сайн тохиролт өгсөн
+%     \item SuperPoint-той харьцуулахад илүү бага outlier гарсан
+% \end{itemize}
+
+% SIFT keypoint–ийн илрүүлэлт дараах байдлаар харагдсан:
+
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.48\textwidth]{Pictures/NMCT.png}
+% \caption{SIFT ашигласан фичер илрүүлэлтийн үр дүн}
+% \label{fig:sift_keypoints}
+% \end{figure}
+
+Feature matching нь FLANN matcher ашиглан хийгдсэн бөгөөд outlier тохиролтуудыг RANSAC ашиглан шүүж цэвэрлэсэн.
+
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.55\textwidth]{Pictures/NMCT.png}
+% \caption{Feature matching–ийн үр дүн (RANSAC дараах)}
+% \label{fig:feature_matching}
+% \end{figure}
+
+% \section{Structure-from-Motion (SfM)-ийн анхан шатны үр дүн}
+
+% COLMAP ашиглан SfM реконструкц хийхэд:
+
+% \begin{itemize}
+%     \item Камерын байрлалын дараалал зөв тодорхойлогдсон
+%     \item Sparse point cloud амжилттай үүссэн
+%     \item Feature matching–ийн чанар SfM үр дүнд шууд нөлөөлсөн
+% \end{itemize}
+
+% Камерын позын граф дараах байдалтай гарсан:
+
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.6\textwidth]{Pictures/NMCT.png}
+% \caption{COLMAP-ийн SfM камерын байрлалын граф}
+% \label{fig:sfm_pose_graph}
+% \end{figure}
+
+Sparse point cloud дараах хэлбэртэй:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{Pictures/Sparse.png}
+\caption{SfM-ийн үүсгэсэн sparse point cloud}
+\label{fig:sparse_cloud}
+\end{figure}
+
+\section{Multi-View Stereo (MVS)-ийн үр дүн}
+
+OpenMVS ашигласан MVS reconstruction–ийн явц:
+
+\begin{itemize}
+    \item Depth map үүсэлт амжилттай ажилласан
+    \item Dense point cloud үүссэн
+    \item Зарим өнцөгт мэдээлэл бага байсан нь mesh reconstruction–д нөлөөлсөн
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{Pictures/Dense.png}
+\caption{OpenMVS ашигласан dense point cloud}
+\label{fig:dense_cloud}
+\end{figure}

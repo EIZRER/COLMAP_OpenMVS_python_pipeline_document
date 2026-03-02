@@ -1,0 +1,160 @@
+\chapter{ДҮГНЭЛТ}
+
+\section{Судалгааны үр дүнгийн нэгтгэл}
+
+Энэхүү судалгааны ажил нь 2D зурагнаас 3D загвар үүсгэх бүрэн ажиллагаатай SfM–MVS суурьтай pipeline-ийг боловсруулж, туршилтын хүрээнд амжилттай хэрэгжүүллээ. Өгөгдөл цуглуулах шатанд камерын байрлал, гэрэлтүүлэг, объектын байрлал зэрэг орчны нөхцөлийг хянаж, өндөр чанартай дүрс зураг авах боломжийг бүрдүүлсэн нь feature detection болон зураг хоорондын matching процессод эерэг нөлөө үзүүлсэн.
+
+\subsection{Техникийн үр дүн}
+
+\begin{enumerate}
+    \item \textbf{Structure-from-Motion (SfM):} 
+    \begin{itemize}
+        \item Sparse point cloud үүсгэж, зураг хоорондын pose estimation-ийн нарийвчлалыг баталгаажуулсан
+        \item Essential/Fundamental матрицыг ашиглан incremental reconstruction хийсэн
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.55\textwidth,keepaspectratio]{Pictures/Sparse.png}
+        \caption{Sparse point cloud жишээ}
+        \label{fig:sparse_point_cloud}
+    \end{figure}
+
+    \item \textbf{Multi-View-Stereo (MVS):} 
+    \begin{itemize}
+        \item Depth map үүсгэж, fusion хийх замаар dense point cloud гаргасан
+        \item Statistical Outlier Removal болон radius filtering ашиглан point cloud-ийг цэвэрлэсэн
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.55\textwidth,keepaspectratio]{Pictures/Dense.png}
+        \caption{Dense point cloud жишээ}
+        \label{fig:dense_point_cloud}
+    \end{figure}
+
+    \item \textbf{Mesh reconstruction:} 
+    \begin{itemize}
+        \item Poisson reconstruction ашиглан mesh үүсгэж, refinement болон texture baking хийсэн
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.55\textwidth,keepaspectratio]{Pictures/Model.png}
+        \caption{Mesh reconstruction жишээ}
+        \label{fig:mesh_example}
+    \end{figure}
+
+    \item \textbf{Dataset:} 
+    \begin{itemize}
+        \item 500+ зураг, өөр өөр өнцөг, controlled lighting box ашигласан
+        \item 1920x1080 JPEG болон PNG форматтай
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.55\textwidth,keepaspectratio]{Pictures/templeR0013.png}
+        \caption{Dataset-ийн хэсэг}
+        \label{fig:dataset_sample}
+    \end{figure}
+\end{enumerate}
+
+\subsection{Төхөөрөмжийн үр дүн}
+
+Туршилтын pipeline-г i9 CPU, RTX 4060 GPU, 16GB RAM бүхий машин дээр ажиллуулж, OpenCV, COLMAP, OpenMVS, PyTorch сан ашиглав. Sparse point cloud generation болон dense reconstruction шат бүр амжилттай ажилласан.
+
+\textbf{Гол үзүүлэлтүүд:}
+\begin{itemize}
+    \item Sparse point cloud: 35,000+ цэг
+    \item Dense point cloud: 2.1 сая цэг
+    \item Mesh vertices: 1.2 сая, faces: 2.3 сая
+    \item Visual accuracy: Chamfer Distance \textbf{0.005 m}, RMSE \textbf{0.007 m}
+\end{itemize}
+
+\subsection{Системийн бүрэлдэхүүн}
+
+\begin{enumerate}
+    \item \textbf{Data collection:} 40-80 зураг авах, controlled lighting box
+    \item \textbf{Pre-processing:} Resize, denoise, color normalization
+    \item \textbf{Feature detection and matching:} SIFT, SuperPoint, BFMatcher/FLANN
+    \item \textbf{Camera calibration:} Checkerboard ашиглан intrinsic/extrinsic параметр
+    \item \textbf{SfM:} Incremental reconstruction, sparse point cloud
+    \item \textbf{MVS:} Depth maps, dense point cloud
+    \item \textbf{Point cloud filtering:} Outlier removal, normal estimation
+    \item \textbf{Mesh reconstruction:} Poisson reconstruction, refinement, texture baking
+\end{enumerate}
+
+% \section{Зорилтын биелэлт}
+
+% \begin{table}[H]
+% \centering
+% \caption{Зорилтын биелэлт}
+% \begin{tabular}{|c|l|c|l|}
+% \hline
+% \textbf{№} & \textbf{Зорилт} & \textbf{Биелэлт} & \textbf{Тайлбар} \\
+% \hline
+% 1 & Өгөгдөл цуглуулах & \checkmark & 40-80 зураг, controlled lighting \\
+% \hline
+% 2 & Pre-processing хийх & \checkmark & Resize, denoise, color normalization \\
+% \hline
+% 3 & Feature detection & \checkmark & SIFT + SuperPoint, BFMatcher/FLANN \\
+% \hline
+% 4 & Camera calibration & \checkmark & Checkerboard ашигласан \\
+% \hline
+% 5 & SfM & \checkmark & Sparse point cloud үүсгэсэн \\
+% \hline
+% 6 & MVS & \checkmark & Dense point cloud гаргасан \\
+% \hline
+% 7 & Mesh reconstruction & \checkmark & Poisson reconstruction, texture baking \\
+% \hline
+% \end{tabular}
+% \label{tab:objectives}
+% \end{table}
+
+\section{Шинэлэг хувь нэмэр}
+
+\begin{enumerate}
+    \item \textbf{SfM–MVS pipeline-ийг тогтмол орчинд туршсан}
+    \item \textbf{Controlled lighting box ашиглан feature detection чанарыг сайжруулсан}
+    \item \textbf{Sparse → Dense → Mesh үе шат бүрийг нэгтгэсэн}
+    \item \textbf{Visual болон metric үнэлгээний аргачлалыг нэгтгэсэн}
+    \item \textbf{Dataset болон pipeline-ийг ирээдүйд өргөтгөх боломжтой болгосон}
+    \item \textbf{Pipeline үүсгэж дарааллыг хялбарчлах}
+\end{enumerate}
+
+\section{Хязгаарлалт}
+
+\begin{enumerate}
+    \item Зөвхөн нэг объектын туршилт
+    \item Fixed turntable-тэй controlled lighting environment-д ажилласан
+    \item Бодит цагийн dynamic орчинг хамраагүй
+    \item Pipeline-ий зарим хэсэгт computational cost өндөр
+\end{enumerate}
+
+\section{Цаашдын судалгааны чиглэл}
+
+\begin{enumerate}
+    \item Pipeline хийх
+    \item Real-time 3D reconstruction GPU/FPGA acceleration
+    \item Deep learning-based feature detection ба depth estimation турших
+    \item Texture quality сайжруулах, photorealistic mesh үүсгэх
+    \item Dataset-ийг нэмэгдүүлэх, open-source болгох
+\end{enumerate}
+
+\section{Төгсгөлийн үг}
+
+Энэхүү дипломын ажлаар SfM–MVS суурьтай 3D reconstruction pipeline-ийг боловсруулж, камер calibration, feature detection, sparse болон dense point cloud generation, mesh reconstruction гэсэн шат бүрийг амжилттай хэрэгжүүлэв. Sparse point cloud болон mesh reconstruction-ийн үр дүнг доорх зургууд харуулсан.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth,height=0.25\textheight]{Pictures/Sparse.png}
+  \caption{Sparse point cloud жишээ}
+  \label{fig:final_sparse}
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth,height=0.25\textheight]{Pictures/Model.png}
+  \caption{Mesh reconstruction жишээ}
+  \label{fig:final_mesh}
+\end{minipage}
+\end{figure}
+
+

@@ -1,0 +1,93 @@
+% \renewcommand{\thesubsection}{\Alph{section}}
+\newpage
+\titleformat{\chapter}[block]{\huge{}\bfseries\centering}{}{0.5em}{}
+
+\chapter*{ХАВСРАЛТ}
+\addcontentsline{toc}{chapter}{Хавсралт}
+
+\section*{Хавсралт А. Эх кодын холбоос}
+
+Төслийн бүх эх код, моделийн архитектур, техникийн индикаторууд болон бусад хэрэгжүүлэлтийг дараах GitHub repository-д байршуулсан:
+
+\begin{center}
+\Large
+\textbf{\url{https://github.com/Asura-lab/Forex-Signal-App}}
+\end{center}
+
+\vspace{1cm}
+
+\noindent\textbf{Repository-д байгаа гол бүрэлдэхүүн хэсгүүд:}
+
+\begin{itemize}
+    \item \textbf{backend/} - Flask REST API сервер, ML моделиуд, preprocessing код
+    \item \textbf{mobile\_app/} - React Native + Expo мобайл апп
+    \item \textbf{models/} - Сургагдсан моделиуд (XGBoost, LightGBM, Random Forest)
+    \item \textbf{data/} - EUR/USD түүхэн өгөгдөл
+    \item \textbf{docs/} - Техникийн баримт бичиг
+    \item \textbf{artifacts/} - Deep Learning моделийн weights
+\end{itemize}
+
+\vspace{0.5cm}
+
+\noindent\textbf{Техникийн хэрэгжүүлэлтүүд:}
+
+\begin{itemize}
+    \item ForexHybridNetV2 моделийн архитектур (CNN + BiLSTM + Attention)
+    \item RSI, MACD, Bollinger Bands техникийн индикаторууд
+    \item Focal Loss функц (class imbalance шийдвэрлэх)
+    \item Ensemble систем (XGBoost, LightGBM, Random Forest)
+    \item JWT authentication систем
+    \item MongoDB өгөгдлийн санд холбогдох
+\end{itemize}
+
+\section*{Хавсралт Б. Hyperparameter тохиргоо}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Параметр} & \textbf{Утга} & \textbf{Тайлбар} \\
+\hline
+TARGET\_HORIZON\_MIN & 10 & Таамаглах хугацаа (минут) \\
+\hline
+SEQ\_LEN & 240 & Оролтын дарааллын урт \\
+\hline
+BATCH\_SIZE & 256 & Batch хэмжээ \\
+\hline
+EPOCHS & 100 & Хамгийн их epoch \\
+\hline
+LEARNING\_RATE & 3e-4 & Суралцах хурд \\
+\hline
+WEIGHT\_DECAY & 1e-3 & Weight decay \\
+\hline
+WARMUP\_EPOCHS & 5 & Warmup epoch \\
+\hline
+EARLY\_STOPPING\_PATIENCE & 12 & Early stopping patience \\
+\hline
+NOISE\_STD & 0.015 & Noise augmentation std \\
+\hline
+RARE\_EVENT\_WEIGHT & 30.0 & Ховор үйл явдлын жин \\
+\hline
+DIR\_LABEL\_SMOOTH & 0.08 & Direction label smoothing \\
+\hline
+BIGMOVE\_LABEL\_SMOOTH & 0.05 & Big move label smoothing \\
+\hline
+SWA\_START\_EPOCH & 40 & SWA эхлэх epoch \\
+\hline
+SWA\_LR & 1e-5 & SWA learning rate \\
+\hline
+FOCAL\_GAMMA & 2.0 & Focal loss gamma \\
+\hline
+FOCAL\_ALPHA & 0.25 & Focal loss alpha \\
+\hline
+CONV\_CHANNELS & 192 & CNN channel тоо \\
+\hline
+LSTM\_HIDDEN & 384 & LSTM hidden хэмжээс \\
+\hline
+NUM\_ATTENTION\_HEADS & 8 & Attention head тоо \\
+\hline
+DROPOUT\_RATE & 0.25 & Dropout хувь \\
+\hline
+\end{tabular}
+\caption{Hyperparameter тохиргоо}
+\end{table}

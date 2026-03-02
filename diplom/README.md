@@ -1,0 +1,128 @@
+# 📄 Дипломын ажил - Forex Signal App
+
+**Шинэ Монгол Технологийн Коллеж | 2025-2026**
+
+> Ensemble Machine Learning ашиглан EUR/USD валютын ханшийн BUY дохио таамаглах систем
+
+---
+
+## 📋 Дипломын ажлын мэдээлэл
+
+| Талбар | Утга |
+|--------|------|
+| **Сургууль** | Шинэ Монгол Технологийн Коллеж |
+| **Тэнхим** | Компьютерын Ухааны Тэнхим |
+| **Сэдэв** | Машин сургалтын аргаар хөрөнгийн зах зээлийн чиг хандлагыг таамаглах арилжааны бот |
+| **Оюутан** | Мөнхсүлд МӨНХДОРЖ (s21c033b) |
+| **Удирдагч багш** | Н.СОРОНЗОНБОЛД |
+| **Он** | 2026 |
+
+---
+
+## 🏗️ Хавтасны бүтэц
+
+```
+diplom/
+├── main.tex                 # Үндсэн файл (compile энэ файлыг)
+├── Information.tex          # Хувийн мэдээлэл, сэдэв
+├── preamble.tex             # LaTeX тохиргоо, packages
+├── acrolist.tex             # Товчилсон үгийн жагсаалт
+├── contents.tex             # Агуулга
+│
+├── Chapter1.tex             # Бүлэг 1: Удиртгал
+├── Chapter2.tex             # Бүлэг 2: Онолын хэсэг
+├── Chapter3.tex             # Бүлэг 3: Хөгжүүлэлт
+├── Chapter4.tex             # Бүлэг 4: Үр дүн
+├── Chapter5.tex             # Бүлэг 5: Дүгнэлт
+│
+├── appendix.tex             # Хавсралт (GitHub холбоос)
+├── reference.bib            # Ном зүй (BibTeX)
+│
+├── images/                  # Зургууд
+│   ├── system_architecture.png
+│   ├── activity_diagram.png
+│   ├── sequence_diagram.png
+│   ├── price_chart.png
+│   └── ...
+│
+└── output/                  # PDF гаралт
+    └── main.pdf
+```
+
+---
+
+## 🚀 Compile хийх
+
+### VS Code + LaTeX Workshop:
+
+1. VS Code дээр LaTeX Workshop extension суулгах
+2. `main.tex` файл нээх
+3. `Ctrl+Alt+B` дарж compile хийх
+4. PDF автоматаар нээгдэнэ
+
+### Command line:
+
+```bash
+# XeLaTeX ашиглах (Монгол үсэг дэмжинэ)
+xelatex main.tex
+bibtex main
+xelatex main.tex
+xelatex main.tex
+```
+
+### Overleaf:
+
+1. Бүх файлыг Overleaf руу upload хийх
+2. Compiler: XeLaTeX сонгох
+3. Compile товч дарах
+
+---
+
+## 📊 Дипломын агуулга
+
+### Бүлэг 1: Удиртгал
+- Судалгааны үндэслэл
+- Зорилго, зорилт
+- Хамрах хүрээ
+
+### Бүлэг 2: Онолын хэсэг
+- Forex зах зээлийн тухай
+- Machine Learning алгоритмууд
+- Техникийн индикаторууд (RSI, MACD, Bollinger Bands гэх мэт)
+
+### Бүлэг 3: Хөгжүүлэлт
+- Системийн архитектур
+- Өгөгдлийн сан
+- ML моделийн сургалт
+- REST API хөгжүүлэлт
+- Мобайл апп хөгжүүлэлт
+
+### Бүлэг 4: Үр дүн
+- Backtest үр дүн (61.9% Win Rate @ 80%+ confidence)
+- Model performance харьцуулалт
+- API хурд, найдвартай байдал
+
+### Бүлэг 5: Дүгнэлт
+- Гол үр дүн
+- Цаашдын хөгжүүлэлт
+- Зөвлөмж
+
+---
+
+## 🔗 Холбоосууд
+
+- **GitHub Repository**: [https://github.com/Asura-lab/Forex-Signal-App](https://github.com/Asura-lab/Forex-Signal-App)
+- **Үндсэн README**: [../README.md](../README.md)
+
+---
+
+## 📝 Тэмдэглэл
+
+- LaTeX загвар: ШМТК стандарт
+- Фонт: Times New Roman (XeLaTeX)
+- Хуудасны хэмжээ: A4
+- Margin: 2.5cm (бүх тал)
+
+---
+
+**Made with LaTeX 📜**

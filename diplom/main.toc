@@ -1,0 +1,50 @@
+\babel@toc {mongolian}{}\relax 
+\contentsline {chapter}{Товчилсон үгийн жагсаалт}{i}{chapter*.1}%
+\contentsline {chapter}{Гарчиг}{ii}{dummy.2}%
+\contentsline {chapter}{Зураг болон Хүснэгтийн жагсаалт}{iii}{dummy.4}%
+\contentsline {chapter}{Хураангуй}{iv}{chapter*.5}%
+\contentsline {chapter}{Abstract}{vi}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}УДИРТГАЛ}{1}{chapter.6}%
+\contentsline {section}{\numberline {1.1}Судалгааны үндэслэл, ач холбогдол}{1}{section.7}%
+\contentsline {section}{\numberline {1.2}Судалгааны зорилго, зорилт}{1}{section.10}%
+\contentsline {subsection}{\numberline {1.2.1}Зорилго}{1}{subsection.11}%
+\contentsline {subsection}{\numberline {1.2.2}Зорилтууд}{1}{subsection.12}%
+\contentsline {section}{\numberline {1.3}Судалгааны хамрах хүрээ}{2}{section.19}%
+\contentsline {section}{\numberline {1.4}Судалгааны шинэлэг тал}{2}{section.20}%
+\contentsline {chapter}{\numberline {2}ОНОЛЫН ҮНДЭСЛЭЛ}{3}{chapter.26}%
+\contentsline {section}{\numberline {2.1}3D Reconstruction – Үндсэн ойлголт}{3}{section.27}%
+\contentsline {subsection}{\numberline {2.1.1}Structure-from-Motion (SfM)}{3}{subsection.28}%
+\contentsline {subsection}{\numberline {2.1.2}Multi-View Stereo (MVS)}{3}{subsection.29}%
+\contentsline {section}{\numberline {2.2}Дээд түвшний алгоритмууд}{3}{section.30}%
+\contentsline {subsection}{\numberline {2.2.1}Feature Extraction}{3}{subsection.31}%
+\contentsline {subsection}{\numberline {2.2.2}Feature Matching}{3}{subsection.32}%
+\contentsline {subsection}{\numberline {2.2.3}Depth Estimation}{3}{subsection.33}%
+\contentsline {subsection}{\numberline {2.2.4}Mesh Generation}{4}{subsection.34}%
+\contentsline {subsection}{\numberline {2.2.5}Texture Mapping}{4}{subsection.35}%
+\contentsline {section}{\numberline {2.3}Холбогдох судалгааны тойм}{4}{section.36}%
+\contentsline {section}{\numberline {2.4}Бүлгийн дүгнэлт}{4}{section.37}%
+\contentsline {chapter}{\numberline {3}СУДАЛГААНЫ АРГА ЗҮЙ}{5}{chapter.38}%
+\contentsline {section}{\numberline {3.1}Системийн ерөнхий тойм}{5}{section.39}%
+\contentsline {subsection}{\numberline {3.1.1}Системийн Flow Diagram}{5}{subsection.40}%
+\contentsline {subsection}{\numberline {3.1.2}Өгөгдөл цуглуулах арга}{6}{subsection.42}%
+\contentsline {subsection}{\numberline {3.1.3}Урьдчилсан боловсруулалт}{6}{subsection.43}%
+\contentsline {subsection}{\numberline {3.1.4}Фичер илрүүлэлт ба тохиролт (SIFT / SuperPoint)}{6}{subsection.44}%
+\contentsline {subsection}{\numberline {3.1.5}Камерын параметр тооцоолол}{6}{subsection.45}%
+\contentsline {subsection}{\numberline {3.1.6}Structure-from-Motion (SfM)}{6}{subsection.46}%
+\contentsline {subsection}{\numberline {3.1.7}Multi-View Stereo (MVS)}{7}{subsection.47}%
+\contentsline {subsection}{\numberline {3.1.8}Point Cloud цэвэрлэгээ ба шүүлт}{7}{subsection.48}%
+\contentsline {subsection}{\numberline {3.1.9}Mesh Reconstruction}{7}{subsection.49}%
+\contentsline {subsection}{\numberline {3.1.10}Гүйцэтгэл ба үнэлгээний арга}{8}{subsection.50}%
+\contentsline {subsection}{\numberline {3.1.11}Туршилтын орчин}{8}{subsection.51}%
+\contentsline {chapter}{\numberline {4}ҮР ДҮН}{9}{chapter.52}%
+\contentsline {section}{\numberline {4.1}Өгөгдлийн цуглуулгын үр дүн}{9}{section.53}%
+\contentsline {section}{\numberline {4.2}Multi-View Stereo (MVS)-ийн үр дүн}{9}{section.56}%
+\contentsline {chapter}{\numberline {5}ДҮГНЭЛТ}{11}{chapter.58}%
+\contentsline {section}{\numberline {5.1}Судалгааны үр дүнгийн нэгтгэл}{11}{section.59}%
+\contentsline {subsection}{\numberline {5.1.1}Техникийн үр дүн}{11}{subsection.60}%
+\contentsline {subsection}{\numberline {5.1.2}Төхөөрөмжийн үр дүн}{13}{subsection.69}%
+\contentsline {subsection}{\numberline {5.1.3}Системийн бүрэлдэхүүн}{13}{subsection.70}%
+\contentsline {section}{\numberline {5.2}Шинэлэг хувь нэмэр}{14}{section.79}%
+\contentsline {section}{\numberline {5.3}Хязгаарлалт}{14}{section.86}%
+\contentsline {section}{\numberline {5.4}Цаашдын судалгааны чиглэл}{14}{section.91}%
+\contentsline {section}{\numberline {5.5}Төгсгөлийн үг}{15}{section.97}%

@@ -1,0 +1,67 @@
+\chapter{ОНОЛЫН ҮНДЭСЛЭЛ}
+
+\section{3D Reconstruction – Үндсэн ойлголт}
+
+3D reconstruction нь 2D зургуудыг ашиглан физик орчны 3D загварыг сэргээх процесс юм. Энэ нь компьютерийн харааны (Computer Vision) салбарын гол судалгааны чиглэл бөгөөд Structure-from-Motion (SfM), Multi-View Stereo (MVS) зэрэг аргуудыг хамардаг.
+
+Энэхүү судалгааны хүрээнд:
+\begin{itemize}
+    \item \textbf{Оролт (Input)}: Камераар авсан олон өнцгийн 2D зураг
+    \item \textbf{Процесс (Process)}: Камерын байрлал, пикселийн гүн, бүтэц тодорхойлох алгоритмууд
+    \item \textbf{Гаралт (Output)}: 3D цэгийн үүл (point cloud) болон торон загвар (mesh)
+\end{itemize}
+
+\subsection{Structure-from-Motion (SfM)}
+
+SfM нь олон зурагнаас камерын байрлал, хөдөлгөөнийг таамаглаж, 3D цэгийн үүл үүсгэдэг арга юм. Оролтын зургуудын хоорондын feature point-уудыг таарч, камерын pose-ийг тодорхойлно. SfM нь ихэвчлэн цэгийн үүл үүсгэх анхны шатанд ашиглагддаг.
+
+\subsection{Multi-View Stereo (MVS)}
+
+MVS нь SfM-аас гарсан камерын байрлал болон цэгийн үүлний мэдээллийг ашиглан өндөр нарийвчлалтай 3D загвар үүсгэдэг. Энэ арга нь пиксел хоорондын гүнгийн мэдээллийг ашиглаж, нарийн геометрийг сэргээдэг.
+
+\section{Дээд түвшний алгоритмууд}
+
+3D reconstruction-д өргөн хэрэглэгддэг алгоритмуудыг авч үзье.
+
+\subsection{Feature Extraction}
+
+Зурагнаас keypoint, corner, edge гэх мэт онцлог шинжийг илрүүлнэ. 
+\begin{itemize}
+    \item SIFT (Scale-Invariant Feature Transform)
+    \item SURF (Speeded-Up Robust Features)
+    \item ORB (Oriented FAST and Rotated BRIEF)
+\end{itemize}
+
+\subsection{Feature Matching}
+
+Өмнөх шатанд олдсон feature-уудыг олон зурагны хооронд тааруулж, камерын хөдөлгөөнийг тооцно. Хамгийн түгээмэл арга нь nearest neighbor search болон RANSAC-ийг ашиглан outlier-уудыг зайлуулах.
+
+\subsection{Depth Estimation}
+
+Цэг бүрийн гүн (depth) эсвэл disparity-г таамаглаж, 3D байршлыг тооцно. MVS алгоритмууд үүний жишээ юм.
+
+\subsection{Mesh Generation}
+
+Цэгийн үүлнээс торон загвар үүсгэх аргууд:
+\begin{itemize}
+    \item Poisson Surface Reconstruction
+    \item Delaunay triangulation
+    \item Ball-pivoting algorithm
+\end{itemize}
+
+\subsection{Texture Mapping}
+
+3D загварт зураг, өнгө болон материалын мэдээллийг холбох процесс. Энэ нь загварыг илүү бодитой харагдуулахад ашиглагддаг.
+
+\section{Холбогдох судалгааны тойм}
+
+Сүүлийн жилүүдэд 3D reconstruction-д олон аргыг хослуулсан системүүд хөгжиж байна.  
+- Furukawa and Ponce (2010) – MVS алгоритмуудын нарийвчлалыг сайжруулахад төвлөрсөн судалгаа 
+- Wu et al. (2011) – SfM болон MVS-г нэгтгэсэн систем, өндөр чанарын 3D цэгийн үүл үүсгэх боломжтой 
+- Schonberger and Frahm (2016) – Large-scale Structure-from-Motion систем, олон мянган зурагтай datasets-д туршигдсан 
+
+Эдгээр судалгаанууд нь энэхүү дипломын ажилд үндсэн онолын суурь болон хэрэгжүүлэлтийн аргачлалыг өгч байна.
+
+\section{Бүлгийн дүгнэлт}
+
+Энэ бүлэгт 3D reconstruction-ийн үндсэн ойлголт, SfM болон MVS алгоритмууд, feature extraction, depth estimation, mesh generation болон texture mapping зэрэг гол процессуудыг авч үзлээ. Дараагийн бүлэгт эдгээр аргуудыг хэрхэн програмчлал, pipeline-д хэрэгжүүлсэн талаар дэлгэрэнгүй тайлбарлана.
