@@ -2,8 +2,9 @@
 
 \section{Системийн ерөнхий тойм}
 
-Энэхүү хэсэгт системийн бүтэц, дата урсгал, pipeline-ын ажиллагааг диаграмаар харуулав.
-Датаг хэрхэн цуглуулах, боловсруулах, 3D reconstruction хийх алхмуудыг тайлбарлана.
+Энэхүү бүлэгт системийн бүтэц, өгөгдлийн урсгал болон pipeline-ийн ажиллагааг 
+тайлбарлана. Өгөгдөл цуглуулахаас эхлэн 3D загвар гаргах хүртэлх бүх алхмуудыг 
+дарааллан авч үзнэ.
 
 \subsection{Системийн Flow Diagram}
 
@@ -57,8 +58,19 @@
 \end{itemize}
 Эдгээр алхмууд нь фичер илрүүлэлт болон тохиролтын чанарыг шууд сайжруулах зорилготой.
 
-\subsection{Фичер илрүүлэлт ба тохиролт (SIFT / SuperPoint)}
-3D дахин бүтээх үндсэн алхам нь олон зураг дээр нийтлэг цэгүүдийг илрүүлэх явдал юм. Төслийн явцад уламжлалт SIFT алгоритмыг ашиглан keypoint илрүүлж, descriptor үүсгэсэн. Зарим туршилтад SuperPoint нейрон сүлжээний суурьтай фичер илрүүлэгчийг ашиглаж, хоёр аргын гүйцэтгэлийг харьцуулсан. Тохиролтыг FLANN ба BFMatcher алгоритмуудын тусламжтай хийж, чанаргүй тохиролтыг Lowe's Ratio Test ашиглан шүүв. Үр дүнд нь зураг хоорондын найдвартай keypoint correspondence-уудын багц үүссэн.
+\subsection{Фичер илрүүлэлт ба тохиролт (SIFT)}
+Энэхүү ажилд COLMAP-ийн \texttt{feature\_extractor} командаар SIFT алгоритмыг 
+ашиглан keypoint илрүүлж, descriptor үүсгэсэн. Камерын загварыг PINHOLE гэж 
+тохируулсан нь дотоод параметрийг зөв боловсруулахад тусалсан.
+Фичер тохиролтыг COLMAP-ийн \texttt{exhaustive\_matcher} ашиглан хийсэн бөгөөд энэ 
+арга нь зургийн бүх боломжит хослолыг хооронд нь тулгаж, хамгийн найдвартай 
+тохиролтуудыг сонгодог. Гэсэн хэдий ч exhaustive matching нь зураг тус бүрийн 
+харагдах талбай хязгаарлагдмал буюу хоорондын өнцгийн ялгаа их байх үед зарим 
+зургийн хооронд найдвартай тохиролт олж чадахгүй байх тохиолдол ажиглагдсан. 
+Энэ нь sparse reconstruction-ийн бүрэн бүтэн байдалд нөлөөлж, цэгэн үүлний 
+нягтралыг бууруулах эрсдэлтэй. Цаашдын судалгаанд SuperPoint зэрэг нейрон 
+сүлжээний суурьтай фичер илрүүлэгчийг ашиглах нь энэ асуудлыг шийдвэрлэх 
+боломжтой гэж үзэж байна.
 
 \subsection{Камерын параметр тооцоолол}
 Камерын intrinsic параметрүүдийг checkerboard ашиглан OpenCV-ийн calibration toolkit-ээр тооцоолсон. Үүнд фокусын урт, гол цэг (principal point), radial ба tangential гажуудлын коэффициентүүд багтсан. Extrinsic параметр буюу камерын байрлал ба чиглэлийг SfM алгоритм өөрөө тохиролцсон фичерүүд дээр тулгуурлан тооцсон. Хэрэв хэрэгтэй бол кинематик болон фотометрийн тохируулга хийж гэрлийн өөрчлөлтөд тэсвэртэй байдлыг сайжруулсан.
@@ -67,6 +79,7 @@
 SfM үе шат нь олон зурагнаас камерын байрлал болон sparse point cloud үүсгэнэ. Энэ үе шат дараах алхмуудтай:
 \begin{itemize}
     \item Зураг хоорондын best pair сонгох;
+    \item Bundle adjustment ашиглан камерын байрлал болон цэгүүдийг нэгэн зэрэг оновчлох;
     \item Essential болон Fundamental matrix тооцоолох;
     \item Камерын эхний байрлал тогтоох;
     \item Инкрементал байдлаар дараагийн зургуудыг нэмэх;
@@ -116,9 +129,63 @@ SfM-ээс гарсан камерын байрлал болон сийрэг ц
     \item GPU: NVIDIA RTX 4060
     \item CPU: Intel Core i9 (15th Gen)
     \item RAM: 16 GB
-    \item Програмын сангууд: COLMAP, OpenMVS, OpenCV, PyTorch (хэрэглэвэл)
+    \item Програмын сангууд: COLMAP, OpenMVS, OpenCV, Python, PyQt5, PyYAML
 \end{itemize}
 Эдгээр үзүүлэлт нь pipeline-ийн хурд, гүйцэтгэлд нөлөөлсөн тул тэмдэглэн авсан.
+
+\clearpage
+
+\subsection{Програм хангамжийн архитектур}
+
+Дипломын ажлын хэрэгжүүлэлт нь Python програмчлалын хэл дээр бичигдсэн бөгөөд дараах модульд хуваагдан зохион байгуулагдсан:
+
+\begin{itemize}
+    \item \textbf{core/} — суурь бүрэлдэхүүнүүд: ажлын замын тодорхойлолт (\texttt{paths.py}), алдааны ангилал (\texttt{exceptions.py}), лог бичилт (\texttt{logger.py})
+    \item \textbf{pipeline/} — COLMAP болон OpenMVS-тэй харилцах модулиуд:
+    \begin{itemize}
+        \item \texttt{pipeline.py} — 9 үе шаттай ерөнхий pipeline удирдлага
+        \item \texttt{colmap\_runner.py} — COLMAP командуудыг дуудах wrapper
+        \item \texttt{openmvs\_runner.py} — OpenMVS командуудыг дуудах wrapper
+        \item \texttt{model\_converter.py} — гаралтын файлуудыг цуглуулах
+    \end{itemize}
+    \item \textbf{gui/} — хэрэглэгчийн графикийн интерфейс (PyQt5):
+    \begin{itemize}
+        \item \texttt{main\_window.py} — үндсэн цонх болон удирдлагын элементүүд
+        \item \texttt{worker\_thread.py} — pipeline-ийг ар талд ажиллуулах тусдаа thread
+        \item \texttt{styles.qss} — интерфейсийн харааны загварчлал
+    \end{itemize}
+    \item \textbf{utils/} — туслах хэрэгслүүд: гадаад програм ажиллуулагч (\texttt{command\_runner.py})
+    \item \textbf{config/config.yaml} — гүйцэтгэлийн файлуудын зам болон тохиргоог YAML форматаар хадгалах
+\end{itemize}
+
+PyQt5-д суурилсан GUI нь дараах боломжуудыг хэрэглэгчид олгоно:
+
+\begin{itemize}
+    \item Зургийн хавтас болон ажлын хавтасны замыг шалгаж сонгох
+    \item GPU ашиглалт, mesh сайжруулалт (Refine Mesh), текстур зураглал (Texture Mesh)-ийг идэвхжүүлэх буюу унтраах
+    \item 9 үе шаттай дэвшлийн мөр (progress bar) болон тайлбарт статус харуулагч
+    \item Бодит цагийн лог цонх — pipeline-ийн гаралтыг шууд дэлгэцэнд харуулах
+    \item Pipeline-ийг зогсоох (Abort) болон ажлын хавтасыг цэвэрлэх (Clean Workspace) товчлуурууд
+    \item Амжилттай дууссаны дараа гаралтын хавтасыг нээх товч
+\end{itemize}
+
+Worker thread нь pipeline-ийн хүнд тооцооллыг үндсэн GUI thread-ийг хааж болохгүй тул тусдаа thread дээр ажиллуулна. Хэрэглэгч Abort товч дарсан тохиолдолд ажиллаж байгаа COLMAP буюу OpenMVS процессыг аюулгүйгээр зогсоож, хагас боловсруулагдсан файлуудыг устгах боломж олгоно.
+
+Pipeline-ийн тохиргоог \texttt{config/config.yaml} файлаар удирдана. Тус файлд COLMAP болон OpenMVS-ийн гүйцэтгэлийн файлуудын зам, ажлын хавтас болон GPU, refine, texture зэрэг тохиргоонуудыг YAML форматаар хадгалдаг бөгөөд GUI-ийн "Save Config" товчоор шинэчлэнэ.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{Pictures/GUI_small.png}
+\caption{PyQt5 GUI ашигласан pipeline удирдлага}
+\label{fig:GUI_appearance}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{Pictures/GUI_working.png}
+\caption{GUI pipeline  ажиллаж байх үеийн дэвшлийн мөр болон лог цонх}
+\label{fig:GUI_working}
+\end{figure}
 
 \clearpage
 

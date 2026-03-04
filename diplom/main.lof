@@ -2,15 +2,19 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ажиллагааны Flow Diagram}}{5}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ажиллагааны Flow Diagram}}{6}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces PyQt5 GUI ашигласан pipeline удирдлага}}{11}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces GUI pipeline ажиллаж байх үеийн дэвшлийн мөр болон лог цонх}}{11}{figure.caption.55}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Зураг авалтын датасетийн жишээ зургууд}}{9}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces SfM-ийн үүсгэсэн sparse point cloud}}{10}{figure.caption.55}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces OpenMVS ашигласан dense point cloud}}{10}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Зураг авалтын датасетийн жишээ зургууд}}{13}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces SfM-ийн үүсгэсэн sparse point cloud}}{13}{figure.caption.69}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces OpenMVS ашигласан dense point cloud}}{14}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Гараар хийсэн реконструкц}}{15}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Автомат pipeline}}{15}{figure.caption.73}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Sparse point cloud жишээ}}{11}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Dense point cloud жишээ}}{12}{figure.caption.64}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Mesh reconstruction жишээ}}{12}{figure.caption.66}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Dataset-ийн хэсэг}}{13}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Sparse point cloud жишээ}}{15}{figure.caption.98}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Mesh reconstruction жишээ}}{15}{figure.caption.98}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Sparse point cloud жишээ}}{16}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Dense point cloud жишээ}}{17}{figure.caption.80}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Mesh reconstruction жишээ}}{17}{figure.caption.82}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Dataset-ийн хэсэг}}{18}{figure.caption.84}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Sparse point cloud жишээ}}{21}{figure.caption.112}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Mesh reconstruction жишээ}}{21}{figure.caption.112}%

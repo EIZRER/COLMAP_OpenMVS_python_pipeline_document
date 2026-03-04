@@ -99,12 +99,11 @@
     \else
       \@restonecolfalse
     \fi
-    \chapter*{\contentsname
+    \chapter*{\Huge \contentsname
         \@mkboth{
            \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
     \@starttoc{toc}
     \if@restonecol\twocolumn\fi
-   \cleardoublepage
 }\end{spacing}
 }
 \newcommand\listfigname{Зураг болон Хүснэгтийн жагсаалт}
@@ -114,14 +113,14 @@
 \addtotoc{Зураг болон Хүснэгтийн жагсаалт}
 \begin{spacing}{1}{
     \setlength{\parskip}{1pt}
-    \chapter*{\listfigname
-      \@mkboth{\MakeUppercase\listfigname}
-              {\MakeUppercase\listfigname}}
+    \section*{\centering\Large\bfseries \listfigname}
+    \@mkboth{\MakeUppercase\listfigname}
+            {\MakeUppercase\listfigname}}
     \@starttoc{lof}
       \par
       \null\par
      \@starttoc{lot}%
-}\end{spacing}
+\end{spacing}
 }
 
 \renewcommand{\cftdotsep}{2} 

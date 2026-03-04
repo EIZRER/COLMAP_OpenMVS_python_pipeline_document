@@ -2,7 +2,11 @@
 
 \section{Судалгааны үр дүнгийн нэгтгэл}
 
-Энэхүү судалгааны ажил нь 2D зурагнаас 3D загвар үүсгэх бүрэн ажиллагаатай SfM–MVS суурьтай pipeline-ийг боловсруулж, туршилтын хүрээнд амжилттай хэрэгжүүллээ. Өгөгдөл цуглуулах шатанд камерын байрлал, гэрэлтүүлэг, объектын байрлал зэрэг орчны нөхцөлийг хянаж, өндөр чанартай дүрс зураг авах боломжийг бүрдүүлсэн нь feature detection болон зураг хоорондын matching процессод эерэг нөлөө үзүүлсэн.
+Энэхүү судалгааны ажил нь 2D зурагнаас 3D загвар үүсгэх бүрэн ажиллагаатай 
+SfM–MVS суурьтай pipeline-ийг амжилттай боловсруулж, туршилтаар баталгаажуулсан. 
+Өгөгдөл цуглуулах шатанд камерын байрлал, гэрэлтүүлэг, объектын байрлал зэрэг 
+орчны нөхцөлийг хянаж өндөр чанартай дүрс зураг авах боломжийг бүрдүүлсэн нь 
+feature detection болон зураг хоорондын matching процессод эерэг нөлөө үзүүлсэн.
 
 \subsection{Техникийн үр дүн}
 
@@ -44,7 +48,7 @@
 
     \item \textbf{Dataset:} 
     \begin{itemize}
-        \item 500+ зураг, өөр өөр өнцөг, controlled lighting box ашигласан
+        \item 48 зураг, өөр өөр өнцөг, controlled lighting box ашигласан
         \item 1920x1080 JPEG болон PNG форматтай
     \end{itemize}
     \begin{figure}[H]
@@ -57,7 +61,7 @@
 
 \subsection{Төхөөрөмжийн үр дүн}
 
-Туршилтын pipeline-г i9 CPU, RTX 4060 GPU, 16GB RAM бүхий машин дээр ажиллуулж, OpenCV, COLMAP, OpenMVS, PyTorch сан ашиглав. Sparse point cloud generation болон dense reconstruction шат бүр амжилттай ажилласан.
+Туршилтын pipeline-г i9 CPU, RTX 4060 GPU, 16GB RAM бүхий машин дээр ажиллуулж, Python, PyQt5, COLMAP, OpenMVS сан ашиглав. Sparse point cloud generation болон dense reconstruction шат бүр амжилттай ажилласан.
 
 \textbf{Гол үзүүлэлтүүд:}
 \begin{itemize}
@@ -70,9 +74,8 @@
 \subsection{Системийн бүрэлдэхүүн}
 
 \begin{enumerate}
-    \item \textbf{Data collection:} 40-80 зураг авах, controlled lighting box
-    \item \textbf{Pre-processing:} Resize, denoise, color normalization
-    \item \textbf{Feature detection and matching:} SIFT, SuperPoint, BFMatcher/FLANN
+    \item \textbf{Data collection:} 40-80 зураг авах
+    \item \textbf{Feature detection and matching:} SIFT (COLMAP-ийн feature\_extractor), Exhaustive Matching
     \item \textbf{Camera calibration:} Checkerboard ашиглан intrinsic/extrinsic параметр
     \item \textbf{SfM:} Incremental reconstruction, sparse point cloud
     \item \textbf{MVS:} Depth maps, dense point cloud
@@ -115,31 +118,66 @@
     \item \textbf{Sparse → Dense → Mesh үе шат бүрийг нэгтгэсэн}
     \item \textbf{Visual болон metric үнэлгээний аргачлалыг нэгтгэсэн}
     \item \textbf{Dataset болон pipeline-ийг ирээдүйд өргөтгөх боломжтой болгосон}
-    \item \textbf{Pipeline үүсгэж дарааллыг хялбарчлах}
+    \item \textbf{PyQt5-д суурилсан GUI боловсруулсан} — бүх 9 үе шатыг нэг цонхноос удирдах боломжтой хэрэглэхэд хялбар интерфейс
 \end{enumerate}
 
 \section{Хязгаарлалт}
 
 \begin{enumerate}
-    \item Зөвхөн нэг объектын туршилт
-    \item Fixed turntable-тэй controlled lighting environment-д ажилласан
-    \item Бодит цагийн dynamic орчинг хамраагүй
-    \item Pipeline-ий зарим хэсэгт computational cost өндөр
+    \item Зөвхөн нэг объектын туршилт хийсэн бөгөөд олон объектод ажиллах боломж нэмэлт туршилт шаардана
+    \item Тогтмол эргэдэг тавцан болон гэрлийн хайрцаг ашигласан тул гадна буюу динамик орчинд ажиллах тохиолдлыг хамраагүй
+    \item GUI-ийн хэрэглэгчийн туршлага (UX) цаашид сайжруулах шаардлагатай — камерын калибрацийн интерфейс, зургийн урьдчилсан боловсруулалтын сонголтууд дутмаг
+    \item COLMAP-ийн exhaustive matching арга нь зарим нөхцөлд зургуудын хоорондын тохиролтыг бүрэн хийж чадахгүй байсан нь sparse reconstruction-ийн чанарт нөлөөлсөн. Нейрон сүлжээнд суурилсан фичер илрүүлэлтийн арга ашиглах нь энэ асуудлыг шийдвэрлэх боломжтой.
 \end{enumerate}
 
 \section{Цаашдын судалгааны чиглэл}
 
+Боловсруулсан pipeline-ийн туршилтын явцад илэрсэн хязгаарлалтуудад тулгуурлан 
+дараах чиглэлүүдэд судалгааг үргэлжлүүлэх нь зүйтэй гэж үзэж байна.
+
 \begin{enumerate}
-    \item Pipeline хийх
-    \item Real-time 3D reconstruction GPU/FPGA acceleration
-    \item Deep learning-based feature detection ба depth estimation турших
-    \item Texture quality сайжруулах, photorealistic mesh үүсгэх
-    \item Dataset-ийг нэмэгдүүлэх, open-source болгох
+    \item \textbf{ML-д суурилсан фичер тохиролт нэвтрүүлэх} — Энэ судалгааны хамгийн 
+    тулгамдсан асуудал нь COLMAP-ийн exhaustive matcher зарим нөхцөлд зургуудын 
+    хоорондын тохиролтыг найдвартай хийж чадахгүй байсан явдал юм. SuperPoint болон 
+    SuperGlue нейрон сүлжээнд суурилсан фичер илрүүлэлт болон тохиролтын аргуудыг 
+    pipeline-д нэгтгэх нь энэ асуудлыг шийдвэрлэх хамгийн боломжит арга зам юм. 
+    SuperPoint нь масштаб болон гэрэлтүүлгийн өөрчлөлтөд SIFT-ээс илүү тэсвэртэй 
+    байдаг бөгөөд SuperGlue нь зургуудын хооронд харагдах давхцал бага байх үед ч 
+    найдвартай тохиролт хийх чадвартай. Энэ нэмэлтийг хэрэгжүүлснээр sparse 
+    reconstruction-ийн бүрэн бүтэн байдал болон нягт цэгэн үүлний чанар мэдэгдэхүйц 
+    сайжирна гэж тооцоолж байна.
+
+    \item \textbf{Гүйцэтгэлийн оновчлол} — CUDA-р хурдасгах болон олон тэрдэлтэй 
+    (multi-threaded) файл боловсруулалт нэмж нийт pipeline-ийн ажиллагааны цагийг 
+    богиносгох. Одоогийн туршилтын орчинд 47 зургийн бүрэн pipeline ажиллуулахад 
+    харьцангуй урт хугацаа шаарддаг бөгөөд GPU хурдасгалтыг бүрэн ашиглах замаар 
+    энэ хугацааг бууруулах боломжтой.
+
+    \item \textbf{GUI өргөтгөл} — Камерын калибрацийн интерфейс, зургийн урьдчилсан 
+    боловсруулалтын тохиргооны сонголтууд болон дотоод 3D дүрслэгч нэмэх нь 
+    хэрэглэгчийн туршлагыг улам сайжруулна.
+
+    \item \textbf{NeRF болон Gaussian Splatting-тэй харьцуулалт} — Орчин үеийн гүн 
+    сургалтад суурилсан аргуудтай тоон болон харааны харьцуулалт хийх нь 
+    COLMAP+OpenMVS pipeline-ийн давуу болон сул талуудыг тодорхой болгоход тусална.
 \end{enumerate}
 
 \section{Төгсгөлийн үг}
 
-Энэхүү дипломын ажлаар SfM–MVS суурьтай 3D reconstruction pipeline-ийг боловсруулж, камер calibration, feature detection, sparse болон dense point cloud generation, mesh reconstruction гэсэн шат бүрийг амжилттай хэрэгжүүлэв. Sparse point cloud болон mesh reconstruction-ийн үр дүнг доорх зургууд харуулсан.
+Энэхүү дипломын ажлын хүрээнд COLMAP болон OpenMVS-д суурилсан SfM–MVS 
+суурьтай 3D реконструкцийн pipeline-ийг амжилттай боловсруулж, туршилтаар 
+баталгаажуулсан. Feature detection, sparse болон dense point cloud generation, 
+mesh reconstruction, texture mapping гэсэн шат бүрийг автоматжуулсан 9 үе шаттай 
+pipeline нь нэг цогц системд нэгтгэгдсэн. Нэмж дурдахад, бүх үе шатыг нэг 
+цонхноос удирдах боломжтой PyQt5-д суурилсан GUI програмыг амжилттай 
+хэрэгжүүлсэн нь системийг мэргэжлийн бус хэрэглэгчдэд ч ашиглах боломжтой 
+болгосон гол ахиц юм.
+
+Туршилтын үр дүнд Chamfer Distance 0.005 м, RMSE 0.007 м гарсан нь системийн 
+реконструкцийн нарийвчлал хангалттай өндөр байгааг харуулж байна. Цаашдын 
+судалгаанд exhaustive matching-ийн хязгаарлалтыг SuperPoint/SuperGlue-д эсвэл DINOv2-д суурилсан 
+ML фичер тохиролтоор орлуулах нь pipeline-ийн ерөнхий чанарыг мэдэгдэхүйц 
+дээшлүүлэх боломжтой гол алхам болно.
 
 \begin{figure}[H]
 \centering

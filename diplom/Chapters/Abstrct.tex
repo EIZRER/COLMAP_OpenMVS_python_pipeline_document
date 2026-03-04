@@ -20,40 +20,43 @@
 \vspace{0.5cm}
 
 \noindent\textbf{Судалгааны үндэслэл:}
-3D загварчлал нь компьютер график, роботикийн ертөнц, VR/AR болон соёлын өвийн дижитал хадгалалт зэрэг олон салбарт чухал. Уламжлалт Structure-from-Motion (SfM) болон Multi-View Stereo (MVS) аргууд нь геометрийн үнэн зөв байдал, тогтвортой байдлаараа давуу ч, тооцоолол өндөр шаардлага ба гэрэлтэлт, зурагнуудын давхцал бага байдалд сул талтай. Энэ судалгаа нь COLMAP-д суурилсан практик pipeline-ийг сайжруулж, машин сургалтын аргаар зарим үе шат (feature extraction, outlier filtering, confidence scoring) илүү үр дүнтэй болгох боломжийг судална.
+3D загварчлал нь роботикс, VR/AR болон соёлын өвийн дижитал хадгалалт зэрэг олон салбарт чухал үүрэгтэй. Уламжлалт Structure-from-Motion (SfM) болон Multi-View Stereo (MVS) аргууд нь геометрийн нарийвчлал болон тогтвортой байдлаараа давуу ч, тооцооллын шаардлага өндөр, гэрэлтүүлгийн нөхцөлд мэдрэмтгий байдаг. Энэхүү судалгааны ажилд COLMAP болон OpenMVS-д суурилсан, 2D зургаас 3D загвар үүсгэх бүрэн автоматжуулсан pipeline болон хэрэглэгчийн графикийн интерфейс (GUI) боловсруулсан.
 
 \vspace{0.3cm}
 
 \noindent\textbf{Судалгааны зорилго:}
-Олон өнцгөөс авсан 2D зурагнаас практик, тогтвортой 3D модель (геометр + текстур) үүсгэх pipeline боловсруулахын тулд:
+Олон өнцгөөс авсан 2D зурагнаас геометр болон текстур бүхий 3D загвар үүсгэх практик pipeline боловсруулахын тулд:
 \begin{itemize}
-\item Зургийн урьдчилсан боловсруулалт, камерын калибраци, feature extraction-г автоматжуулах
-\item COLMAP ашиглан эхний sparse ба dense point cloud үүсгэх
-\item Үр дүнг геометрийн үнэн зөв (reprojection error, Chamfer distance), бүрэн байдал (completeness) ба визуал чанараар үнэлэх
-\item Уламжлалт MVS болон SfM-ын оронд Машин сургалтын аргуудыг орлуулах боломжийг практик аргаар судлах
+\item COLMAP ашиглан фичер илрүүлэлт, тохиролт болон сийрэг 3D цэгэн загвар үүсгэх үе шатыг автоматжуулах
+\item OpenMVS-ийн тусламжтай нягт цэгэн үүл, mesh болон текстур зураглалын үе шатуудыг нэгтгэх
+\item PyQt5-д суурилсан хэрэглэхэд хялбар GUI хэрэгсэл боловсруулах
+\item Реконструкцийн үр дүнг Chamfer Distance болон RMSE-ийн тусламжтай үнэлэх
 \end{itemize}
 
 \vspace{0.3cm}
 
 \noindent\textbf{Арга зүй:}
-Pipeline-д дараах үе шатууд орно: зурагнуудын kinematic болон photometric урьдчилсан боловсруулалт, SIFT болон SuperPoint-аас гарсан онцлогуудыг харьцуулах, COLMAP-н SfM ба MVS модулиудыг ажиллуулах. ML-аргыг (жиш: small CNN эсвэл Random Forest) feature descriptor-уудын чанарыг үнэлж, таарууарчихааг (mismatches) шүүн ялгах болон таамаглалын итгэлцлийг тодорхойлоход ашиглав. Моделийн гүйцэтгэлийг synthetic болон real-world dataset-ууд дээр харьцуулсан.
+Python програмчлалын хэл, PyQt5 UI framework болон YAML тохиргооны систем ашиглан модульчлагдсан pipeline боловсруулсан. Pipeline нь дараах 9 үе шатаас бүрдэнэ: COLMAP өгөгдлийн сан үүсгэх, SIFT фичер илрүүлэлт, фичер тохиролт, sparse mapper ажиллуулах, загварын хөрвүүлэлт, OpenMVS-д шилжүүлэлт, нягт цэгэн үүл үүсгэлт, mesh реконструкц, mesh боловсруулалт болон текстур зураглал. Систем нь бодит цагийн дэвшил харуулагч болон ажиллагааг зогсоох (abort) боломжийг агуулна.
 
 \vspace{0.3cm}
 
 \noindent\textbf{Үр дүн:}
-Анхны туршилтуудын дагуу COLMAP-н уламжлалт pipeline нь геометрийн нарийвчлал сайн хадгалсан. ML-н тусламжтай feature filtering ба confidence scoring оруулснаар outlier-ууд буурч, reprojection error-ыг бага хэмжээгээр сайжруулсан бөгөөд reconstruction-ийн тогтвортой байдал гэрэлтэлтийн хувирал үүссэн тохиолдолд сайжирсан. Мөн reconstructed mesh-ийн бүрэн байдал болон texture continuity дээр давуу тал ажиглагдсан.
+Бүрэн ажиллагаатай 9 үе шаттай pipeline-ийг амжилттай хэрэгжүүллээ. 47 зурагт туршилтын үр дүнд сийрэг цэгэн үүл 35,000 гаруй цэг, нягт цэгэн үүл 2.1 сая цэг, mesh нь 1.2 сая орой агуулсан байлаа. Chamfer Distance 0.005 м, RMSE 0.007 м гарсан. Бүх үе шатыг нэг GUI-ийн дотроос ажиллуулах боломж нь хэрэглэгчийн гараар хийх ажлын хэмжээг мэдэгдэхүйц бууруулсан.
 
 \vspace{0.3cm}
 
 \noindent\textbf{Дүгнэлт:}
-SfM + MVS (COLMAP)-д тулгуурласан pipeline нь практик 3D reconstruction-д хамгийн боломжит суурь хэвээр байна. Машин сургалтын аргуудыг хэсэгчилсэн байдлаар (feature quality, outlier removal, confidence scoring) нэвтрүүлэх нь reconstruction-ийг тогтвортой, практик нөхцөлд илүү найдвартай болгодог. Үргэлжлүүлэх ажилд hybrid сайжруулалтуудыг олон төрлийн зураглалтай, real-time ойролцоо шийдлүүд рүү шилжүүлэх боломжтой.
+COLMAP болон OpenMVS-д суурилсан SfM+MVS pipeline нь практик 3D реконструкцийн
+найдвартай суурь болох нь туршилтаар нотлогдсон. Боловсруулсан систем нь музей,
+соёлын өвийн дижитал архив болон жижиг лабораторийн орчинд шууд ашиглах боломжтой
+прототип юм. Цаашид машин сургалтын аргуудыг нэгтгэх, гүйцэтгэлийг оновчлох замаар
+системийг улам сайжруулах боломжтой.
 
 \vspace{0.3cm}
 
 \noindent\textbf{Түлхүүр үг:}
-3D Reconstruction, COLMAP, Structure-from-Motion, Multi-View Stereo, Feature Matching, Machine Learning, Computer Vision.
+3D Реконструкц, COLMAP, OpenMVS, Structure-from-Motion, Multi-View Stereo, Python, PyQt5, Pipeline автоматжуулалт.
 
-\clearpage
 
 % ========================= ABSTRACT ========================= %
 
@@ -77,35 +80,39 @@ SfM + MVS (COLMAP)-д тулгуурласан pipeline нь практик 3D r
 \vspace{0.5cm}
 
 \noindent\textbf{Background:}
-3D reconstruction is essential for graphics, robotics, VR/AR, and digital preservation. Classical Structure-from-Motion (SfM) and Multi-View Stereo (MVS) methods provide reliable geometry but are computationally demanding and affected by lighting changes and low image overlap. This thesis focuses on improving a COLMAP-based SfM/MVS pipeline with targeted machine-learning enhancements to increase robustness and practical usability.
+3D reconstruction is fundamental across robotics, VR/AR, and digital heritage preservation. Classical Structure-from-Motion (SfM) and Multi-View Stereo (MVS) methods provide reliable geometry but are computationally intensive and sensitive to lighting variations. This thesis presents a fully automated SfM+MVS pipeline with a graphical user interface (GUI) built on COLMAP and OpenMVS, aimed at simplifying the end-to-end 3D reconstruction workflow.
 
 \vspace{0.3cm}
 
 \noindent\textbf{Objective:}
-Design a practical pipeline to reconstruct geometry and texture from multi-view images by:
+To develop a practical pipeline reconstructing 3D geometry and texture from multi-view images by:
 \begin{itemize}
-\item Automating preprocessing, camera calibration, and feature extraction
-\item Producing initial sparse and dense point clouds using COLMAP
-\item Introducing ML-based feature filtering, outlier detection, and confidence scoring
-\item Evaluating reconstruction with reprojection error, Chamfer distance, completeness, and visual quality
+\item Automating feature extraction, matching, and sparse reconstruction using COLMAP
+\item Integrating dense point cloud generation, mesh reconstruction, and texture mapping via OpenMVS
+\item Building a user-friendly PyQt5 GUI for the complete pipeline
+\item Evaluating reconstruction quality with Chamfer distance and RMSE metrics
 \end{itemize}
 
 \vspace{0.3cm}
 
 \noindent\textbf{Methodology:}
-The pipeline includes photometric and geometric preprocessing, feature detection (SIFT, SuperPoint), matching, and COLMAP SfM/MVS processing. Lightweight ML models (e.g., small CNNs or tree-based classifiers) are trained to assess descriptor quality and filter mismatches. Experiments run on both synthetic and real-world datasets for quantitative and qualitative comparison.
+A modular pipeline was implemented in Python using PyQt5 and YAML-based configuration. The pipeline consists of 9 steps: COLMAP database creation, SIFT feature extraction, exhaustive feature matching, sparse mapper, binary-to-text model conversion, COLMAP-to-OpenMVS interface, point cloud densification, mesh reconstruction, and mesh refinement with texture mapping. A worker thread handles background execution with real-time progress feedback and abort support.
 
 \vspace{0.3cm}
 
 \noindent\textbf{Results:}
-Baseline COLMAP reconstructions show high geometric accuracy. Integrating ML-based filtering and confidence scoring reduced outliers and improved reconstruction stability under varying lighting and limited overlap conditions. Improvements were observed in reprojection error, completeness, and texture continuity.
+A fully functional 9-step pipeline was successfully implemented and tested. On a 47-image dataset, the sparse point cloud contained 35,000+ points, the dense cloud had 2.1 million points, and the final mesh had 1.2 million vertices. Chamfer Distance reached 0.005 m and RMSE was 0.007 m. Running all stages through a single GUI application significantly reduced manual workflow overhead.
 
 \vspace{0.3cm}
 
 \noindent\textbf{Conclusion:}
-A COLMAP-based SfM/MVS pipeline augmented with targeted machine-learning components yields more robust and practical 3D reconstructions for real-world scenarios. Future work will explore further hybridization, runtime optimization, and extensions toward near real-time reconstruction.
+The COLMAP+OpenMVS-based SfM+MVS pipeline was validated as a robust and practical
+foundation for 3D reconstruction. The implemented system serves as a deployable prototype
+suitable for museum digitization, cultural heritage archiving, and small-scale laboratory use.
+Future work will focus on integrating machine learning components such as deep feature
+extraction and neural reconstruction methods to further improve accuracy and performance.
 
 \vspace{0.3cm}
 
 \noindent\textbf{Keywords:}
-3D Reconstruction, COLMAP, Structure-from-Motion, Multi-View Stereo, Feature Matching, Machine Learning, Computer Vision.
+3D Reconstruction, COLMAP, OpenMVS, Structure-from-Motion, Multi-View Stereo, Python, PyQt5, Pipeline Automation.
