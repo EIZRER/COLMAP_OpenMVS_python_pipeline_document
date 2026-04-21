@@ -63,3 +63,4 @@
 \contentsline {section}{\numberline {5.5}Төгсгөлийн үг}{30}{section.136}%
 \contentsline {chapter}{Ном зүй}{31}{chapter*.137}%
 \contentsline {chapter}{Товчлол}{32}{dummy.138}%
+\contentsline {chapter}{Summary (English)}{35}{dummy.147}%

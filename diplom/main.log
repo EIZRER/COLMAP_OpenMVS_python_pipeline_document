@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.4.21)  22 APR 2026 04:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.4.21)  22 APR 2026 04:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2332,7 +2332,7 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 \openout2 = `Information.aux'.
 
 (Information.tex) (Chapters/CoverPage.tex
-<Pictures/NMCT.png, id=285, 69.25874pt x 86.57344pt>
+<Pictures/NMCT.png, id=289, 69.25874pt x 86.57344pt>
 File: Pictures/NMCT.png Graphic file (type png)
 <use Pictures/NMCT.png>
 Package pdftex.def Info: Pictures/NMCT.png  used on input line 10.
@@ -2630,34 +2630,34 @@ LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
  [12
 
 ]
-<Pictures/GUI_small.png, id=586, 492.03825pt x 454.69875pt>
+<Pictures/GUI_small.png, id=595, 492.03825pt x 454.69875pt>
 File: Pictures/GUI_small.png Graphic file (type png)
 <use Pictures/GUI_small.png>
 Package pdftex.def Info: Pictures/GUI_small.png  used on input line 278.
 (pdftex.def)             Requested size: 258.5623pt x 238.94243pt.
-<Pictures/GUI_working.png, id=587, 487.8225pt x 160.80075pt>
+<Pictures/GUI_working.png, id=596, 487.8225pt x 160.80075pt>
 File: Pictures/GUI_working.png Graphic file (type png)
 <use Pictures/GUI_working.png>
 Package pdftex.def Info: Pictures/GUI_working.png  used on input line 285.
 (pdftex.def)             Requested size: 258.5623pt x 85.22888pt.
  [13 <./Pictures/GUI_small.png>] [14 <./Pictures/GUI_working.png>]) (Chapters/Chapter4_Results.tex
 {\Mongolian \CYRB \cyry \cyrl \cyrerev \cyrg } 4.
-<Pictures/templeR0013.png, id=598, 361.35pt x 481.8pt>
+<Pictures/templeR0013.png, id=607, 361.35pt x 481.8pt>
 File: Pictures/templeR0013.png Graphic file (type png)
 <use Pictures/templeR0013.png>
 Package pdftex.def Info: Pictures/templeR0013.png  used on input line 45.
 (pdftex.def)             Requested size: 150.43886pt x 200.58286pt.
-<Pictures/templeR0016.png, id=599, 361.35pt x 481.8pt>
+<Pictures/templeR0016.png, id=608, 361.35pt x 481.8pt>
 File: Pictures/templeR0016.png Graphic file (type png)
 <use Pictures/templeR0016.png>
 Package pdftex.def Info: Pictures/templeR0016.png  used on input line 52.
 (pdftex.def)             Requested size: 150.43886pt x 200.58286pt.
-<Pictures/templeR0024.png, id=600, 361.35pt x 481.8pt>
+<Pictures/templeR0024.png, id=609, 361.35pt x 481.8pt>
 File: Pictures/templeR0024.png Graphic file (type png)
 <use Pictures/templeR0024.png>
 Package pdftex.def Info: Pictures/templeR0024.png  used on input line 59.
 (pdftex.def)             Requested size: 150.43886pt x 200.58286pt.
-<Pictures/Sparse.png, id=601, 283.81032pt x 234.1247pt>
+<Pictures/Sparse.png, id=610, 283.81032pt x 234.1247pt>
 File: Pictures/Sparse.png Graphic file (type png)
 <use Pictures/Sparse.png>
 Package pdftex.def Info: Pictures/Sparse.png  used on input line 146.
@@ -2666,41 +2666,41 @@ Package pdftex.def Info: Pictures/Sparse.png  used on input line 146.
 
 
 ]
-<Pictures/Dense.png, id=615, 397.485pt x 319.94531pt>
+<Pictures/Dense.png, id=624, 397.485pt x 319.94531pt>
 File: Pictures/Dense.png Graphic file (type png)
 <use Pictures/Dense.png>
 Package pdftex.def Info: Pictures/Dense.png  used on input line 174.
 (pdftex.def)             Requested size: 258.5623pt x 208.12796pt.
  [16 <./Pictures/templeR0013.png> <./Pictures/templeR0016.png> <./Pictures/templeR0024.png> <./Pictures/Sparse.png>]
-<Pictures/exp_raw_mesh.png, id=622, 691.383pt x 342.078pt>
+<Pictures/exp_raw_mesh.png, id=631, 691.383pt x 342.078pt>
 File: Pictures/exp_raw_mesh.png Graphic file (type png)
 <use Pictures/exp_raw_mesh.png>
 Package pdftex.def Info: Pictures/exp_raw_mesh.png  used on input line 195.
 (pdftex.def)             Requested size: 399.59694pt x 197.71115pt.
-<Pictures/exp_textured_mesh.png, id=623, 705.837pt x 362.5545pt>
+<Pictures/exp_textured_mesh.png, id=632, 705.837pt x 362.5545pt>
 File: Pictures/exp_textured_mesh.png Graphic file (type png)
 <use Pictures/exp_textured_mesh.png>
 Package pdftex.def Info: Pictures/exp_textured_mesh.png  used on input line 211.
 (pdftex.def)             Requested size: 399.59694pt x 205.25858pt.
  [17 <./Pictures/Dense.png> <./Pictures/exp_raw_mesh.png>]
-<Pictures/Model.png, id=630, 515.67656pt x 332.74312pt>
+<Pictures/Model.png, id=639, 515.67656pt x 332.74312pt>
 File: Pictures/Model.png Graphic file (type png)
 <use Pictures/Model.png>
 Package pdftex.def Info: Pictures/Model.png  used on input line 237.
 (pdftex.def)             Requested size: 225.64728pt x 188.25406pt.
-<Pictures/Pipeline_result.png, id=631, 564.30824pt x 362.5545pt>
+<Pictures/Pipeline_result.png, id=640, 564.30824pt x 362.5545pt>
 File: Pictures/Pipeline_result.png Graphic file (type png)
 <use Pictures/Pipeline_result.png>
 Package pdftex.def Info: Pictures/Pipeline_result.png  used on input line 247.
 (pdftex.def)             Requested size: 225.6504pt x 188.25282pt.
  [18 <./Pictures/exp_textured_mesh.png> <./Pictures/Model.png> <./Pictures/Pipeline_result.png>]
-<Pictures/exp1a_mesh.png, id=639, 663.6795pt x 317.38576pt>
+<Pictures/exp1a_mesh.png, id=648, 663.6795pt x 317.38576pt>
 File: Pictures/exp1a_mesh.png Graphic file (type png)
 <use Pictures/exp1a_mesh.png>
 Package pdftex.def Info: Pictures/exp1a_mesh.png  used on input line 308.
 (pdftex.def)             Requested size: 399.59694pt x 191.10124pt.
  [19]
-<Pictures/exp1d_mesh.png, id=644, 623.32875pt x 275.22826pt>
+<Pictures/exp1d_mesh.png, id=653, 623.32875pt x 275.22826pt>
 File: Pictures/exp1d_mesh.png Graphic file (type png)
 <use Pictures/exp1d_mesh.png>
 Package pdftex.def Info: Pictures/exp1d_mesh.png  used on input line 322.
@@ -2710,12 +2710,12 @@ Package pgfplots info on input line 386: Using 'lua backend=false' for axis: x c
  [20 <./Pictures/exp1a_mesh.png> <./Pictures/exp1d_mesh.png>]
 Package pgfplots info on input line 417: Using 'lua backend=false' for axis: x coord trafo unsupported.
  [21]
-<Pictures/exp2a_mesh.png, id=655, 766.062pt x 359.54324pt>
+<Pictures/exp2a_mesh.png, id=664, 766.062pt x 359.54324pt>
 File: Pictures/exp2a_mesh.png Graphic file (type png)
 <use Pictures/exp2a_mesh.png>
 Package pdftex.def Info: Pictures/exp2a_mesh.png  used on input line 465.
 (pdftex.def)             Requested size: 399.59694pt x 187.55058pt.
-<Pictures/exp2b_mesh.png, id=656, 672.111pt x 356.532pt>
+<Pictures/exp2b_mesh.png, id=665, 672.111pt x 356.532pt>
 File: Pictures/exp2b_mesh.png Graphic file (type png)
 <use Pictures/exp2b_mesh.png>
 Package pdftex.def Info: Pictures/exp2b_mesh.png  used on input line 479.
@@ -2723,18 +2723,18 @@ Package pdftex.def Info: Pictures/exp2b_mesh.png  used on input line 479.
  [22 <./Pictures/exp2a_mesh.png> <./Pictures/exp2b_mesh.png>]
 Package pgfplots info on input line 554: Using 'lua backend=false' for axis: x coord trafo unsupported.
  [23]
-<Pictures/exp3a_mesh.png, id=668, 533.5935pt x 261.97874pt>
+<Pictures/exp3a_mesh.png, id=677, 533.5935pt x 261.97874pt>
 File: Pictures/exp3a_mesh.png Graphic file (type png)
 <use Pictures/exp3a_mesh.png>
 Package pdftex.def Info: Pictures/exp3a_mesh.png  used on input line 605.
 (pdftex.def)             Requested size: 399.59694pt x 196.19975pt.
-<Pictures/exp3b_mesh.png, id=669, 705.837pt x 314.3745pt>
+<Pictures/exp3b_mesh.png, id=678, 705.837pt x 314.3745pt>
 File: Pictures/exp3b_mesh.png Graphic file (type png)
 <use Pictures/exp3b_mesh.png>
 Package pdftex.def Info: Pictures/exp3b_mesh.png  used on input line 619.
 (pdftex.def)             Requested size: 399.59694pt x 177.98169pt.
  [24 <./Pictures/exp3a_mesh.png>]
-<Pictures/exp3c_mesh.png, id=675, 617.30624pt x 296.307pt>
+<Pictures/exp3c_mesh.png, id=684, 617.30624pt x 296.307pt>
 File: Pictures/exp3c_mesh.png Graphic file (type png)
 <use Pictures/exp3c_mesh.png>
 Package pdftex.def Info: Pictures/exp3c_mesh.png  used on input line 633.
@@ -2764,17 +2764,41 @@ Underfull \hbox (badness 5592) in paragraph at lines 46--47
 \T2A/Tempora-TLF/m/n/10 COLMAP+OpenMVS ар-гыг сон-го-сон нь найд-
  []
 
+
+Underfull \hbox (badness 7468) in paragraph at lines 57--58
+[]\T2A/Tempora-TLF/b/sc/10 3-р тур-шилт: \T2A/Tempora-TLF/m/n/10 Lighthouse 4K бич-лэ-гээс
+ []
+
+[32
+
+]
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 70.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
 (Font)              scaled to size 7.0pt on input line 74.
-[32
-
-]
 Package pgfplots info on input line 109: Using 'lua backend=false' for axis: x coord trafo unsupported.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 140.
- [33]) (main.aux (Information.aux))
+ [33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+[]\T2A/Tempora-TLF/m/n/10 This research adopted the classical
+ []
+
+[35
+
+]
+Package pgfplots info on input line 261: Using 'lua backend=false' for axis: x coord trafo unsupported.
+
+Underfull \hbox (badness 7047) in paragraph at lines 283--284
+[]\T2A/Tempora-TLF/m/n/10 The unequal reference point cloud sizes
+ []
+
+
+Underfull \hbox (badness 6110) in paragraph at lines 283--284
+\T2A/Tempora-TLF/m/n/10 in Experiment 3 make cross-configuration
+ []
+
+[36] [37]) (main.aux (Information.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -2787,20 +2811,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 944A7B92CA0D9B08BE30F4AFA37C0EDE;16468.
+(rerunfilecheck)             Checksum: 76649244CA5DF9FBFB27A3A71355D83C;16606.
  ) 
 Here is how much of TeX's memory you used:
- 49681 strings out of 467871
- 1133855 string characters out of 5418376
+ 49703 strings out of 467871
+ 1134145 string characters out of 5418376
  1577820 words of memory out of 5000000
- 77418 multiletter control sequences out of 15000+600000
+ 77427 multiletter control sequences out of 15000+600000
  699986 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  88i,19n,104p,1395b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Bold.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-BoldItalic.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Italic.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Regular.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (42 pages, 4432128 bytes).
+Output written on main.pdf (46 pages, 4445225 bytes).
 PDF statistics:
- 871 PDF objects out of 1000 (max. 8388607)
- 224 named destinations out of 1000 (max. 500000)
- 716 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 905 PDF objects out of 1000 (max. 8388607)
+ 237 named destinations out of 1000 (max. 500000)
+ 724 words of extra memory for PDF output out of 10000 (max. 10000000)
 

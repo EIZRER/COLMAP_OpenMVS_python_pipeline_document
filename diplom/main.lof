@@ -32,3 +32,4 @@
 \contentsline {figure}{\numberline {4.23}{\ignorespaces 3-р туршилт --- фреймийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). 3A ба 3B/3C-ийн хооронд 18 дахин ялгаа байгаа нь шууд метрик харьцуулалтыг найдваргүй болгодог.}}{26}{figure.caption.112}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1}{\ignorespaces 1-р туршилт --- matcher болон хослолын аргын Chamfer Distance харьцуулалт}}{33}{figure.caption.140}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Experiment 1 --- Chamfer Distance comparison by matcher and matching strategy}}{36}{figure.caption.149}%
