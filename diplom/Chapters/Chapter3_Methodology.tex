@@ -46,7 +46,29 @@
 
 \clearpage
 \subsection{Өгөгдөл цуглуулах арга}
-3D дахин бүтээх туршилтад ашиглах 2D зургуудыг тодорхой хяналттай орчинд авсан. Камер нь тогтмол байрлал болон фокусын урттай байхаар тохируулж, объектын эргэн тойронд тогтмол өнцгөөр олон зураг авахын тулд эргэдэг тавцан (mini capture box) ашиглав. Гэрлийн нөхцөлийг тогтмол байлгах үүднээс хаалттай гэрлийн хайрцаг (controlled lighting box) хэрэглэж, орчны сүүдэрлэл болон specular reflection-оос зайлсхийв. Зургуудыг $1920 \times 1080$ хэмжээтэй, JPEG форматаар хадгалсан ба нийтдээ туршилт бүрд 40–80 зураг авсан.
+
+3D реконструкцийн туршилтад ашиглах 2D зургуудыг дараах стандартчилсан нөхцөлд цуглуулсан.
+
+\textbf{Зураг авах орчин:} Гэрэлтүүлгийн хувирлын нөлөөг багасгах зорилгоор өөрийн бүтээсэн controlled lighting box ашигласан. Тус хайрцаг нь дотор талдаа LED гэрлийн хэд хэдэн эх үүсвэртэй бөгөөд диффузорын тусламжтай жигд гэрэлтүүлэг бий болгодог. Specular reflection болон хурц сүүдрийг арилгахын тулд гэрлийн үүсвэрийг олон чиглэлд байрлуулсан.
+
+\textbf{Камерын тохируулга:} Зургийг $1920 \times 1080$ пикселийн нарийвчлалтай, JPEG форматаар хадгалсан. Камерыг тогтмол байрлалд байрлуулж, автомат фокус болон автомат өртөлтийг унтраан, гар аргаар тогтмол утгад тохируулав. Ингэснээр зургийн гэрэлтүүлэг болон фокус нийт цуврал дахин давтагдах боломжтой болсон.
+
+\textbf{Зургийн авах дараалал:} Объектыг эргэдэг тавцан дээр байрлуулж, тогтмол өнцөгтэй алхамаар эргүүлэн зураг авав. Үндсэн датасетэд $360°/47\approx 7.7°$-ийн алхамтайгаар нийт 47 зураг авсан. Нэмэлт датасетүүдэд 172 болон 200 зургийг тус тус цуглуулж, зургийн тооны нарийвчлалд үзүүлэх нөлөөг туршихад ашигласан. Объектоос камер хүртэлх зай туршилт бүрт адил тогтмол байлгасан.
+
+\textbf{Датасетийн задаргаа:} Туршилтуудын хувьд цуглуулсан датасетийн задаргааг доорх хүснэгтэд харуулав.
+
+\begin{table}[H]
+\centering
+\caption{Туршилтын датасетийн тойм}
+\label{tab:dataset_summary}
+\begin{tabular}{|c|c|c|l|}
+\hline
+\textbf{Датасет} & \textbf{Зургийн тоо} & \textbf{Алхамын өнцөг} & \textbf{Зорилго} \\ \hline
+А & 47  & $\approx 7.7°$ & Үндсэн туршилт (1, 2-р туршилт) \\ \hline
+Б & 172 & $\approx 2.1°$ & Зургийн тооны нөлөөний туршилт \\ \hline
+В & 200 & $\approx 1.8°$ & Зургийн тооны нөлөөний туршилт \\ \hline
+\end{tabular}
+\end{table}
 
 \subsection{Урьдчилсан боловсруулалт}
 Зургуудыг SfM болон MVS алгоритмуудын шаардлага хангахаар урьдчилан боловсруулав. Үүнд:
@@ -136,6 +158,67 @@ SfM-ээс гарсан камерын байрлал болон сийрэг ц
 \clearpage
 
 \subsection{Програм хангамжийн архитектур}
+
+\textbf{Технологийн сонголтын үндэслэл:} Python програмчлалын хэлийг сонгосон нь хурдан прототип бүтээх боломж, COLMAP болон OpenMVS-тэй командын мөрөөр харилцах subprocess интерфейсийн хялбар байдал, мөн машин сургалтын номын сангуудтай (NumPy, Open3D) нэгтгэх ирээдүйн боломжийг харгалзан үзсэн шийдвэр юм. PyQt5-ийг UI framework болгон сонгосон нь энэ нь боловсорч гүйцсэн (mature) фреймворк бөгөөд signal/slot механизм нь pipeline worker thread болон UI-ийн хооронд аюулгүй харилцааг хангадаг учраас юм. YAML тохиргооны систем нь хүний унших боломжтой, код дахин compile хийхгүйгээр exe замыг өөрчлөх боломж олгодог тул ашигласан. Modullar бүтэц нь туршилтын янз бүрийн тохиргоог бие даан солих боломжийг бий болгодог.
+
+Системийн архитектурыг доорх диаграммаар харуулав:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=0.6cm and 1.2cm,
+    module/.style={rectangle, rounded corners=3pt, minimum width=3.0cm, minimum height=0.75cm,
+                   draw=black!70, fill=blue!15, align=center, font=\small\bfseries},
+    submod/.style={rectangle, minimum width=2.6cm, minimum height=0.6cm,
+                   draw=black!50, fill=blue!5, align=center, font=\footnotesize},
+    external/.style={rectangle, rounded corners=3pt, minimum width=2.8cm, minimum height=0.75cm,
+                    draw=black!70, fill=green!15, align=center, font=\small\bfseries},
+    config/.style={rectangle, rounded corners=3pt, minimum width=2.8cm, minimum height=0.75cm,
+                   draw=black!70, fill=orange!15, align=center, font=\small\bfseries},
+    arrow/.style={thick,->,>=stealth,draw=black!60}
+]
+
+% GUI layer
+\node (gui) [module] {gui/};
+\node (mw) [submod, below=0.15cm of gui] {main\_window.py};
+\node (wt) [submod, below=0.1cm of mw] {worker\_thread.py};
+
+% Pipeline layer
+\node (pip) [module, right=1.6cm of gui] {pipeline/};
+\node (pl) [submod, below=0.15cm of pip] {pipeline.py};
+\node (cr) [submod, below=0.1cm of pl] {colmap\_runner.py};
+\node (or) [submod, below=0.1cm of cr] {openmvs\_runner.py};
+
+% Core layer
+\node (core) [module, below=1.4cm of gui] {core/};
+\node (co1) [submod, below=0.15cm of core] {paths.py};
+\node (co2) [submod, below=0.1cm of co1] {exceptions.py};
+
+% Utils layer
+\node (utils) [module, below=1.4cm of pip] {utils/};
+\node (ut1) [submod, below=0.15cm of utils] {command\_runner.py};
+
+% Config
+\node (cfg) [config, below=0.9cm of co2] {config/config.yaml};
+
+% External tools
+\node (colmap) [external, right=1.6cm of pip] {COLMAP};
+\node (omvs)   [external, below=0.7cm of colmap] {OpenMVS};
+
+% Arrows
+\draw [arrow] (gui) -- (pip);
+\draw [arrow] (wt.east) -- ++(0.4,0) |- (pl.west);
+\draw [arrow] (cr.east) -- (colmap.west);
+\draw [arrow] (or.east) -- (omvs.west);
+\draw [arrow] (pip) -- (utils);
+\draw [arrow] (pip.south) -- ++(0,-0.3) -| (core.north);
+\draw [arrow] (cfg.north) -- (core.south);
+\draw [arrow] (cfg.east) -- ++(0.3,0) |- (pip.south);
+
+\end{tikzpicture}
+\caption{Системийн програм хангамжийн модульд суурилсан архитектурын диаграмм}
+\label{fig:software_architecture}
+\end{figure}
 
 Дипломын ажлын хэрэгжүүлэлт нь Python програмчлалын хэл дээр бичигдсэн бөгөөд дараах модульд хуваагдан зохион байгуулагдсан:
 

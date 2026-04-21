@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.4.21)  21 APR 2026 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.4.21)  21 APR 2026 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2331,11 +2331,11 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 \openout2 = `Information.aux'.
 
 (Information.tex) (Chapters/CoverPage.tex
-<Pictures/NMCT.png, id=273, 69.25874pt x 86.57344pt>
+<Pictures/NMCT.png, id=281, 69.25874pt x 86.57344pt>
 File: Pictures/NMCT.png Graphic file (type png)
 <use Pictures/NMCT.png>
 Package pdftex.def Info: Pictures/NMCT.png  used on input line 10.
-(pdftex.def)             Requested size: 72.6476pt x 90.80966pt.
+(pdftex.def)             Requested size: 70.51372pt x 88.14255pt.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 11.
  (C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -2413,19 +2413,21 @@ File: TS1Tempora-TLF.fd 2016/02/02 (autoinst) Font definitions for TS1/Tempora-T
 )
 LaTeX Font Info:    Font shape `TS1/Tempora-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 30.
- [1{C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tempora/tmp_ac5xuc.enc}] [2]) [3]
+ [1{C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tempora/tmp_ac5xuc.enc}]) [2
+
+]
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
 (Font)              scaled to size 24.88pt on input line 59.
-(main.toc [4
+(main.toc [3
 
 ])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [5]
+ [4]
 ------------------------------------------------------------------------------
  –ó—É—Ä–∞–≥ –±–æ–ª–æ–Ω –•“Ø—Å–Ω—ç–≥—Ç–∏–π–Ω –∂–∞–≥—Å–∞–∞–ª—Ç
 ------------------------------------------------------------------------------
@@ -2437,122 +2439,122 @@ LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [6] (Chapters/acrolist.tex
+ [5] (Chapters/acrolist.tex
 
-LaTeX Warning: Hyper reference `acro:AI' on page vii undefined on input line 7.
+LaTeX Warning: Hyper reference `acro:AI' on page vi undefined on input line 7.
 
 
-LaTeX Warning: Hyper reference `acro:AI' on page vii undefined on input line 7.
+LaTeX Warning: Hyper reference `acro:AI' on page vi undefined on input line 7.
 
 
-LaTeX Warning: Hyper reference `acro:CAM' on page vii undefined on input line 8.
+LaTeX Warning: Hyper reference `acro:CAM' on page vi undefined on input line 8.
 
 
-LaTeX Warning: Hyper reference `acro:CAM' on page vii undefined on input line 8.
+LaTeX Warning: Hyper reference `acro:CAM' on page vi undefined on input line 8.
 
 
-LaTeX Warning: Hyper reference `acro:COLMAP' on page vii undefined on input line 9.
+LaTeX Warning: Hyper reference `acro:COLMAP' on page vi undefined on input line 9.
 
 
-LaTeX Warning: Hyper reference `acro:COLMAP' on page vii undefined on input line 9.
+LaTeX Warning: Hyper reference `acro:COLMAP' on page vi undefined on input line 9.
 
 
-LaTeX Warning: Hyper reference `acro:CPU' on page vii undefined on input line 10.
+LaTeX Warning: Hyper reference `acro:CPU' on page vi undefined on input line 10.
 
 
-LaTeX Warning: Hyper reference `acro:CPU' on page vii undefined on input line 10.
+LaTeX Warning: Hyper reference `acro:CPU' on page vi undefined on input line 10.
 
 
-LaTeX Warning: Hyper reference `acro:CV' on page vii undefined on input line 11.
+LaTeX Warning: Hyper reference `acro:CV' on page vi undefined on input line 11.
 
 
-LaTeX Warning: Hyper reference `acro:CV' on page vii undefined on input line 11.
+LaTeX Warning: Hyper reference `acro:CV' on page vi undefined on input line 11.
 
 
-LaTeX Warning: Hyper reference `acro:CUDA' on page vii undefined on input line 12.
+LaTeX Warning: Hyper reference `acro:CUDA' on page vi undefined on input line 12.
 
 
-LaTeX Warning: Hyper reference `acro:CUDA' on page vii undefined on input line 12.
+LaTeX Warning: Hyper reference `acro:CUDA' on page vi undefined on input line 12.
 
 
-LaTeX Warning: Hyper reference `acro:FOV' on page vii undefined on input line 13.
+LaTeX Warning: Hyper reference `acro:FOV' on page vi undefined on input line 13.
 
 
-LaTeX Warning: Hyper reference `acro:FOV' on page vii undefined on input line 13.
+LaTeX Warning: Hyper reference `acro:FOV' on page vi undefined on input line 13.
 
 
-LaTeX Warning: Hyper reference `acro:GPU' on page vii undefined on input line 14.
+LaTeX Warning: Hyper reference `acro:GPU' on page vi undefined on input line 14.
 
 
-LaTeX Warning: Hyper reference `acro:GPU' on page vii undefined on input line 14.
+LaTeX Warning: Hyper reference `acro:GPU' on page vi undefined on input line 14.
 
 
-LaTeX Warning: Hyper reference `acro:GUI' on page vii undefined on input line 15.
+LaTeX Warning: Hyper reference `acro:GUI' on page vi undefined on input line 15.
 
 
-LaTeX Warning: Hyper reference `acro:GUI' on page vii undefined on input line 15.
+LaTeX Warning: Hyper reference `acro:GUI' on page vi undefined on input line 15.
 
 
-LaTeX Warning: Hyper reference `acro:ML' on page vii undefined on input line 16.
+LaTeX Warning: Hyper reference `acro:ML' on page vi undefined on input line 16.
 
 
-LaTeX Warning: Hyper reference `acro:ML' on page vii undefined on input line 16.
+LaTeX Warning: Hyper reference `acro:ML' on page vi undefined on input line 16.
 
 
-LaTeX Warning: Hyper reference `acro:MVS' on page vii undefined on input line 17.
+LaTeX Warning: Hyper reference `acro:MVS' on page vi undefined on input line 17.
 
 
-LaTeX Warning: Hyper reference `acro:MVS' on page vii undefined on input line 17.
+LaTeX Warning: Hyper reference `acro:MVS' on page vi undefined on input line 17.
 
 
-LaTeX Warning: Hyper reference `acro:NeRF' on page vii undefined on input line 18.
+LaTeX Warning: Hyper reference `acro:NeRF' on page vi undefined on input line 18.
 
 
-LaTeX Warning: Hyper reference `acro:NeRF' on page vii undefined on input line 18.
+LaTeX Warning: Hyper reference `acro:NeRF' on page vi undefined on input line 18.
 
 
-LaTeX Warning: Hyper reference `acro:OBJ' on page vii undefined on input line 19.
+LaTeX Warning: Hyper reference `acro:OBJ' on page vi undefined on input line 19.
 
 
-LaTeX Warning: Hyper reference `acro:OBJ' on page vii undefined on input line 19.
+LaTeX Warning: Hyper reference `acro:OBJ' on page vi undefined on input line 19.
 
 
-LaTeX Warning: Hyper reference `acro:OpenMVS' on page vii undefined on input line 20.
+LaTeX Warning: Hyper reference `acro:OpenMVS' on page vi undefined on input line 20.
 
 
-LaTeX Warning: Hyper reference `acro:OpenMVS' on page vii undefined on input line 20.
+LaTeX Warning: Hyper reference `acro:OpenMVS' on page vi undefined on input line 20.
 
 
-LaTeX Warning: Hyper reference `acro:PLY' on page vii undefined on input line 21.
+LaTeX Warning: Hyper reference `acro:PLY' on page vi undefined on input line 21.
 
 
-LaTeX Warning: Hyper reference `acro:PLY' on page vii undefined on input line 21.
+LaTeX Warning: Hyper reference `acro:PLY' on page vi undefined on input line 21.
 
 
-LaTeX Warning: Hyper reference `acro:PnP' on page vii undefined on input line 22.
+LaTeX Warning: Hyper reference `acro:PnP' on page vi undefined on input line 22.
 
 
-LaTeX Warning: Hyper reference `acro:PnP' on page vii undefined on input line 22.
+LaTeX Warning: Hyper reference `acro:PnP' on page vi undefined on input line 22.
 
 
-LaTeX Warning: Hyper reference `acro:SfM' on page vii undefined on input line 23.
+LaTeX Warning: Hyper reference `acro:SfM' on page vi undefined on input line 23.
 
 
-LaTeX Warning: Hyper reference `acro:SfM' on page vii undefined on input line 23.
+LaTeX Warning: Hyper reference `acro:SfM' on page vi undefined on input line 23.
 
 
-LaTeX Warning: Hyper reference `acro:SIFT' on page vii undefined on input line 24.
+LaTeX Warning: Hyper reference `acro:SIFT' on page vi undefined on input line 24.
 
 
-LaTeX Warning: Hyper reference `acro:SIFT' on page vii undefined on input line 24.
+LaTeX Warning: Hyper reference `acro:SIFT' on page vi undefined on input line 24.
 
 
-LaTeX Warning: Hyper reference `acro:UV' on page vii undefined on input line 25.
+LaTeX Warning: Hyper reference `acro:UV' on page vi undefined on input line 25.
 
 
-LaTeX Warning: Hyper reference `acro:UV' on page vii undefined on input line 25.
+LaTeX Warning: Hyper reference `acro:UV' on page vi undefined on input line 25.
 
-) [7
+) [6
 
 ] (Chapters/Chapter1_Introduction.tex
 {\Mongolian \CYRB \cyry \cyrl \cyrerev \cyrg } 1.
@@ -2562,102 +2564,161 @@ LaTeX Warning: Hyper reference `acro:UV' on page vii undefined on input line 25.
 {\Mongolian \CYRB \cyry \cyrl \cyrerev \cyrg } 2.
 [3
 
-] [4]) (Chapters/Chapter3_Methodology.tex [5]
-{\Mongolian \CYRB \cyry \cyrl \cyrerev \cyrg } 3.
+{C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [4] [5]
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 25.
-[6
-
-]
-LaTeX Font Info:    Trying to load font information for T2A+lmtt on input line 62.
-LaTeX Font Info:    No file T2Almtt.fd. on input line 62.
-
-
-LaTeX Font Warning: Font shape `T2A/lmtt/m/n' undefined
-(Font)              using `T2A/cmr/m/n' instead on input line 62.
-
-
-Overfull \hbox (7.5948pt too wide) in paragraph at lines 62--74
-[]\T2A/Tempora-TLF/m/n/10 ›Ì˝ı≥≥ ‡ÊËÎ‰ COLMAP-ËÈÌ \T2A/lmtt/m/n/10 feature_extractor \T2A/Tempora-TLF/m/n/10 ÍÓ-Ï‡Ì-‰‡‡ SIFT ‡Î-„Ó-ËÚ-Ï˚„ ‡¯Ë„-Î‡Ì keypoint ËÎ-≥≥ÎÊ, descriptor
- []
-
+(Font)              scaled to size 9.0pt on input line 142.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
+(Font)              scaled to size 9.0pt on input line 145.
+) (Chapters/Chapter3_Methodology.tex [6]
+{\Mongolian \CYRB \cyry \cyrl \cyrerev \cyrg } 3.
 [7
 
-{C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t2a.enc}] [8] [9]
-<Pictures/GUI_small.png, id=496, 492.03825pt x 454.69875pt>
+]
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 56.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 56.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 56.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 56.
+
+Missing character: There is no ∞ in font zptmcm7t!
+Missing character: There is no ∞ in font zptmcm7t!
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 67.
+
+Missing character: There is no ∞ in font zptmcm7t!
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 68.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 68.
+
+Missing character: There is no ∞ in font zptmcm7t!
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 69.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 69.
+
+Missing character: There is no ∞ in font zptmcm7t!
+LaTeX Font Info:    Trying to load font information for T2A+lmtt on input line 84.
+LaTeX Font Info:    No file T2Almtt.fd. on input line 84.
+
+LaTeX Font Warning: Font shape `T2A/lmtt/m/n' undefined
+(Font)              using `T2A/cmr/m/n' instead on input line 84.
+
+[8
+
+{C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t2a.enc}] [9] [10]
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 183.
+ [11
+
+]
+<Pictures/GUI_small.png, id=538, 492.03825pt x 454.69875pt>
 File: Pictures/GUI_small.png Graphic file (type png)
 <use Pictures/GUI_small.png>
-Package pdftex.def Info: Pictures/GUI_small.png  used on input line 178.
-(pdftex.def)             Requested size: 266.38686pt x 246.17197pt.
- [10
-
-]
-<Pictures/GUI_working.png, id=502, 487.8225pt x 160.80075pt>
+Package pdftex.def Info: Pictures/GUI_small.png  used on input line 261.
+(pdftex.def)             Requested size: 258.5623pt x 238.94243pt.
+<Pictures/GUI_working.png, id=539, 487.8225pt x 160.80075pt>
 File: Pictures/GUI_working.png Graphic file (type png)
 <use Pictures/GUI_working.png>
-Package pdftex.def Info: Pictures/GUI_working.png  used on input line 185.
-(pdftex.def)             Requested size: 266.38686pt x 87.81009pt.
- [11 <./Pictures/GUI_small.png> <./Pictures/GUI_working.png>]) (Chapters/Chapter4_Results.tex
+Package pdftex.def Info: Pictures/GUI_working.png  used on input line 268.
+(pdftex.def)             Requested size: 258.5623pt x 85.22888pt.
+ [12 <./Pictures/GUI_small.png>] [13 <./Pictures/GUI_working.png>]) (Chapters/Chapter4_Results.tex
 {\Mongolian \CYRB \cyry \cyrl \cyrerev \cyrg } 4.
-<Pictures/templeR0013.png, id=509, 361.35pt x 481.8pt>
+<Pictures/templeR0013.png, id=550, 361.35pt x 481.8pt>
 File: Pictures/templeR0013.png Graphic file (type png)
 <use Pictures/templeR0013.png>
-Package pdftex.def Info: Pictures/templeR0013.png  used on input line 41.
-(pdftex.def)             Requested size: 154.9914pt x 206.65533pt.
-<Pictures/templeR0016.png, id=510, 361.35pt x 481.8pt>
+Package pdftex.def Info: Pictures/templeR0013.png  used on input line 45.
+(pdftex.def)             Requested size: 150.43886pt x 200.58286pt.
+<Pictures/templeR0016.png, id=551, 361.35pt x 481.8pt>
 File: Pictures/templeR0016.png Graphic file (type png)
 <use Pictures/templeR0016.png>
-Package pdftex.def Info: Pictures/templeR0016.png  used on input line 44.
-(pdftex.def)             Requested size: 154.9914pt x 206.65533pt.
-<Pictures/templeR0024.png, id=511, 361.35pt x 481.8pt>
+Package pdftex.def Info: Pictures/templeR0016.png  used on input line 52.
+(pdftex.def)             Requested size: 150.43886pt x 200.58286pt.
+<Pictures/templeR0024.png, id=552, 361.35pt x 481.8pt>
 File: Pictures/templeR0024.png Graphic file (type png)
 <use Pictures/templeR0024.png>
-Package pdftex.def Info: Pictures/templeR0024.png  used on input line 47.
-(pdftex.def)             Requested size: 154.9914pt x 206.65533pt.
-[12
-
-
-]
-<Pictures/Sparse.png, id=525, 283.81032pt x 234.1247pt>
+Package pdftex.def Info: Pictures/templeR0024.png  used on input line 59.
+(pdftex.def)             Requested size: 150.43886pt x 200.58286pt.
+<Pictures/Sparse.png, id=553, 283.81032pt x 234.1247pt>
 File: Pictures/Sparse.png Graphic file (type png)
 <use Pictures/Sparse.png>
-Package pdftex.def Info: Pictures/Sparse.png  used on input line 130.
-(pdftex.def)             Requested size: 266.38686pt x 219.77pt.
- [13 <./Pictures/templeR0013.png> <./Pictures/templeR0016.png> <./Pictures/templeR0024.png> <./Pictures/Sparse.png>]
-<Pictures/Dense.png, id=531, 397.485pt x 319.94531pt>
+Package pdftex.def Info: Pictures/Sparse.png  used on input line 146.
+(pdftex.def)             Requested size: 258.5623pt x 213.31459pt.
+[14
+
+
+] [15 <./Pictures/templeR0013.png> <./Pictures/templeR0016.png> <./Pictures/templeR0024.png> <./Pictures/Sparse.png>]
+<Pictures/Dense.png, id=572, 397.485pt x 319.94531pt>
 File: Pictures/Dense.png Graphic file (type png)
 <use Pictures/Dense.png>
-Package pdftex.def Info: Pictures/Dense.png  used on input line 152.
-(pdftex.def)             Requested size: 266.38686pt x 214.4257pt.
-<Pictures/Model.png, id=532, 515.67656pt x 332.74312pt>
+Package pdftex.def Info: Pictures/Dense.png  used on input line 172.
+(pdftex.def)             Requested size: 258.5623pt x 208.12796pt.
+<Pictures/Model.png, id=573, 515.67656pt x 332.74312pt>
 File: Pictures/Model.png Graphic file (type png)
 <use Pictures/Model.png>
-Package pdftex.def Info: Pictures/Model.png  used on input line 177.
-(pdftex.def)             Requested size: 232.4772pt x 188.25406pt.
-<Pictures/Pipeline_result.png, id=533, 564.30824pt x 362.5545pt>
+Package pdftex.def Info: Pictures/Model.png  used on input line 201.
+(pdftex.def)             Requested size: 225.64728pt x 188.25406pt.
+<Pictures/Pipeline_result.png, id=574, 564.30824pt x 362.5545pt>
 File: Pictures/Pipeline_result.png Graphic file (type png)
 <use Pictures/Pipeline_result.png>
-Package pdftex.def Info: Pictures/Pipeline_result.png  used on input line 183.
-(pdftex.def)             Requested size: 232.47864pt x 188.25282pt.
- [14 <./Pictures/Dense.png>]
-Package pgfplots info on input line 237: Using 'lua backend=false' for axis: x coord trafo unsupported.
- [15 <./Pictures/Model.png> <./Pictures/Pipeline_result.png>]
-Package pgfplots info on input line 272: Using 'lua backend=false' for axis: x coord trafo unsupported.
-Package pgfplots info on input line 303: Using 'lua backend=false' for axis: x coord trafo unsupported.
- [16]
-Package pgfplots info on input line 408: Using 'lua backend=false' for axis: x coord trafo unsupported.
- [17]
-Package pgfplots info on input line 461: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pdftex.def Info: Pictures/Pipeline_result.png  used on input line 211.
+(pdftex.def)             Requested size: 225.6504pt x 188.25282pt.
+ [16 <./Pictures/Dense.png>]
+Package pgfplots info on input line 283: Using 'lua backend=false' for axis: x coord trafo unsupported.
+ [17 <./Pictures/Model.png> <./Pictures/Pipeline_result.png>]
+Package pgfplots info on input line 318: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pgfplots info on input line 349: Using 'lua backend=false' for axis: x coord trafo unsupported.
  [18]
-Package pgfplots info on input line 488: Using 'lua backend=false' for axis: x coord trafo unsupported.
-Package pgfplots info on input line 515: Using 'lua backend=false' for axis: x coord trafo unsupported.
-) (Chapters/Chapter5_Conclusion.tex [19] [20]
+Package pgfplots info on input line 454: Using 'lua backend=false' for axis: x coord trafo unsupported.
+ [19]
+Package pgfplots info on input line 507: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pgfplots info on input line 534: Using 'lua backend=false' for axis: x coord trafo unsupported.
+ [20]
+Package pgfplots info on input line 561: Using 'lua backend=false' for axis: x coord trafo unsupported.
+) (Chapters/Chapter5_Conclusion.tex [21]
 {\Mongolian \CYRB \cyry \cyrl \cyrerev \cyrg } 5.
-[21
+[22
 
-] [22] [23]) (Chapters/Bibliography.tex [24]) [25
+] [23]) (Chapters/Bibliography.tex [24]) [25
 
-] (main.aux (Information.aux))
+] (Chapters/Summary.tex
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+[]\T2A/Tempora-TLF/m/n/10 ›Ì˝ı≥≥ ÒÛ-‰‡Î-„‡‡Ì‰ ÛÎ‡ÏÊ-Î‡ÎÚ
+ []
+
+
+Underfull \hbox (badness 5592) in paragraph at lines 46--47
+\T2A/Tempora-TLF/m/n/10 COLMAP+OpenMVS ‡-„˚„ ÒÓÌ-„Ó-ÒÓÌ Ì¸ Ì‡È‰-
+ []
+
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 70.
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
+(Font)              scaled to size 7.0pt on input line 74.
+[26
+
+]
+Package pgfplots info on input line 109: Using 'lua backend=false' for axis: x coord trafo unsupported.
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 140.
+ [27]) (main.aux (Information.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -2670,20 +2731,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 98B8F0F75426A5A7200568030228E64F;15762.
+(rerunfilecheck)             Checksum: 1DBA2353EB306AC7682C0544E56E01F7;16055.
  ) 
 Here is how much of TeX's memory you used:
- 49374 strings out of 467871
- 1127783 string characters out of 5418376
- 1582676 words of memory out of 5000000
- 77176 multiletter control sequences out of 15000+600000
- 672868 words of font info for 92 fonts, out of 8000000 for 9000
+ 49605 strings out of 467871
+ 1131306 string characters out of 5418376
+ 1577677 words of memory out of 5000000
+ 77369 multiletter control sequences out of 15000+600000
+ 698425 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,19n,104p,1247b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Bold.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-BoldItalic.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Italic.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Regular.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (34 pages, 1989791 bytes).
+ 88i,19n,104p,1345b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Bold.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-BoldItalic.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Italic.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Regular.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (35 pages, 2065482 bytes).
 PDF statistics:
- 696 PDF objects out of 1000 (max. 8388607)
- 178 named destinations out of 1000 (max. 500000)
- 647 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 775 PDF objects out of 1000 (max. 8388607)
+ 204 named destinations out of 1000 (max. 500000)
+ 663 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,149 @@
+\addtotoc{Товчлол}
+\thispagestyle{plain}
+
+\vspace*{-6mm}
+\begin{center}
+\textbf{\large \titlename}\\[1mm]
+\end{center}
+
+\begin{flushright}
+\departmentname\\
+Оюутан: \studentID, \authorShort\\
+Удирдагч багш: \supervisorname
+\end{flushright}
+
+\vspace{1mm}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\setlength{\columnsep}{7mm}
+\begin{multicols}{2}
+\setlength{\parskip}{5pt}
+\sloppy
+
+\noindent\textbf{1. Удиртгал}
+
+Энэхүү судалгаа нь олон өнцгийн 2D зургаас 3D загвар үүсгэх бүрэн автоматжуулсан pipeline болон хэрэглэгчийн графикийн интерфейсийг (GUI) боловсруулах, мөн matching параметрүүдийн реконструкцийн нарийвчлалд үзүүлэх нөлөөг туршилтаар тодорхойлох асуудлыг авч үзсэн. Уламжлалт Structure-from-Motion (SfM) болон Multi-View Stereo (MVS) аргууд нь геометрийн нарийвчлалаараа давуу боловч тооцооллын шаардлага өндөр, тохиргооны сонголт нь гаралтын чанарт шийдвэрлэх нөлөөтэй байдаг.
+
+Судалгааны зорилго нь:
+\begin{itemize}
+    \item COLMAP болон OpenMVS-д суурилсан 9 үе шаттай pipeline боловсруулах,
+    \item PyQt5-д суурилсан GUI систем бүтээх,
+    \item Matcher болон хослолын аргын нарийвчлалд үзүүлэх нөлөөг туршилтаар үнэлэх,
+    \item Chamfer Distance болон RMSE-ээр реконструкцийн чанарыг хэмжих,
+    \item Судалгааны хязгаарлалтыг ил тод тэмдэглэх.
+\end{itemize}
+
+Судалгааны гол асуултууд нь matcher-ийн сонголт, хослолын стратеги, overlap параметр болон зургийн тооны нарийвчлалд үзүүлэх нөлөөг тодорхойлоход чиглэсэн. Үнэлэлтэд Chamfer Distance ба RMSE ашигласан бөгөөд утга бага байх тусам сэргээгдсэн загвар ground truth-тай илүү ойр байна.
+
+\noindent\textbf{2. Судалгааны ажлын онол, өнөөгийн түвшин}
+
+3D реконструкцийн чиглэлд уламжлалт геометрийн аргаас эхлэн орчин үеийн гүн сургалтын аргууд хүртэл олон чухал ахиц гарсан. Hartley \& Zisserman (2003) нар олон камерын геометрийн суурь онолыг тавьсан бол Lowe (2004)-ийн SIFT алгоритм нь масштаб болон эргэлтэд тэсвэртэй фичер илрүүлэлтийг нэвтрүүлсэн. Sch\"onberger \& Frahm (2016)-ийн COLMAP нь олон мянган зурагт ажиллах incremental SfM pipeline болж, Cernea (2015)-ийн OpenMVS нь нягт реконструкцийн нэгдсэн хэрэгсэл болсон.
+
+Орчин үеийн гүн сургалтад суурилсан аргууд болох NeRF (Mildenhall et al., 2020) болон 3D Gaussian Splatting (Kerbl et al., 2023) нь дүрслэлийн чанараараа давуу боловч их хэмжээний тооцооллын нөөц шаарддаг. DeTone et al. (2018)-ийн SuperPoint болон Lindenberger et al. (2023)-ийн LightGlue нь нейрон сүлжээнд суурилсан фичер илрүүлэлт болон тохиролтын аргуудыг хөгжүүлсэн.
+
+Энэхүү судалгаанд уламжлалт COLMAP+OpenMVS аргыг сонгосон нь найдвартай байдал, хэрэгжүүлэлтийн боломж болон ирээдүйд машин сургалтын аргуудыг нэмж нэгтгэх уян хатан байдлыг харгалзан үзсэний үр дүн юм.
+
+\noindent\textbf{3. Судалгааны арга зүй ба хэрэгжүүлэлт}
+
+Pipeline нь Python програмчлалын хэл дээр бичигдсэн бөгөөд \texttt{core/}, \texttt{pipeline/}, \texttt{gui/}, \texttt{utils/} гэсэн модульд хуваагдан зохион байгуулагдсан. PyQt5-д суурилсан GUI нь дэвшлийн мөр, бодит цагийн лог болон pipeline-ийг зогсоох боломжийг хэрэглэгчид олгодог.
+
+Туршилтад ашигласан датасет нь controlled lighting box ашиглан тогтмол нөхцөлд авсан 47 зураг бөгөөд $1920\times1080$ хэмжээтэй JPEG форматтай. Туршилтуудыг дараах гурван чиглэлд явуулсан:
+
+\begin{itemize}
+    \item \textbf{1-р туршилт:} SIFT болон LightGlue matcher-ийг exhaustive болон sequential (overlap=10) хослолын аргатай хослуулан 4 тохиргоогоор харьцуулсан.
+    \item \textbf{2-р туршилт:} Sequential matching-ийн overlap параметрийг 5, 10, 20, 40 гэсэн утгаар туршиж оновчтой босго тодорхойлсон.
+    \item \textbf{3-р туршилт:} 47, 172, 200 зурагтай датасет дээр зургийн тооны нарийвчлалд үзүүлэх нөлөөг судалсан.
+\end{itemize}
+
+Туршилтын орчин: NVIDIA RTX 4060 GPU, Intel Core i9 CPU, 16 GB RAM.
+
+\noindent\textbf{4. Судалгааны үр дүн, нэгтгэсэн дүгнэлт}
+
+Системийн гол гүйцэтгэлийн үзүүлэлтүүд:
+
+\begin{table}[H]
+\centering
+\caption{Системийн гол гүйцэтгэлийн үзүүлэлтүүд}
+\label{tab:tovchlol_results}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Үзүүлэлт} & \textbf{Утга} \\ \hline
+Датасет (зураг) & 47 \\ \hline
+Sparse point cloud & 35{,}000+ цэг \\ \hline
+Dense point cloud & 2.1 сая цэг \\ \hline
+Mesh vertices / faces & 1.2 сая / 2.3 сая \\ \hline
+Хамгийн сайн CD (1B: LG+Exh.) & 0.0074 м \\ \hline
+Хамгийн сайн RMSE (1A: SIFT+Exh.) & 0.0064 м \\ \hline
+\end{tabular}
+\end{table}
+
+1-р туршилтын гол дүгнэлт: exhaustive болон sequential хослолын аргын сонголт нь matcher-ийн сонголтоос илүү чухал нөлөөтэй. Доорх графикаас харахад LightGlue+Sequential тохиргоо (1D) гамшигт үр дүн үзүүлсэн.
+\end{multicols}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xbar,
+    bar width=14pt,
+    width=0.82\textwidth,
+    height=5.5cm,
+    symbolic y coords={1A,1B,1C,1D},
+    ytick=data,
+    yticklabels={
+        {1A: SIFT+Exhaustive},
+        {1B: LG+Exhaustive},
+        {1C: SIFT+Sequential},
+        {1D: LG+Sequential}
+    },
+    xlabel={Chamfer Distance (м)},
+    xmin=0,
+    xmax=0.17,
+    enlarge y limits=0.3,
+    grid=major,
+    grid style={dashed,gray!30},
+]
+\addplot[fill=blue!60,draw=blue!80] coordinates {
+    (0.007803,1A)
+    (0.007437,1B)
+    (0.010782,1C)
+    (0.143084,1D)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{1-р туршилт --- matcher болон хослолын аргын Chamfer Distance харьцуулалт}
+\label{fig:tovchlol_exp1}
+\end{figure}
+
+\begin{multicols*}{2}
+
+Sequential matching-д overlap параметрийн оновчтой босго overlap=10 болох нь тогтоогдсон --- overlap=5-аас overlap=10 руу шилжихэд Chamfer Distance 0.033~м-ээр буурсан боловч overlap=10-аас дээш нэмэгдүүлэх нь бараг ямар ч ахиц өгөхгүй байв.
+
+Судалгааны дүнг тайлбарлахдаа дараах хязгаарлалтыг тэмдэглэсэн:
+\begin{itemize}
+    \item Зөвхөн нэг объектын туршилт хийсэн тул олон объектод ажиллах чадварыг баталгаажуулаагүй,
+    \item 3-р туршилтын датасетуудын эталон нягт цэгэн үүлний хэмжээ 18 дахин ялгаатай тул 3A болон 3B/3C-ийн шууд харьцуулалт найдваргүй,
+    \item GUI-ийн UX цаашид сайжруулах шаардлагатай --- камерын калибрацийн интерфейс дутмаг,
+    \item Sequential matching нь хязгаарлагдмал зургийн тооны датасетэд зарим matcher-д бүтэлгүйтдэг.
+\end{itemize}
+
+Инженерчлэлийн хувьд энэ судалгаа нь өгөгдөл цуглуулахаас эхлээд sparse болон dense реконструкц, mesh үүсгэлт, текстур зураглал хүртэлх бүх үе шатыг нэг цогц системд нэгтгэж, PyQt5 GUI-ээр хэрэглэгчдэд хүргэсэн. Цаашдын судалгаанд SuperPoint/SuperGlue зэрэг ML фичер тохиролт нэвтрүүлэх, NeRF болон Gaussian Splatting-тэй харьцуулах нь чухал алхам болно.
+
+\noindent\textbf{5. Ном зүй}
+
+\small
+\begin{enumerate}
+    \item Hartley, R., \& Zisserman, A. (2003). \textit{Multiple View Geometry in Computer Vision}. Cambridge University Press.
+    \item Lowe, D. G. (2004). Distinctive image features from scale-invariant keypoints. \textit{IJCV}, 60(2), 91--110.
+    \item Sch\"onberger, J. L., \& Frahm, J. M. (2016). Structure-from-motion revisited. \textit{CVPR}, 4104--4113.
+    \item Cernea, D. (2015). OpenMVS: Multi-View Stereo Reconstruction Library.
+    \item Mildenhall, B., et al. (2020). NeRF: Representing scenes as neural radiance fields. \textit{ECCV}, 405--421.
+    \item Lindenberger, P., et al. (2023). LightGlue: Local feature matching at light speed. \textit{ICCV}, 17627--17638.
+\end{enumerate}
+\normalsize
+
+\end{multicols*}

@@ -38,13 +38,25 @@ GUI програм нь PyQt5 framework ашиглан Windows-д зориула
 \begin{figure}[htbp]
 \centering
 \begin{subfigure}{0.32\textwidth}
-    \includegraphics[width=\linewidth]{Pictures/templeR0013.png}
+    \IfFileExists{Pictures/templeR0013.png}{%
+        \includegraphics[width=\linewidth]{Pictures/templeR0013.png}%
+    }{%
+        \fbox{\parbox{\linewidth}{\centering\small\color{gray}[Зураг 1]}}%
+    }
 \end{subfigure}
 \begin{subfigure}{0.32\textwidth}
-    \includegraphics[width=\linewidth]{Pictures/templeR0016.png}
+    \IfFileExists{Pictures/templeR0016.png}{%
+        \includegraphics[width=\linewidth]{Pictures/templeR0016.png}%
+    }{%
+        \fbox{\parbox{\linewidth}{\centering\small\color{gray}[Зураг 2]}}%
+    }
 \end{subfigure}
 \begin{subfigure}{0.32\textwidth}
-    \includegraphics[width=\linewidth]{Pictures/templeR0024.png}
+    \IfFileExists{Pictures/templeR0024.png}{%
+        \includegraphics[width=\linewidth]{Pictures/templeR0024.png}%
+    }{%
+        \fbox{\parbox{\linewidth}{\centering\small\color{gray}[Зураг 3]}}%
+    }
 \end{subfigure}
 \caption{Зураг авалтын датасетийн жишээ зургууд}
 \label{fig:dataset_samples}
@@ -127,7 +139,11 @@ Sparse point cloud дараах хэлбэртэй:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.55\textwidth]{Pictures/Sparse.png}
+\IfFileExists{Pictures/Sparse.png}{%
+    \includegraphics[width=0.55\textwidth]{Pictures/Sparse.png}%
+}{%
+    \fbox{\parbox{0.55\textwidth}{\centering\color{gray}[Sparse point cloud зураг: Pictures/Sparse.png]}}%
+}
 \caption{SfM-ийн үүсгэсэн sparse point cloud}
 \label{fig:sparse_cloud}
 \end{figure}
@@ -149,7 +165,11 @@ OpenMVS ашигласан MVS reconstruction–ийн явц:
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.55\textwidth]{Pictures/Dense.png}
+\IfFileExists{Pictures/Dense.png}{%
+    \includegraphics[width=0.55\textwidth]{Pictures/Dense.png}%
+}{%
+    \fbox{\parbox{0.55\textwidth}{\centering\color{gray}[Dense point cloud зураг: Pictures/Dense.png]}}%
+}
 \caption{OpenMVS ашигласан dense point cloud}
 \label{fig:dense_cloud}
 \end{figure}
@@ -174,18 +194,44 @@ pipeline нь RefineMesh болон TextureMesh үе шатуудыг нэмж �
 \centering
 \begin{minipage}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth,height=0.28\textheight]{Pictures/Model.png}
+  \IfFileExists{Pictures/Model.png}{%
+    \includegraphics[width=\textwidth,height=0.28\textheight]{Pictures/Model.png}%
+  }{%
+    \fbox{\parbox{\textwidth}{\centering\color{gray}[Гараар хийсэн реконструкцийн зураг]}}%
+  }
   \caption{Гараар хийсэн реконструкц}
   \label{fig:manual_output}
 \end{minipage}\hfill
 \begin{minipage}{0.48\textwidth}
   \centering
-  \includegraphics[width=\textwidth,height=0.28\textheight]{Pictures/Pipeline_result.png}
+  \IfFileExists{Pictures/Pipeline_result.png}{%
+    \includegraphics[width=\textwidth,height=0.28\textheight]{Pictures/Pipeline_result.png}%
+  }{%
+    \fbox{\parbox{\textwidth}{\centering\color{gray}[Автомат pipeline-ийн гаралтын зураг]}}%
+  }
   \caption{Автомат pipeline}
   \label{fig:pipeline_output}
 \end{minipage}
-% \caption*{Зураг 4.4 болон 4.5 — Гараар болон автоматаар хийсэн реконструкцийн гаралтын харьцуулалт}
 \end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Гараар хийсэн болон автомат pipeline-ийн харьцуулалт}
+\label{tab:manual_vs_auto}
+\small
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Шалгуур} & \textbf{Гараар} & \textbf{Автомат pipeline} \\ \hline
+Хэрэглэгчийн идэвхтэй хугацаа & $>$30 мин & $<$2 мин \\ \hline
+Алдаа гарах боломж & Өндөр & Бага \\ \hline
+Үе шатуудын дараалал & Гар аргаар & Автоматаар \\ \hline
+Гаралтын формат & .ply (өнгөгүй) & .obj (текстур бүхий) \\ \hline
+RefineMesh үе шат & Үгүй & Тийм (тохиргоогоор) \\ \hline
+TextureMesh үе шат & Үгүй & Тийм (тохиргоогоор) \\ \hline
+Дахин ажиллуулах хялбар байдал & Бага & Өндөр \\ \hline
+Хэрэглэгчийн интерфейс & Командын мөр & PyQt5 GUI \\ \hline
+\end{tabular}
+\end{table}
 
 \section{Туршилтын үр дүн: Matching параметрүүдийн нарийвчлалд үзүүлэх нөлөө}
 

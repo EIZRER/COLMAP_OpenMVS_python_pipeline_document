@@ -51,7 +51,7 @@
 \setlength{\parindent}{15pt}
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \usepackage{vmargin}
-\setmarginsrb               { 25mm}  % left margin
+\setmarginsrb               { 30mm}  % left margin
                             { 20mm}  % top margin
                             { 15mm}  % right margin
                             { 20mm}  % bottom margin
@@ -59,7 +59,7 @@
                             {0.25in}  % head sep
                             {   9pt}  % foot height
                             { 0.3in}  % foot sep
-\setstretch{1.5}
+\setstretch{1.15}
 
 
    
