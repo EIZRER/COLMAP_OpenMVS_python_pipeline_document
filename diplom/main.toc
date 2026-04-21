@@ -50,15 +50,16 @@
 \contentsline {section}{\numberline {4.5}Туршилтын үр дүн: Matching параметрүүдийн нарийвчлалд үзүүлэх нөлөө}{19}{section.90}%
 \contentsline {subsection}{\numberline {4.5.1}1-р туршилт: Matcher болон зургийн хослолын аргын харьцуулалт}{19}{subsection.91}%
 \contentsline {subsection}{\numberline {4.5.2}2-р туршилт: Sequential matching-ийн overlap параметрийн нарийвчлалд үзүүлэх нөлөө}{21}{subsection.98}%
-\contentsline {subsection}{\numberline {4.5.3}3-р туршилт: Зургийн тоо болон реконструкцийн чанарын хамаарал}{24}{subsection.105}%
-\contentsline {chapter}{\numberline {5}ДҮГНЭЛТ}{27}{chapter.113}%
-\contentsline {section}{\numberline {5.1}Судалгааны үр дүнгийн нэгтгэл}{27}{section.114}%
-\contentsline {subsection}{\numberline {5.1.1}Техникийн үр дүн}{27}{subsection.115}%
-\contentsline {subsection}{\numberline {5.1.2}Төхөөрөмжийн үр дүн}{27}{subsection.117}%
-\contentsline {subsection}{\numberline {5.1.3}Зорилтын биелэлт}{27}{subsection.119}%
-\contentsline {section}{\numberline {5.2}Шинэлэг хувь нэмэр}{28}{section.121}%
-\contentsline {section}{\numberline {5.3}Хязгаарлалт}{28}{section.125}%
-\contentsline {section}{\numberline {5.4}Цаашдын судалгааны чиглэл}{28}{section.130}%
-\contentsline {section}{\numberline {5.5}Төгсгөлийн үг}{29}{section.135}%
-\contentsline {chapter}{Ном зүй}{30}{chapter*.136}%
-\contentsline {chapter}{Товчлол}{31}{dummy.137}%
+\contentsline {subsection}{\numberline {4.5.3}3-р туршилт: Видео дахь фреймийн сонголтын давтамж болон реконструкцийн чанарын хамаарал}{24}{subsection.105}%
+\contentsline {paragraph}{Арга зүйн тайлбар.}{27}{paragraph*.113}%
+\contentsline {chapter}{\numberline {5}ДҮГНЭЛТ}{28}{chapter.114}%
+\contentsline {section}{\numberline {5.1}Судалгааны үр дүнгийн нэгтгэл}{28}{section.115}%
+\contentsline {subsection}{\numberline {5.1.1}Техникийн үр дүн}{28}{subsection.116}%
+\contentsline {subsection}{\numberline {5.1.2}Төхөөрөмжийн үр дүн}{28}{subsection.118}%
+\contentsline {subsection}{\numberline {5.1.3}Зорилтын биелэлт}{28}{subsection.120}%
+\contentsline {section}{\numberline {5.2}Шинэлэг хувь нэмэр}{29}{section.122}%
+\contentsline {section}{\numberline {5.3}Хязгаарлалт}{29}{section.126}%
+\contentsline {section}{\numberline {5.4}Цаашдын судалгааны чиглэл}{29}{section.131}%
+\contentsline {section}{\numberline {5.5}Төгсгөлийн үг}{30}{section.136}%
+\contentsline {chapter}{Ном зүй}{31}{chapter*.137}%
+\contentsline {chapter}{Товчлол}{32}{dummy.138}%

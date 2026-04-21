@@ -24,11 +24,11 @@
 \contentsline {figure}{\numberline {4.15}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба Chamfer Distance}}{23}{figure.caption.102}%
 \contentsline {figure}{\numberline {4.16}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба RMSE}}{23}{figure.caption.103}%
 \contentsline {figure}{\numberline {4.17}{\ignorespaces 2-р туршилт --- overlap утга ба нэгтгэсэн алдааны харьцуулалт. overlap=5-аас overlap=10 руу шилжихэд чанар мэдэгдэхүйц сайжирч, цаашид тоо нэмэгдэх нь өгөөж багатай болж байна.}}{23}{figure.caption.104}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces 47 зурагтай датасетийн (3A) mesh гаралт. Объектын үндсэн геометр сэргэгдсэн боловч нягтрал харьцангуй бага байна.}}{24}{figure.caption.107}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces 172 зурагтай датасетийн (3B) mesh гаралт. Зургийн тоо нэмэгдэхэд гадаргуугийн нарийн ширийн мэдээлэл илүү бүрэн сэргэгдэж байна.}}{24}{figure.caption.108}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces 200 зурагтай датасетийн (3C) mesh гаралт. 172 зурагтай харьцуулахад Chamfer Distance 0.012~м-ээр буурсан нь зургийн тоо нэмэгдсэний эерэг нөлөөг харуулж байна.}}{25}{figure.caption.109}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces 3-р туршилт --- зургийн тоо ба Chamfer Distance}}{25}{figure.caption.110}%
-\contentsline {figure}{\numberline {4.22}{\ignorespaces 3-р туршилт --- зургийн тоо ба RMSE}}{25}{figure.caption.111}%
-\contentsline {figure}{\numberline {4.23}{\ignorespaces 3-р туршилт --- зургийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). Эталон цэгэн үүлний 18 дахин ялгаа нь 3A болон 3B/3C-ийн шууд метрик харьцуулалтыг найдваргүй болгож байна.}}{26}{figure.caption.112}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces 3A тохиргооны mesh гаралт --- 4 секунд тутамд нэг фрейм (${\sim }86$ фрейм). Объектын үндсэн геометр сэргэгдсэн боловч оролтын фреймийн тоо харьцангуй цөөн тул нягт цэгэн үүл нь 952 мянган цэгт хязгаарлагдсан байна.}}{24}{figure.caption.107}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces 3B тохиргооны mesh гаралт --- 2 секунд тутамд нэг фрейм (${\sim }172$ фрейм). Фреймийн тоо нэмэгдэхэд эталон нягт цэгэн үүл 17.5 сая цэгт хүрч гадаргуугийн нарийн ширийн мэдээлэл мэдэгдэхүйц нэмэгдсэн байна.}}{25}{figure.caption.108}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces 3C тохиргооны mesh гаралт --- 1.5 секунд тутамд нэг фрейм (${\sim }200$ фрейм). 3B-тэй харьцуулахад Chamfer Distance 0.012~м-ээр буурсан нь фреймийн нягтрал нэмэгдэх нь реконструкцийн чанарт эерэг нөлөөтэй болохыг харуулж байна.}}{25}{figure.caption.109}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces 3-р туршилт --- фреймийн тоо ба Chamfer Distance. 3A-ийн бага утга нь эталон нягт цэгэн үүлний хэмжээний 18 дахин ялгааг тусгаж байгаа тул 3B/3C-тэй шууд харьцуулах нь найдваргүй.}}{26}{figure.caption.110}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces 3-р туршилт --- фреймийн тоо ба RMSE}}{26}{figure.caption.111}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces 3-р туршилт --- фреймийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). 3A ба 3B/3C-ийн хооронд 18 дахин ялгаа байгаа нь шууд метрик харьцуулалтыг найдваргүй болгодог.}}{26}{figure.caption.112}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces 1-р туршилт --- matcher болон хослолын аргын Chamfer Distance харьцуулалт}}{32}{figure.caption.139}%
+\contentsline {figure}{\numberline {1}{\ignorespaces 1-р туршилт --- matcher болон хослолын аргын Chamfer Distance харьцуулалт}}{33}{figure.caption.140}%
