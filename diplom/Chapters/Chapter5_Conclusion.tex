@@ -34,16 +34,30 @@ SfM шатанд sparse point cloud амжилттай үүсгэж, зураг 
 
 \subsection{Төхөөрөмжийн үр дүн}
 
-Туршилтын pipeline-г i9 CPU, RTX 4060 GPU, 16GB RAM бүхий машин дээр ажиллуулж, Python, PyQt5, COLMAP, OpenMVS сан ашиглав. Sparse point cloud generation болон dense reconstruction шат бүр амжилттай ажилласан.
+Pipeline-ийн үе шат бүрийн ажиллагааны хугацааг 47 зурагтай үндсэн датасет дээр хэмжсэн. Дараах хүснэгтэд үе шат тус бүрийн ойролцоо хугацааг харуулав.
 
-\textbf{Гол үзүүлэлтүүд:}
-\begin{itemize}
-    \item Sparse point cloud: 35,000+ цэг
-    \item Dense point cloud: 2.1 сая цэг
-    \item Mesh vertices: 1.2 сая, faces: 2.3 сая
-    \item Хамгийн сайн Chamfer Distance: \textbf{0.0074~м} (1B: LightGlue + Exhaustive)
-    \item Хамгийн сайн RMSE: \textbf{0.0064~м} (1A: SIFT + Exhaustive)
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Pipeline-ийн үе шат бүрийн ойролцоо ажиллагааны хугацаа}
+\label{tab:pipeline_timing}
+\small
+\begin{tabular}{|c|p{6.5cm}|r|}
+\hline
+\textbf{Үе шат} & \textbf{Тайлбар} & \textbf{Ойролцоо хугацаа} \\ \hline
+1 & COLMAP өгөгдлийн сан үүсгэх        & $<$1 мин \\ \hline
+2 & SIFT фичер илрүүлэлт (47 зураг)   & 2--3 мин \\ \hline
+3 & Exhaustive feature matching         & 3--5 мин \\ \hline
+4 & Sparse mapper                        & 2--4 мин \\ \hline
+5 & Загварын хөрвүүлэлт                 & $<$1 мин \\ \hline
+6 & InterfaceCOLMAP шилжүүлэлт          & $<$1 мин \\ \hline
+7 & DensifyPointCloud                    & 15--25 мин \\ \hline
+8 & ReconstructMesh                      & 3--5 мин \\ \hline
+9 & RefineMesh + TextureMesh             & 8--15 мин \\ \hline
+  & \textbf{Нийт}                        & \textbf{$\sim$35--55 мин} \\ \hline
+\end{tabular}
+\end{table}
+
+DensifyPointCloud үе шат нь pipeline-ийн хамгийн урт хугацаа шаарддаг хэсэг бөгөөд GPU-ийн CUDA хурдасгалтыг бүрэн ашигласан ч 47 зурагт 15--25 минут зарцуулдаг. Зургийн тоо нэмэгдэхэд энэ хугацаа шугаман бус байдлаар нэмэгдэх тул 172 болон 200 зурагтай датасетэд нийт pipeline 2--3 цаг хүрч болно. Энэ нь GPU хурдасгалтын оновчлолыг цаашдын судалгааны нэн тэргүүний чиглэл болгож байна.
 
 \subsection{Зорилтын биелэлт}
 
@@ -56,17 +70,17 @@ SfM шатанд sparse point cloud амжилттай үүсгэж, зураг 
 \hline
 \textbf{№} & \textbf{Зорилт} & \textbf{Биелэлт} \\
 \hline
-1 & Controlled lighting box зохион бүтээж, тогтвортой нөхцөлд зураг авах орчин бий болгох & \checkmark \\
+1 & Тогтмол гэрэлтүүлэг бүхий хяналттай орчинд объектыг олон өнцгөөс системтэйгээр зураг авах & \checkmark \\
 \hline
-2 & Объектуудыг олон өнцгөөс жигд гэрэлтүүлэгтэйгээр зураг авах & \checkmark \\
+2 & COLMAP ашиглан SfM ба MVS реконструкц хэрэгжүүлэх & \checkmark \\
 \hline
-3 & COLMAP ашиглан SfM ба MVS реконструкц хэрэгжүүлэх & \checkmark \\
+3 & Бүх үе шатыг нэг цонхноос удирдах боломжтой PyQt5-д суурилсан GUI систем бүтээх & \checkmark \\
 \hline
-4 & PyQt5-д суурилсан GUI систем бүтээх & \checkmark \\
+4 & SfM → MVS → Mesh алхмуудыг автоматаар ажиллуулдаг 9 үе шаттай pipeline боловсруулах & \checkmark \\
 \hline
-5 & Chamfer Distance болон RMSE-ээр гүйцэтгэлийг үнэлэх & \checkmark \\
+5 & Chamfer Distance болон RMSE-ээр реконструкцийн чанарыг тоон аргаар хэмжих & \checkmark \\
 \hline
-6 & SfM → MVS → Mesh алхмуудыг автоматаар ажиллуулдаг 9 үе шаттай pipeline боловсруулах & \checkmark \\
+6 & Matcher сонголт, хослолын стратеги болон overlap параметрийн нарийвчлалд үзүүлэх нөлөөг гурван туршилтын цуваагаар тодорхойлох & \checkmark \\
 \hline
 \end{tabular}
 \label{tab:objectives_completion}

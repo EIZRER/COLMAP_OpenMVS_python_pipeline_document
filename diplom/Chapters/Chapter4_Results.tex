@@ -137,7 +137,7 @@ Feature matching нь FLANN matcher ашиглан хийгдсэн бөгөөд
 
 Sparse point cloud дараах хэлбэртэй:
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \IfFileExists{Pictures/Sparse.png}{%
     \includegraphics[width=0.55\textwidth]{Pictures/Sparse.png}%
@@ -147,6 +147,8 @@ Sparse point cloud дараах хэлбэртэй:
 \caption{SfM-ийн үүсгэсэн sparse point cloud}
 \label{fig:sparse_cloud}
 \end{figure}
+
+\FloatBarrier
 
 Sparse point cloud нь 35,000 гаруй цэг агуулсан бөгөөд энэ нь объектын үндсэн 
 геометрийн бүтцийг хангалттай дүрсэлж байна. Гэсэн хэдий ч exhaustive matching-ийн 
@@ -163,7 +165,7 @@ OpenMVS ашигласан MVS reconstruction–ийн явц:
     \item Зарим өнцөгт мэдээлэл бага байсан нь mesh reconstruction–д нөлөөлсөн
 \end{itemize}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \IfFileExists{Pictures/Dense.png}{%
     \includegraphics[width=0.55\textwidth]{Pictures/Dense.png}%
@@ -174,10 +176,44 @@ OpenMVS ашигласан MVS reconstruction–ийн явц:
 \label{fig:dense_cloud}
 \end{figure}
 
-Нягт цэгэн үүл нь 2.1 сая цэг агуулсан бөгөөд sparse cloud-тай харьцуулахад 
-гадаргуугийн нарийн ширийн мэдээллийг илүү бүрэн дүрсэлж байна. Зарим өнцгөөс 
-авсан зургуудад мэдээлэл хязгаарлагдмал байсан нь тухайн хэсгийн depth map-ийн 
+Нягт цэгэн үүл нь 2.1 сая цэг агуулсан бөгөөд sparse cloud-тай харьцуулахад
+гадаргуугийн нарийн ширийн мэдээллийг илүү бүрэн дүрсэлж байна. Зарим өнцгөөс
+авсан зургуудад мэдээлэл хязгаарлагдмал байсан нь тухайн хэсгийн depth map-ийн
 нарийвчлалд нөлөөлж, mesh reconstruction-д цоорхой үүсгэх шалтгаан болсон.
+
+Нягт цэгэн үүлнээс үүсгэсэн raw mesh дараах байдалтай байлаа. Mesh-д цоорхой болон жигд бус хэсгүүд байсан бөгөөд RefineMesh болон TextureMesh үе шатуудыг дамжсаны дараа эдгээр нь мэдэгдэхүйц сайжирсан.
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp_raw_mesh.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp_raw_mesh.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp\_raw\_mesh.png]}\\[0.5em]
+        ReconstructMesh үе шатын гаралт — текстургүй raw mesh\\[2cm]
+        }}
+    }
+    \caption{ReconstructMesh үе шатын гаралт --- текстургүй raw mesh (47 зурагтай датасет)}
+    \label{fig:raw_mesh}
+\end{figure}
+
+TextureMesh үе шатын дараа гарсан эцсийн .obj загвар дараах байдалтай байлаа. Оролтын зургуудын өнгийн мэдээллийг гадаргуутай холбосноор загварын бодит харагдах байдал мэдэгдэхүйц сайжирсан.
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp_textured_mesh.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp_textured_mesh.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp\_textured\_mesh.png]}\\[0.5em]
+        TextureMesh үе шатын эцсийн гаралт --- текстур бүхий .obj загвар\\[2cm]
+        }}
+    }
+    \caption{TextureMesh үе шатын эцсийн гаралт --- текстур бүхий .obj загвар (47 зурагтай датасет)}
+    \label{fig:textured_mesh}
+\end{figure}
+
+\FloatBarrier
 
 \section{Гараар хийсэн болон автомат pipeline-ийн гаралтын харьцуулалт}
 
@@ -257,6 +293,38 @@ TextureMesh үе шат & Үгүй & Тийм (тохиргоогоор) \\ \hli
 \end{tabular}
 \label{tab:exp1_results}
 \end{table}
+
+Дөрвөн тохиргооны mesh гаралтын харааны харьцуулалтыг доорх зургуудад харуулав. Метрик утгуудын ялгаа нь mesh-ийн харааны чанарт хэрхэн тусгалдаж байгааг тодруулахын тулд 1A болон 1D тохиргооны гаралтыг харьцуулсан.
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp1a_mesh.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp1a_mesh.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp1a\_mesh.png]}\\[0.5em]
+        1A тохиргооны mesh гаралт --- SIFT + Exhaustive matching\\[2cm]
+        }}
+    }
+    \caption{1A тохиргооны mesh гаралт --- SIFT + Exhaustive matching (Chamfer: 0.0078~м, RMSE: 0.0064~м). Хамгийн сайн чанарын нэг тохиргоо.}
+    \label{fig:exp1a}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp1d_mesh.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp1d_mesh.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp1d\_mesh.png]}\\[0.5em]
+        1D тохиргооны бүтэлгүйтсэн реконструкц --- LightGlue + Sequential matching\\[2cm]
+        }}
+    }
+    \caption{1D тохиргооны бүтэлгүйтсэн реконструкц --- LightGlue + Sequential matching (Chamfer: 0.143~м, RMSE: 0.279~м). Sequential matching нь LightGlue-д хангалттай хослол үүсгэж чадаагүйгээс геометр бүрэн алдагдсан байна.}
+    \label{fig:exp1d}
+\end{figure}
+
+\FloatBarrier
 
 \begin{figure}[H]
 \centering
@@ -383,6 +451,38 @@ TextureMesh үе шат & Үгүй & Тийм (тохиргоогоор) \\ \hli
 \label{tab:exp2_results}
 \end{table}
 
+overlap параметрийн утга өөрчлөгдөхөд mesh-ийн харааны чанарт гарах өөрчлөлтийг доорх зургуудад харуулав.
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp2a_overlap5.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp2a_overlap5.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp2a\_overlap5.png]}\\[0.5em]
+        overlap=5 тохиргооны mesh гаралт (Chamfer: 0.153~м)\\[2cm]
+        }}
+    }
+    \caption{overlap=5 тохиргооны mesh гаралт (Chamfer: 0.153~м). Хангалтгүй тохиролтоос шалтгаалан гадаргуугийн олон хэсэгт цоорхой болон геометрийн алдаа ажиглагдаж байна.}
+    \label{fig:exp2a}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp2b_overlap10.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp2b_overlap10.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp2b\_overlap10.png]}\\[0.5em]
+        overlap=10 тохиргооны mesh гаралт (Chamfer: 0.120~м)\\[2cm]
+        }}
+    }
+    \caption{overlap=10 тохиргооны mesh гаралт (Chamfer: 0.120~м). overlap=5-тай харьцуулахад гадаргуугийн бүрэн бүтэн байдал мэдэгдэхүйц сайжирсан.}
+    \label{fig:exp2b}
+\end{figure}
+
+\FloatBarrier
+
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
@@ -486,6 +586,52 @@ TextureMesh үе шат & Үгүй & Тийм (тохиргоогоор) \\ \hli
 \end{tabular}
 \label{tab:exp3_results}
 \end{table}
+
+Зургийн тооны өөрчлөлт mesh-ийн нягтрал болон гадаргуугийн нарийвчлалд хэрхэн нөлөөлж байгааг доорх зургуудад харьцуулан үзүүлэв.
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp3a_47img.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp3a_47img.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp3a\_47img.png]}\\[0.5em]
+        47 зурагтай датасетийн (3A) mesh гаралт\\[2cm]
+        }}
+    }
+    \caption{47 зурагтай датасетийн (3A) mesh гаралт. Объектын үндсэн геометр сэргэгдсэн боловч нягтрал харьцангуй бага байна.}
+    \label{fig:exp3a}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp3b_172img.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp3b_172img.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp3b\_172img.png]}\\[0.5em]
+        172 зурагтай датасетийн (3B) mesh гаралт\\[2cm]
+        }}
+    }
+    \caption{172 зурагтай датасетийн (3B) mesh гаралт. Зургийн тоо нэмэгдэхэд гадаргуугийн нарийн ширийн мэдээлэл илүү бүрэн сэргэгдэж байна.}
+    \label{fig:exp3b}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{images/exp3c_200img.png}{
+        \includegraphics[width=0.85\textwidth]{images/exp3c_200img.png}
+    }{
+        \fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}
+        {\large [Зураг оруулах: exp3c\_200img.png]}\\[0.5em]
+        200 зурагтай датасетийн (3C) mesh гаралт\\[2cm]
+        }}
+    }
+    \caption{200 зурагтай датасетийн (3C) mesh гаралт. 172 зурагтай харьцуулахад Chamfer Distance 0.012~м-ээр буурсан нь зургийн тоо нэмэгдсэний эерэг нөлөөг харуулж байна.}
+    \label{fig:exp3c}
+\end{figure}
+
+\FloatBarrier
 
 \begin{figure}[H]
 \centering

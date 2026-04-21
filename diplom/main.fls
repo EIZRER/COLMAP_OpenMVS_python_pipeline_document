@@ -386,6 +386,8 @@ INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgf
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\latex\placeins\placeins.sty
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\latex\placeins\placeins.sty
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\latex\colortbl\colortbl.sty
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\latex\colortbl\colortbl.sty
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
@@ -707,6 +709,9 @@ INPUT .\Chapters\Chapter3_Methodology.tex
 INPUT Chapters\Chapter3_Methodology.tex
 INPUT C:\Users\erkab\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1000.tfm
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\cm-super\cm-super-t2a.enc
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\erkab\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tempora\Tempora-Regular-TLF-t2a.tfm
 INPUT .\Pictures\GUI_small.png
 INPUT .\Pictures\GUI_small.png
@@ -757,6 +762,7 @@ INPUT .\Pictures\Dense.png
 INPUT .\Pictures\Dense.png
 INPUT .\Pictures\Dense.png
 INPUT .\Pictures\Dense.png
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tempora\Tempora-Regular-TLF-t2a.tfm
 INPUT .\Pictures\Model.png
 INPUT .\Pictures\Model.png
 INPUT .\Pictures\Model.png
@@ -773,14 +779,15 @@ INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7m
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\psyro.tfm
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
-INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
-INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Users\erkab\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT .\Chapters\Chapter5_Conclusion.tex
 INPUT .\Chapters\Chapter5_Conclusion.tex
 INPUT .\Chapters\Chapter5_Conclusion.tex
 INPUT .\Chapters\Chapter5_Conclusion.tex
 INPUT Chapters\Chapter5_Conclusion.tex
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT .\Chapters\Bibliography.tex
 INPUT .\Chapters\Bibliography.tex
 INPUT .\Chapters\Bibliography.tex
