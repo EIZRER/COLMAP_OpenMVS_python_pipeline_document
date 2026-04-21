@@ -50,7 +50,7 @@
 \contentsline {section}{\numberline {4.5}Туршилтын үр дүн: Matching параметрүүдийн нарийвчлалд үзүүлэх нөлөө}{19}{section.90}%
 \contentsline {subsection}{\numberline {4.5.1}1-р туршилт: Matcher болон зургийн хослолын аргын харьцуулалт}{19}{subsection.91}%
 \contentsline {subsection}{\numberline {4.5.2}2-р туршилт: Sequential matching-ийн overlap параметрийн нарийвчлалд үзүүлэх нөлөө}{21}{subsection.98}%
-\contentsline {subsection}{\numberline {4.5.3}3-р туршилт: Зургийн тоо болон реконструкцийн чанарын хамаарал}{23}{subsection.105}%
+\contentsline {subsection}{\numberline {4.5.3}3-р туршилт: Зургийн тоо болон реконструкцийн чанарын хамаарал}{24}{subsection.105}%
 \contentsline {chapter}{\numberline {5}ДҮГНЭЛТ}{27}{chapter.113}%
 \contentsline {section}{\numberline {5.1}Судалгааны үр дүнгийн нэгтгэл}{27}{section.114}%
 \contentsline {subsection}{\numberline {5.1.1}Техникийн үр дүн}{27}{subsection.115}%

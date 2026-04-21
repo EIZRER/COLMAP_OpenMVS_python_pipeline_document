@@ -187,54 +187,50 @@ SfM-ээс гарсан камерын байрлал болон сийрэг ц
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
-    node distance=0.6cm and 1.2cm,
-    module/.style={rectangle, rounded corners=3pt, minimum width=3.0cm, minimum height=0.75cm,
-                   draw=black!70, fill=blue!15, align=center, font=\small\bfseries},
-    submod/.style={rectangle, minimum width=2.6cm, minimum height=0.6cm,
-                   draw=black!50, fill=blue!5, align=center, font=\footnotesize},
-    external/.style={rectangle, rounded corners=3pt, minimum width=2.8cm, minimum height=0.75cm,
-                    draw=black!70, fill=green!15, align=center, font=\small\bfseries},
-    config/.style={rectangle, rounded corners=3pt, minimum width=2.8cm, minimum height=0.75cm,
-                   draw=black!70, fill=orange!15, align=center, font=\small\bfseries},
-    arrow/.style={thick,->,>=stealth,draw=black!60}
+    appbox/.style={rectangle, rounded corners=3pt, minimum width=4.8cm,
+                   draw=black!70, fill=blue!12, align=center, font=\small\bfseries},
+    extbox/.style={rectangle, rounded corners=3pt, minimum width=2.8cm, minimum height=0.8cm,
+                   draw=black!70, fill=green!18, align=center, font=\small\bfseries},
+    cfgbox/.style={rectangle, rounded corners=3pt, minimum width=4.8cm, minimum height=0.8cm,
+                   draw=black!70, fill=orange!18, align=center, font=\small\bfseries},
+    supbox/.style={rectangle, rounded corners=3pt, minimum width=3.2cm, minimum height=0.8cm,
+                   draw=black!70, fill=cyan!12, align=center, font=\small\bfseries},
+    arr/.style={->, >=stealth, thick, draw=black!70}
 ]
 
-% GUI layer
-\node (gui) [module] {gui/};
-\node (mw) [submod, below=0.15cm of gui] {main\_window.py};
-\node (wt) [submod, below=0.1cm of mw] {worker\_thread.py};
+%% All nodes placed at explicit absolute coordinates %%
 
-% Pipeline layer
-\node (pip) [module, right=1.6cm of gui] {pipeline/};
-\node (pl) [submod, below=0.15cm of pip] {pipeline.py};
-\node (cr) [submod, below=0.1cm of pl] {colmap\_runner.py};
-\node (or) [submod, below=0.1cm of cr] {openmvs\_runner.py};
+% Vertical stack (x=0)
+\node[cfgbox] (cfg)  at (0,  5.3) {config/config.yaml};
+\node[appbox] (gui)  at (0,  3.5) {gui/ \\[3pt]
+    {\footnotesize main\_window.py \enspace worker\_thread.py}};
+\node[appbox] (pip)  at (0,  1.5) {pipeline/ \\[3pt]
+    {\footnotesize pipeline.py \enspace colmap\_runner.py} \\
+    {\footnotesize openmvs\_runner.py}};
 
-% Core layer
-\node (core) [module, below=1.4cm of gui] {core/};
-\node (co1) [submod, below=0.15cm of core] {paths.py};
-\node (co2) [submod, below=0.1cm of co1] {exceptions.py};
+% Support modules — placed below pip, spread left/right
+\node[supbox] (core)  at (-3.2, -0.6) {core/ \\[2pt]
+    {\footnotesize paths.py, exceptions.py}};
+\node[supbox] (utils) at ( 3.2, -0.6) {utils/ \\[2pt]
+    {\footnotesize command\_runner.py}};
 
-% Utils layer
-\node (utils) [module, below=1.4cm of pip] {utils/};
-\node (ut1) [submod, below=0.15cm of utils] {command\_runner.py};
+% External tools — placed to the right of pip
+\node[extbox] (colmap) at (6.8,  2.0) {COLMAP};
+\node[extbox] (omvs)   at (6.8,  1.0) {OpenMVS};
 
-% Config
-\node (cfg) [config, below=0.9cm of co2] {config/config.yaml};
+%% Arrows — each uses a distinct anchor; no path crosses any node %%
 
-% External tools
-\node (colmap) [external, right=1.6cm of pip] {COLMAP};
-\node (omvs)   [external, below=0.7cm of colmap] {OpenMVS};
+% Vertical chain: config → gui → pipeline
+\draw[arr] (cfg.south)  -- (gui.north);
+\draw[arr] (gui.south)  -- (pip.north);
 
-% Arrows
-\draw [arrow] (gui) -- (pip);
-\draw [arrow] (wt.east) -- ++(0.4,0) |- (pl.west);
-\draw [arrow] (cr.east) -- (colmap.west);
-\draw [arrow] (or.east) -- (omvs.west);
-\draw [arrow] (pip) -- (utils);
-\draw [arrow] (pip.south) -- ++(0,-0.3) -| (core.north);
-\draw [arrow] (cfg.north) -- (core.south);
-\draw [arrow] (cfg.east) -- ++(0.3,0) |- (pip.south);
+% Pipeline → external tools: upper-right corner → COLMAP, middle-right → OpenMVS
+\draw[arr] (pip.north east) -- (colmap.west);
+\draw[arr] (pip.east)       -- (omvs.west);
+
+% Pipeline → support modules: lower-left corner → core, lower-right corner → utils
+\draw[arr] (pip.south west) -- (core.north);
+\draw[arr] (pip.south east) -- (utils.north);
 
 \end{tikzpicture}
 \caption{Системийн програм хангамжийн модульд суурилсан архитектурын диаграмм}
