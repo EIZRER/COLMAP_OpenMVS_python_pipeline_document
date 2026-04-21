@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.4.21)  22 APR 2026 03:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.4.21)  22 APR 2026 04:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2726,27 +2726,27 @@ Package pgfplots info on input line 554: Using 'lua backend=false' for axis: x c
 <Pictures/exp3a_mesh.png, id=668, 533.5935pt x 261.97874pt>
 File: Pictures/exp3a_mesh.png Graphic file (type png)
 <use Pictures/exp3a_mesh.png>
-Package pdftex.def Info: Pictures/exp3a_mesh.png  used on input line 601.
+Package pdftex.def Info: Pictures/exp3a_mesh.png  used on input line 605.
 (pdftex.def)             Requested size: 399.59694pt x 196.19975pt.
 <Pictures/exp3b_mesh.png, id=669, 705.837pt x 314.3745pt>
 File: Pictures/exp3b_mesh.png Graphic file (type png)
 <use Pictures/exp3b_mesh.png>
-Package pdftex.def Info: Pictures/exp3b_mesh.png  used on input line 615.
+Package pdftex.def Info: Pictures/exp3b_mesh.png  used on input line 619.
 (pdftex.def)             Requested size: 399.59694pt x 177.98169pt.
  [24 <./Pictures/exp3a_mesh.png>]
 <Pictures/exp3c_mesh.png, id=675, 617.30624pt x 296.307pt>
 File: Pictures/exp3c_mesh.png Graphic file (type png)
 <use Pictures/exp3c_mesh.png>
-Package pdftex.def Info: Pictures/exp3c_mesh.png  used on input line 629.
+Package pdftex.def Info: Pictures/exp3c_mesh.png  used on input line 633.
 (pdftex.def)             Requested size: 399.59694pt x 191.81056pt.
-Package pgfplots info on input line 654: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pgfplots info on input line 658: Using 'lua backend=false' for axis: x coord trafo unsupported.
  [25 <./Pictures/exp3b_mesh.png> <./Pictures/exp3c_mesh.png>]
-Package pgfplots info on input line 682: Using 'lua backend=false' for axis: x coord trafo unsupported.
-Package pgfplots info on input line 710: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pgfplots info on input line 686: Using 'lua backend=false' for axis: x coord trafo unsupported.
+Package pgfplots info on input line 714: Using 'lua backend=false' for axis: x coord trafo unsupported.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 722.
+(hyperref)                than one, level fixed on input line 726.
 
 [26]) (Chapters/Chapter5_Conclusion.tex [27]
 {\Mongolian \CYRB \cyry \cyrl \cyrerev \cyrg } 5.
@@ -2798,7 +2798,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  88i,19n,104p,1395b,2312s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Bold.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-BoldItalic.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Italic.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempora-Regular.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/erkab/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (42 pages, 4431557 bytes).
+Output written on main.pdf (42 pages, 4432128 bytes).
 PDF statistics:
  871 PDF objects out of 1000 (max. 8388607)
  224 named destinations out of 1000 (max. 500000)
