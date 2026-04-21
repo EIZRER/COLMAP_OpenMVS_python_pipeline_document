@@ -11,10 +11,13 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces OpenMVS ашигласан dense point cloud}}{14}{figure.caption.71}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Гараар хийсэн реконструкц}}{15}{figure.caption.73}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Автомат pipeline}}{15}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 1-р туршилт --- Chamfer Distance харьцуулалт}}{16}{figure.caption.77}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 1-р туршилт --- RMSE харьцуулалт}}{16}{figure.caption.78}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 1-р туршилт --- Chamfer болон RMSE нэгтгэсэн харьцуулалт. 1D тохиргоонд LightGlue matcher нь sequential хослолын аргатай хослуулахад гамшигт үр дүн үзүүлж байна.}}{16}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба Chamfer Distance}}{17}{figure.caption.82}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба RMSE}}{17}{figure.caption.83}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces 2-р туршилт --- overlap утга ба нэгтгэсэн алдааны харьцуулалт. overlap=5-аас overlap=10 руу шилжихэд чанар мэдэгдэхүйц сайжирч, цаашид тоо нэмэгдэх нь өгөөж багатай болж байна.}}{18}{figure.caption.84}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces 3-р туршилт --- зургийн тоо ба Chamfer Distance}}{19}{figure.caption.87}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces 3-р туршилт --- зургийн тоо ба RMSE}}{19}{figure.caption.88}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces 3-р туршилт --- зургийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). Эталон цэгэн үүлний 18 дахин ялгаа нь 3A болон 3B/3C-ийн шууд метрик харьцуулалтыг найдваргүй болгож байна.}}{19}{figure.caption.89}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Sparse point cloud жишээ}}{16}{figure.caption.78}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Dense point cloud жишээ}}{17}{figure.caption.80}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Mesh reconstruction жишээ}}{17}{figure.caption.82}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Dataset-ийн хэсэг}}{18}{figure.caption.84}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Sparse point cloud жишээ}}{21}{figure.caption.112}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Mesh reconstruction жишээ}}{21}{figure.caption.112}%

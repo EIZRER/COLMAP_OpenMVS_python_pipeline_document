@@ -48,7 +48,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}3D Reconstruction – Үндсэн ойлголт}{3}{section.24}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Structure-from-Motion (SfM)}{3}{subsection.25}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Multi-View Stereo (MVS)}{3}{subsection.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Дээд түвшний алгоритмууд}{3}{section.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Үндсэн алгоритмууд}{3}{section.27}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Feature Extraction}{3}{subsection.28}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Feature Matching}{3}{subsection.29}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Depth Estimation}{3}{subsection.30}\protected@file@percent }
@@ -100,27 +100,61 @@
 \newlabel{fig:manual_output}{{4.4}{15}{Гараар хийсэн реконструкц}{figure.caption.73}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Автомат pipeline}}{15}{figure.caption.73}\protected@file@percent }
 \newlabel{fig:pipeline_output}{{4.5}{15}{Автомат pipeline}{figure.caption.73}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}ДҮГНЭЛТ}{16}{chapter.74}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Туршилтын үр дүн: Matching параметрүүдийн нарийвчлалд үзүүлэх нөлөө}{15}{section.74}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}1-р туршилт: Matcher болон зургийн хослолын аргын харьцуулалт}{15}{subsection.75}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces 1-р туршилтын тохиргоо болон үр дүн}}{15}{table.caption.76}\protected@file@percent }
+\newlabel{tab:exp1_results}{{4.1}{15}{1-р туршилтын тохиргоо болон үр дүн}{table.caption.76}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces 1-р туршилт --- Chamfer Distance харьцуулалт}}{16}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:exp1_chamfer}{{4.6}{16}{1-р туршилт --- Chamfer Distance харьцуулалт}{figure.caption.77}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces 1-р туршилт --- RMSE харьцуулалт}}{16}{figure.caption.78}\protected@file@percent }
+\newlabel{fig:exp1_rmse}{{4.7}{16}{1-р туршилт --- RMSE харьцуулалт}{figure.caption.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces 1-р туршилт --- Chamfer болон RMSE нэгтгэсэн харьцуулалт. 1D тохиргоонд LightGlue matcher нь sequential хослолын аргатай хослуулахад гамшигт үр дүн үзүүлж байна.}}{16}{figure.caption.79}\protected@file@percent }
+\newlabel{fig:exp1_combined}{{4.8}{16}{1-р туршилт --- Chamfer болон RMSE нэгтгэсэн харьцуулалт. 1D тохиргоонд LightGlue matcher нь sequential хослолын аргатай хослуулахад гамшигт үр дүн үзүүлж байна}{figure.caption.79}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}2-р туршилт: Sequential matching-ийн overlap параметрийн нарийвчлалд үзүүлэх нөлөө}{17}{subsection.80}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces 2-р туршилтын overlap параметр болон үр дүн}}{17}{table.caption.81}\protected@file@percent }
+\newlabel{tab:exp2_results}{{4.2}{17}{2-р туршилтын overlap параметр болон үр дүн}{table.caption.81}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба Chamfer Distance}}{17}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:exp2_chamfer}{{4.9}{17}{2-р туршилт --- sequential overlap параметр ба Chamfer Distance}{figure.caption.82}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба RMSE}}{17}{figure.caption.83}\protected@file@percent }
+\newlabel{fig:exp2_rmse}{{4.10}{17}{2-р туршилт --- sequential overlap параметр ба RMSE}{figure.caption.83}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces 2-р туршилт --- overlap утга ба нэгтгэсэн алдааны харьцуулалт. overlap=5-аас overlap=10 руу шилжихэд чанар мэдэгдэхүйц сайжирч, цаашид тоо нэмэгдэх нь өгөөж багатай болж байна.}}{18}{figure.caption.84}\protected@file@percent }
+\newlabel{fig:exp2_combined}{{4.11}{18}{2-р туршилт --- overlap утга ба нэгтгэсэн алдааны харьцуулалт. overlap=5-аас overlap=10 руу шилжихэд чанар мэдэгдэхүйц сайжирч, цаашид тоо нэмэгдэх нь өгөөж багатай болж байна}{figure.caption.84}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}3-р туршилт: Зургийн тоо болон реконструкцийн чанарын хамаарал}{18}{subsection.85}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces 3-р туршилтын зургийн тоо болон үр дүн}}{18}{table.caption.86}\protected@file@percent }
+\newlabel{tab:exp3_results}{{4.3}{18}{3-р туршилтын зургийн тоо болон үр дүн}{table.caption.86}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces 3-р туршилт --- зургийн тоо ба Chamfer Distance}}{19}{figure.caption.87}\protected@file@percent }
+\newlabel{fig:exp3_chamfer}{{4.12}{19}{3-р туршилт --- зургийн тоо ба Chamfer Distance}{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces 3-р туршилт --- зургийн тоо ба RMSE}}{19}{figure.caption.88}\protected@file@percent }
+\newlabel{fig:exp3_rmse}{{4.13}{19}{3-р туршилт --- зургийн тоо ба RMSE}{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces 3-р туршилт --- зургийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). Эталон цэгэн үүлний 18 дахин ялгаа нь 3A болон 3B/3C-ийн шууд метрик харьцуулалтыг найдваргүй болгож байна.}}{19}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:exp3_refpts}{{4.14}{19}{3-р туршилт --- зургийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). Эталон цэгэн үүлний 18 дахин ялгаа нь 3A болон 3B/3C-ийн шууд метрик харьцуулалтыг найдваргүй болгож байна}{figure.caption.89}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}ДҮГНЭЛТ}{21}{chapter.90}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Судалгааны үр дүнгийн нэгтгэл}{16}{section.75}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Техникийн үр дүн}{16}{subsection.76}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Sparse point cloud жишээ}}{16}{figure.caption.78}\protected@file@percent }
-\newlabel{fig:sparse_point_cloud}{{5.1}{16}{Sparse point cloud жишээ}{figure.caption.78}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Dense point cloud жишээ}}{17}{figure.caption.80}\protected@file@percent }
-\newlabel{fig:dense_point_cloud}{{5.2}{17}{Dense point cloud жишээ}{figure.caption.80}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Mesh reconstruction жишээ}}{17}{figure.caption.82}\protected@file@percent }
-\newlabel{fig:mesh_example}{{5.3}{17}{Mesh reconstruction жишээ}{figure.caption.82}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Dataset-ийн хэсэг}}{18}{figure.caption.84}\protected@file@percent }
-\newlabel{fig:dataset_sample}{{5.4}{18}{Dataset-ийн хэсэг}{figure.caption.84}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Төхөөрөмжийн үр дүн}{18}{subsection.85}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Системийн бүрэлдэхүүн}{18}{subsection.86}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Шинэлэг хувь нэмэр}{19}{section.94}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Хязгаарлалт}{19}{section.101}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Цаашдын судалгааны чиглэл}{19}{section.106}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Төгсгөлийн үг}{20}{section.111}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Sparse point cloud жишээ}}{21}{figure.caption.112}\protected@file@percent }
-\newlabel{fig:final_sparse}{{5.5}{21}{Sparse point cloud жишээ}{figure.caption.112}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Mesh reconstruction жишээ}}{21}{figure.caption.112}\protected@file@percent }
-\newlabel{fig:final_mesh}{{5.6}{21}{Mesh reconstruction жишээ}{figure.caption.112}{}}
-\gdef \@abspage@last{30}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Судалгааны үр дүнгийн нэгтгэл}{21}{section.91}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Техникийн үр дүн}{21}{subsection.92}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Системийн гол гүйцэтгэлийн үзүүлэлтүүд}}{21}{table.caption.93}\protected@file@percent }
+\newlabel{tab:key_results}{{5.1}{21}{Системийн гол гүйцэтгэлийн үзүүлэлтүүд}{table.caption.93}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Төхөөрөмжийн үр дүн}{21}{subsection.94}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Зорилтын биелэлт}{22}{subsection.95}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Зорилтын биелэлт}}{22}{table.caption.96}\protected@file@percent }
+\newlabel{tab:objectives_completion}{{5.2}{22}{Зорилтын биелэлт}{table.caption.96}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Шинэлэг хувь нэмэр}{22}{section.97}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Хязгаарлалт}{22}{section.101}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Цаашдын судалгааны чиглэл}{23}{section.106}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Төгсгөлийн үг}{23}{section.111}\protected@file@percent }
+\bibcite{hartley2003}{{1}{}{{}}{{}}}
+\bibcite{lowe2004}{{2}{}{{}}{{}}}
+\bibcite{furukawa2010}{{3}{}{{}}{{}}}
+\bibcite{schonberger2016}{{4}{}{{}}{{}}}
+\bibcite{kazhdan2006}{{5}{}{{}}{{}}}
+\bibcite{cernea2015}{{6}{}{{}}{{}}}
+\bibcite{mildenhall2020}{{7}{}{{}}{{}}}
+\bibcite{kerbl2023}{{8}{}{{}}{{}}}
+\bibcite{detone2018}{{9}{}{{}}{{}}}
+\bibcite{sarlin2020}{{10}{}{{}}{{}}}
+\bibcite{lindenberger2023}{{11}{}{{}}{{}}}
+\bibcite{opencv2015}{{12}{}{{}}{{}}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\@writefile{toc}{\contentsline {chapter}{Ном зүй}{25}{chapter*.112}\protected@file@percent }
+\gdef \@abspage@last{34}

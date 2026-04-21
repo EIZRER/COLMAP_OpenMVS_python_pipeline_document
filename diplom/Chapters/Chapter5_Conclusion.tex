@@ -10,54 +10,27 @@ feature detection болон зураг хоорондын matching процес
 
 \subsection{Техникийн үр дүн}
 
-\begin{enumerate}
-    \item \textbf{Structure-from-Motion (SfM):} 
-    \begin{itemize}
-        \item Sparse point cloud үүсгэж, зураг хоорондын pose estimation-ийн нарийвчлалыг баталгаажуулсан
-        \item Essential/Fundamental матрицыг ашиглан incremental reconstruction хийсэн
-    \end{itemize}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.55\textwidth,keepaspectratio]{Pictures/Sparse.png}
-        \caption{Sparse point cloud жишээ}
-        \label{fig:sparse_point_cloud}
-    \end{figure}
+4-р бүлэгт дэлгэрэнгүй авч үзсэн туршилтын гол үзүүлэлтүүдийг дараах хүснэгтэд нэгтгэн харуулав.
 
-    \item \textbf{Multi-View-Stereo (MVS):} 
-    \begin{itemize}
-        \item Depth map үүсгэж, fusion хийх замаар dense point cloud гаргасан
-        \item Statistical Outlier Removal болон radius filtering ашиглан point cloud-ийг цэвэрлэсэн
-    \end{itemize}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.55\textwidth,keepaspectratio]{Pictures/Dense.png}
-        \caption{Dense point cloud жишээ}
-        \label{fig:dense_point_cloud}
-    \end{figure}
+\begin{table}[H]
+\centering
+\caption{Системийн гол гүйцэтгэлийн үзүүлэлтүүд}
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Үзүүлэлт} & \textbf{Утга} \\
+\hline
+Туршилтын датасет (зураг) & 47 \\
+Sparse point cloud & 35{,}000+ цэг \\
+Dense point cloud & 2.1 сая цэг \\
+Mesh vertices / faces & 1.2 сая / 2.3 сая \\
+Хамгийн сайн Chamfer Distance (1B: LightGlue+Exhaustive) & 0.0074 м \\
+Хамгийн сайн RMSE (1A: SIFT+Exhaustive) & 0.0064 м \\
+\hline
+\end{tabular}
+\label{tab:key_results}
+\end{table}
 
-    \item \textbf{Mesh reconstruction:} 
-    \begin{itemize}
-        \item Poisson reconstruction ашиглан mesh үүсгэж, refinement болон texture baking хийсэн
-    \end{itemize}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.55\textwidth,keepaspectratio]{Pictures/Model.png}
-        \caption{Mesh reconstruction жишээ}
-        \label{fig:mesh_example}
-    \end{figure}
-
-    \item \textbf{Dataset:} 
-    \begin{itemize}
-        \item 48 зураг, өөр өөр өнцөг, controlled lighting box ашигласан
-        \item 1920x1080 JPEG болон PNG форматтай
-    \end{itemize}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.55\textwidth,keepaspectratio]{Pictures/templeR0013.png}
-        \caption{Dataset-ийн хэсэг}
-        \label{fig:dataset_sample}
-    \end{figure}
-\end{enumerate}
+SfM шатанд sparse point cloud амжилттай үүсгэж, зураг хоорондын pose estimation-ийг баталгаажуулсан. MVS шатанд depth map фьюзионоор нягт цэгэн үүл гаргаж, Poisson reconstruction ашиглан mesh үүсгэж текстур зураглал хийсэн.
 
 \subsection{Төхөөрөмжийн үр дүн}
 
@@ -68,20 +41,36 @@ feature detection болон зураг хоорондын matching процес
     \item Sparse point cloud: 35,000+ цэг
     \item Dense point cloud: 2.1 сая цэг
     \item Mesh vertices: 1.2 сая, faces: 2.3 сая
-    \item Visual accuracy: Chamfer Distance \textbf{0.005 m}, RMSE \textbf{0.007 m}
+    \item Хамгийн сайн Chamfer Distance: \textbf{0.0074~м} (1B: LightGlue + Exhaustive)
+    \item Хамгийн сайн RMSE: \textbf{0.0064~м} (1A: SIFT + Exhaustive)
 \end{itemize}
 
-\subsection{Системийн бүрэлдэхүүн}
+\subsection{Зорилтын биелэлт}
 
-\begin{enumerate}
-    \item \textbf{Data collection:} 40-80 зураг авах
-    \item \textbf{Feature detection and matching:} SIFT (COLMAP-ийн feature\_extractor), Exhaustive Matching
-    \item \textbf{Camera calibration:} Checkerboard ашиглан intrinsic/extrinsic параметр
-    \item \textbf{SfM:} Incremental reconstruction, sparse point cloud
-    \item \textbf{MVS:} Depth maps, dense point cloud
-    \item \textbf{Point cloud filtering:} Outlier removal, normal estimation
-    \item \textbf{Mesh reconstruction:} Poisson reconstruction, refinement, texture baking
-\end{enumerate}
+1-р бүлэгт тавьсан зорилтуудын биелэлтийг дараах хүснэгтэд харуулав.
+
+\begin{table}[H]
+\centering
+\caption{Зорилтын биелэлт}
+\begin{tabular}{|c|p{9cm}|c|}
+\hline
+\textbf{№} & \textbf{Зорилт} & \textbf{Биелэлт} \\
+\hline
+1 & Controlled lighting box зохион бүтээж, тогтвортой нөхцөлд зураг авах орчин бий болгох & \checkmark \\
+\hline
+2 & Объектуудыг олон өнцгөөс жигд гэрэлтүүлэгтэйгээр зураг авах & \checkmark \\
+\hline
+3 & COLMAP ашиглан SfM ба MVS реконструкц хэрэгжүүлэх & \checkmark \\
+\hline
+4 & PyQt5-д суурилсан GUI систем бүтээх & \checkmark \\
+\hline
+5 & Chamfer Distance болон RMSE-ээр гүйцэтгэлийг үнэлэх & \checkmark \\
+\hline
+6 & SfM → MVS → Mesh алхмуудыг автоматаар ажиллуулдаг 9 үе шаттай pipeline боловсруулах & \checkmark \\
+\hline
+\end{tabular}
+\label{tab:objectives_completion}
+\end{table}
 
 % \section{Зорилтын биелэлт}
 
@@ -113,12 +102,9 @@ feature detection болон зураг хоорондын matching процес
 \section{Шинэлэг хувь нэмэр}
 
 \begin{enumerate}
-    \item \textbf{SfM–MVS pipeline-ийг тогтмол орчинд туршсан}
-    \item \textbf{Controlled lighting box ашиглан feature detection чанарыг сайжруулсан}
-    \item \textbf{Sparse → Dense → Mesh үе шат бүрийг нэгтгэсэн}
-    \item \textbf{Visual болон metric үнэлгээний аргачлалыг нэгтгэсэн}
-    \item \textbf{Dataset болон pipeline-ийг ирээдүйд өргөтгөх боломжтой болгосон}
-    \item \textbf{PyQt5-д суурилсан GUI боловсруулсан} — бүх 9 үе шатыг нэг цонхноос удирдах боломжтой хэрэглэхэд хялбар интерфейс
+    \item \textbf{PyQt5-д суурилсан GUI боловсруулсан} — бүх 9 үе шатыг нэг цонхноос удирдах боломжтой, лог харуулах, abort хийх боломж бүхий хэрэглэхэд хялбар интерфейс; энэ нь pipeline-ийг мэргэжлийн бус хэрэглэгчдэд ч хүртээмжтэй болгосон
+    \item \textbf{Matching стратегийн нарийвчлалд үзүүлэх нөлөөг туршилтаар тодорхойлсон} — гурван ялгаатай туршилтын цуваа явуулж хослолын арга (exhaustive vs sequential), overlap параметр болон зургийн тооны нарийвчлалд үзүүлэх нөлөөг тодорхойлсон; sequential matching дэхь overlap=10 нь оновчтой босго утга болох нь тогтоогдсон
+    \item \textbf{Chamfer Distance болон RMSE-д суурилсан тоон үнэлгээний аргачлалыг хэрэглэсэн} — зөвхөн харааны үнэлгээнд тулгуурлахгүйгээр объектив метрик ашиглан реконструкцийн чанарыг хэмжсэн
 \end{enumerate}
 
 \section{Хязгаарлалт}
@@ -127,7 +113,7 @@ feature detection болон зураг хоорондын matching процес
     \item Зөвхөн нэг объектын туршилт хийсэн бөгөөд олон объектод ажиллах боломж нэмэлт туршилт шаардана
     \item Тогтмол эргэдэг тавцан болон гэрлийн хайрцаг ашигласан тул гадна буюу динамик орчинд ажиллах тохиолдлыг хамраагүй
     \item GUI-ийн хэрэглэгчийн туршлага (UX) цаашид сайжруулах шаардлагатай — камерын калибрацийн интерфейс, зургийн урьдчилсан боловсруулалтын сонголтууд дутмаг
-    \item COLMAP-ийн exhaustive matching арга нь зарим нөхцөлд зургуудын хоорондын тохиролтыг бүрэн хийж чадахгүй байсан нь sparse reconstruction-ийн чанарт нөлөөлсөн. Нейрон сүлжээнд суурилсан фичер илрүүлэлтийн арга ашиглах нь энэ асуудлыг шийдвэрлэх боломжтой.
+    \item Sequential matching арга нь хязгаарлагдмал зургийн тооны датасетэд зарим matcher-д бүтэлгүйтэж болно. Туршилтаар 49 зурагтай датасет дэхь sequential matching нь LightGlue matcher-тэй хослуулахад Chamfer Distance 0.143~м (exhaustive тохиргооноос 19 дахин муу) гаргасан. Нейрон сүлжээнд суурилсан фичер илрүүлэлтийн арга ашиглах нь энэ асуудлыг шийдвэрлэх боломжтой боловч matching стратегийн сонголт ч адилхан чухал ач холбогдолтой болох нь тогтоогдлоо.
 \end{enumerate}
 
 \section{Цаашдын судалгааны чиглэл}
@@ -138,9 +124,9 @@ feature detection болон зураг хоорондын matching процес
 \begin{enumerate}
     \item \textbf{ML-д суурилсан фичер тохиролт нэвтрүүлэх} — Энэ судалгааны хамгийн 
     тулгамдсан асуудал нь COLMAP-ийн exhaustive matcher зарим нөхцөлд зургуудын 
-    хоорондын тохиролтыг найдвартай хийж чадахгүй байсан явдал юм. SuperPoint болон 
-    SuperGlue нейрон сүлжээнд суурилсан фичер илрүүлэлт болон тохиролтын аргуудыг 
-    pipeline-д нэгтгэх нь энэ асуудлыг шийдвэрлэх хамгийн боломжит арга зам юм. 
+    хоорондын тохиролтыг найдвартай хийж чадахгүй байсан явдал юм. SuperPoint болон
+    SuperGlue нейрон сүлжээнд суурилсан фичер илрүүлэлт болон тохиролтын аргуудыг
+    pipeline-д нэгтгэх нь энэ асуудлыг шийдвэрлэх хамгийн тохиромжтой арга зам юм. 
     SuperPoint нь масштаб болон гэрэлтүүлгийн өөрчлөлтөд SIFT-ээс илүү тэсвэртэй 
     байдаг бөгөөд SuperGlue нь зургуудын хооронд харагдах давхцал бага байх үед ч 
     найдвартай тохиролт хийх чадвартай. Энэ нэмэлтийг хэрэгжүүлснээр sparse 
@@ -168,31 +154,14 @@ feature detection болон зураг хоорондын matching процес
 суурьтай 3D реконструкцийн pipeline-ийг амжилттай боловсруулж, туршилтаар 
 баталгаажуулсан. Feature detection, sparse болон dense point cloud generation, 
 mesh reconstruction, texture mapping гэсэн шат бүрийг автоматжуулсан 9 үе шаттай 
-pipeline нь нэг цогц системд нэгтгэгдсэн. Нэмж дурдахад, бүх үе шатыг нэг 
-цонхноос удирдах боломжтой PyQt5-д суурилсан GUI програмыг амжилттай 
-хэрэгжүүлсэн нь системийг мэргэжлийн бус хэрэглэгчдэд ч ашиглах боломжтой 
+pipeline нь нэг цогц системд нэгтгэгдсэн. Үүнээс гадна, бүх үе шатыг нэг
+цонхноос удирдах боломжтой PyQt5-д суурилсан GUI програмыг амжилттай
+хэрэгжүүлсэн нь системийг мэргэжлийн бус хэрэглэгчдэд ч ашиглах боломжтой
 болгосон гол ахиц юм.
 
-Туршилтын үр дүнд Chamfer Distance 0.005 м, RMSE 0.007 м гарсан нь системийн 
-реконструкцийн нарийвчлал хангалттай өндөр байгааг харуулж байна. Цаашдын 
+Гурван ялгаатай туршилтын цуваа явуулж matching параметрүүдийн нарийвчлалд үзүүлэх нөлөөг тодорхойлсон бөгөөд хамгийн сайн Chamfer Distance нь 1B (LightGlue + Exhaustive) тохиргоонд \textbf{0.0074~м}, хамгийн сайн RMSE нь 1A (SIFT + Exhaustive) тохиргоонд \textbf{0.0064~м} гарсан нь системийн реконструкцийн нарийвчлал хангалттай өндөр байгааг харуулж байна. Цаашдын 
 судалгаанд exhaustive matching-ийн хязгаарлалтыг SuperPoint/SuperGlue-д эсвэл DINOv2-д суурилсан 
 ML фичер тохиролтоор орлуулах нь pipeline-ийн ерөнхий чанарыг мэдэгдэхүйц 
 дээшлүүлэх боломжтой гол алхам болно.
-
-\begin{figure}[H]
-\centering
-\begin{minipage}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth,height=0.25\textheight]{Pictures/Sparse.png}
-  \caption{Sparse point cloud жишээ}
-  \label{fig:final_sparse}
-\end{minipage}\hfill
-\begin{minipage}{0.48\textwidth}
-  \centering
-  \includegraphics[width=\textwidth,height=0.25\textheight]{Pictures/Model.png}
-  \caption{Mesh reconstruction жишээ}
-  \label{fig:final_mesh}
-\end{minipage}
-\end{figure}
 
 
