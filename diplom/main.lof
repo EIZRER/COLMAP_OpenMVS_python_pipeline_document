@@ -4,7 +4,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Ажиллагааны Flow Diagram}}{7}{figure.caption.51}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Системийн програм хангамжийн модульд суурилсан архитектурын диаграмм}}{12}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PyQt5 GUI ашигласан pipeline удирдлага}}{13}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces PyQt5 GUI ашигласан pipeline удирдлага}}{14}{figure.caption.67}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces GUI pipeline ажиллаж байх үеийн дэвшлийн мөр болон лог цонх}}{14}{figure.caption.68}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Зураг авалтын датасетийн жишээ зургууд}}{16}{figure.caption.81}%
@@ -31,5 +31,3 @@
 \contentsline {figure}{\numberline {4.22}{\ignorespaces 3-р туршилт --- фреймийн тоо ба RMSE}}{26}{figure.caption.111}%
 \contentsline {figure}{\numberline {4.23}{\ignorespaces 3-р туршилт --- фреймийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). 3A ба 3B/3C-ийн хооронд 18 дахин ялгаа байгаа нь шууд метрик харьцуулалтыг найдваргүй болгодог.}}{26}{figure.caption.112}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces 1-р туршилт --- matcher болон хослолын аргын Chamfer Distance харьцуулалт}}{33}{figure.caption.140}%
-\contentsline {figure}{\numberline {1}{\ignorespaces Experiment 1 --- Chamfer Distance comparison by matcher and matching strategy}}{36}{figure.caption.149}%

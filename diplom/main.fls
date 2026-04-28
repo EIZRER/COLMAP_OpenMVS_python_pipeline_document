@@ -846,12 +846,6 @@ INPUT .\Chapters\Bibliography.tex
 INPUT .\Chapters\Bibliography.tex
 INPUT .\Chapters\Bibliography.tex
 INPUT Chapters\Bibliography.tex
-INPUT .\Chapters\Summary.tex
-INPUT .\Chapters\Summary.tex
-INPUT Chapters\Summary.tex
-INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tempora\Tempora-Regular-TLF-t2a.tfm
-INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tempora\Tempora-Bold-TLF-t2a.tfm
-INPUT C:\Users\erkab\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tempora\Tempora-Italic-TLF-t2a.tfm
 INPUT main.aux
 INPUT .\Information.aux
 INPUT .\Information.aux
