@@ -218,17 +218,17 @@ SfM-ээс гарсан камерын байрлал болон сийрэг ц
 \node[extbox] (colmap) at (6.8,  2.0) {COLMAP};
 \node[extbox] (omvs)   at (6.8,  1.0) {OpenMVS};
 
-%% Arrows — each uses a distinct anchor; no path crosses any node %%
+%% Arrows %%
 
 % Vertical chain: config → gui → pipeline
 \draw[arr] (cfg.south)  -- (gui.north);
 \draw[arr] (gui.south)  -- (pip.north);
 
-% Pipeline → external tools: upper-right corner → COLMAP, middle-right → OpenMVS
-\draw[arr] (pip.north east) -- (colmap.west);
-\draw[arr] (pip.east)       -- (omvs.west);
+% Pipeline → external tools
+\draw[arr] (pip.east)       -- (colmap.west);
+\draw[arr] (pip.east) -- (omvs.west);
 
-% Pipeline → support modules: lower-left corner → core, lower-right corner → utils
+% Pipeline → support modules
 \draw[arr] (pip.south west) -- (core.north);
 \draw[arr] (pip.south east) -- (utils.north);
 
@@ -277,14 +277,14 @@ Pipeline-ийн тохиргоог \texttt{config/config.yaml} файлаар у
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.55\textwidth]{Pictures/GUI_small.png}
+\includegraphics[width=0.9\textwidth]{Pictures/UpdatedGUI.png}
 \caption{PyQt5 GUI ашигласан pipeline удирдлага}
 \label{fig:GUI_appearance}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.55\textwidth]{Pictures/GUI_working.png}
+\includegraphics[width=0.9\textwidth]{Pictures/GUI_working.png}
 \caption{GUI pipeline  ажиллаж байх үеийн дэвшлийн мөр болон лог цонх}
 \label{fig:GUI_working}
 \end{figure}
