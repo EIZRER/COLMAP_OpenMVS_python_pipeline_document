@@ -3,36 +3,36 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Ажиллагааны Flow Diagram}}{7}{figure.caption.51}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Системийн програм хангамжийн модульд суурилсан архитектурын диаграмм}}{12}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PyQt5 GUI ашигласан pipeline удирдлага}}{14}{figure.caption.67}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces GUI pipeline ажиллаж байх үеийн дэвшлийн мөр болон лог цонх}}{14}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Системийн програм хангамжийн модульд суурилсан архитектурын диаграмм}}{11}{figure.caption.66}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces PyQt5 GUI ашигласан pipeline удирдлага}}{13}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces GUI pipeline ажиллаж байх үеийн дэвшлийн мөр болон лог цонх}}{13}{figure.caption.68}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Зураг авалтын датасетийн жишээ зургууд}}{16}{figure.caption.81}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces SfM-ийн үүсгэсэн sparse point cloud}}{16}{figure.caption.82}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces OpenMVS ашигласан dense point cloud жишээ зураг }}{17}{figure.caption.84}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces ReconstructMesh үе шатын гаралт --- текстургүй raw mesh (47 зурагтай датасет)}}{17}{figure.caption.85}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces TextureMesh үе шатын эцсийн гаралт --- текстур бүхий .obj загвар (47 зурагтай датасет)}}{18}{figure.caption.86}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Гараар хийсэн реконструкц}}{18}{figure.caption.88}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Автомат pipeline}}{18}{figure.caption.88}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 1A тохиргооны mesh гаралт --- SIFT + Exhaustive matching (Chamfer: 0.0078~м, RMSE: 0.0064~м). Хамгийн сайн чанарын нэг тохиргоо.}}{20}{figure.caption.93}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces 1D тохиргооны бүтэлгүйтсэн реконструкц --- LightGlue + Sequential matching (Chamfer: 0.143~м, RMSE: 0.279~м). Sequential matching нь LightGlue-д хангалттай хослол үүсгэж чадаагүйгээс геометр бүрэн алдагдсан байна.}}{20}{figure.caption.94}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces 1-р туршилт --- Chamfer Distance харьцуулалт}}{20}{figure.caption.95}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces 1-р туршилт --- RMSE харьцуулалт}}{21}{figure.caption.96}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces 1-р туршилт --- Chamfer болон RMSE нэгтгэсэн харьцуулалт. 1D тохиргоонд LightGlue matcher нь sequential хослолын аргатай хослуулахад гамшигт үр дүн үзүүлж байна.}}{21}{figure.caption.97}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces overlap=5 тохиргооны mesh гаралт (Chamfer: 0.153~м). Хангалтгүй тохиролтоос шалтгаалан гадаргуугийн олон хэсэгт цоорхой болон геометрийн алдаа ажиглагдаж байна.}}{22}{figure.caption.100}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces overlap=10 тохиргооны mesh гаралт (Chamfer: 0.120~м). overlap=5-тай харьцуулахад гадаргуугийн бүрэн бүтэн байдал мэдэгдэхүйц сайжирсан.}}{22}{figure.caption.101}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба Chamfer Distance}}{23}{figure.caption.102}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба RMSE}}{23}{figure.caption.103}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces 2-р туршилт --- overlap утга ба нэгтгэсэн алдааны харьцуулалт. overlap=5-аас overlap=10 руу шилжихэд чанар мэдэгдэхүйц сайжирч, цаашид тоо нэмэгдэх нь өгөөж багатай болж байна.}}{23}{figure.caption.104}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces 3A тохиргооны mesh гаралт --- 4 секунд тутамд нэг фрейм (${\sim }86$ фрейм). Объектын үндсэн геометр сэргэгдсэн боловч оролтын фреймийн тоо харьцангуй цөөн тул нягт цэгэн үүл нь 952 мянган цэгт хязгаарлагдсан байна.}}{24}{figure.caption.107}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces 3B тохиргооны mesh гаралт --- 2 секунд тутамд нэг фрейм (${\sim }172$ фрейм). Фреймийн тоо нэмэгдэхэд эталон нягт цэгэн үүл 17.5 сая цэгт хүрч гадаргуугийн нарийн ширийн мэдээлэл мэдэгдэхүйц нэмэгдсэн байна.}}{25}{figure.caption.108}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces 3C тохиргооны mesh гаралт --- 1.5 секунд тутамд нэг фрейм (${\sim }200$ фрейм). 3B-тэй харьцуулахад Chamfer Distance 0.012~м-ээр буурсан нь фреймийн нягтрал нэмэгдэх нь реконструкцийн чанарт эерэг нөлөөтэй болохыг харуулж байна.}}{25}{figure.caption.109}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces 3-р туршилт --- фреймийн тоо ба Chamfer Distance. 3A-ийн бага утга нь эталон нягт цэгэн үүлний хэмжээний 18 дахин ялгааг тусгаж байгаа тул 3B/3C-тэй шууд харьцуулах нь найдваргүй.}}{26}{figure.caption.110}%
-\contentsline {figure}{\numberline {4.22}{\ignorespaces 3-р туршилт --- фреймийн тоо ба RMSE}}{26}{figure.caption.111}%
-\contentsline {figure}{\numberline {4.23}{\ignorespaces 3-р туршилт --- фреймийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). 3A ба 3B/3C-ийн хооронд 18 дахин ялгаа байгаа нь шууд метрик харьцуулалтыг найдваргүй болгодог.}}{26}{figure.caption.112}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Зураг авалтын датасетийн жишээ зургууд}}{15}{figure.caption.81}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces SfM-ийн үүсгэсэн sparse point cloud}}{15}{figure.caption.82}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces OpenMVS ашигласан dense point cloud жишээ зураг }}{16}{figure.caption.84}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces ReconstructMesh үе шатын гаралт --- текстургүй raw mesh (47 зурагтай датасет)}}{16}{figure.caption.85}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces TextureMesh үе шатын эцсийн гаралт --- текстур бүхий .obj загвар (47 зурагтай датасет)}}{17}{figure.caption.86}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Гараар хийсэн реконструкц}}{17}{figure.caption.88}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Автомат pipeline}}{17}{figure.caption.88}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 1A тохиргооны mesh гаралт --- SIFT + Exhaustive matching (Chamfer: 0.0078~м, RMSE: 0.0064~м). Хамгийн сайн чанарын нэг тохиргоо.}}{19}{figure.caption.93}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 1D тохиргооны бүтэлгүйтсэн реконструкц --- LightGlue + Sequential matching (Chamfer: 0.143~м, RMSE: 0.279~м). Sequential matching нь LightGlue-д хангалттай хослол үүсгэж чадаагүйгээс геометр бүрэн алдагдсан байна.}}{19}{figure.caption.94}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces 1-р туршилт --- Chamfer Distance харьцуулалт}}{19}{figure.caption.95}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces 1-р туршилт --- RMSE харьцуулалт}}{20}{figure.caption.96}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces 1-р туршилт --- Chamfer болон RMSE нэгтгэсэн харьцуулалт. 1D тохиргоонд LightGlue matcher нь sequential хослолын аргатай хослуулахад гамшигт үр дүн үзүүлж байна.}}{20}{figure.caption.97}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces overlap=5 тохиргооны mesh гаралт (Chamfer: 0.153~м). Хангалтгүй тохиролтоос шалтгаалан гадаргуугийн олон хэсэгт цоорхой болон геометрийн алдаа ажиглагдаж байна.}}{21}{figure.caption.100}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces overlap=10 тохиргооны mesh гаралт (Chamfer: 0.120~м). overlap=5-тай харьцуулахад гадаргуугийн бүрэн бүтэн байдал мэдэгдэхүйц сайжирсан.}}{21}{figure.caption.101}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба Chamfer Distance}}{22}{figure.caption.102}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces 2-р туршилт --- sequential overlap параметр ба RMSE}}{22}{figure.caption.103}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces 2-р туршилт --- overlap утга ба нэгтгэсэн алдааны харьцуулалт. overlap=5-аас overlap=10 руу шилжихэд чанар мэдэгдэхүйц сайжирч, цаашид тоо нэмэгдэх нь өгөөж багатай болж байна.}}{22}{figure.caption.104}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces 3A тохиргооны mesh гаралт --- 4 секунд тутамд нэг фрейм (${\sim }86$ фрейм). Объектын үндсэн геометр сэргэгдсэн боловч оролтын фреймийн тоо харьцангуй цөөн тул нягт цэгэн үүл нь 952 мянган цэгт хязгаарлагдсан байна.}}{23}{figure.caption.107}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces 3B тохиргооны mesh гаралт --- 2 секунд тутамд нэг фрейм (${\sim }172$ фрейм). Фреймийн тоо нэмэгдэхэд эталон нягт цэгэн үүл 17.5 сая цэгт хүрч гадаргуугийн нарийн ширийн мэдээлэл мэдэгдэхүйц нэмэгдсэн байна.}}{24}{figure.caption.108}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces 3C тохиргооны mesh гаралт --- 1.5 секунд тутамд нэг фрейм (${\sim }200$ фрейм). 3B-тэй харьцуулахад Chamfer Distance 0.012~м-ээр буурсан нь фреймийн нягтрал нэмэгдэх нь реконструкцийн чанарт эерэг нөлөөтэй болохыг харуулж байна.}}{24}{figure.caption.109}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces 3-р туршилт --- фреймийн тоо ба Chamfer Distance. 3A-ийн бага утга нь эталон нягт цэгэн үүлний хэмжээний 18 дахин ялгааг тусгаж байгаа тул 3B/3C-тэй шууд харьцуулах нь найдваргүй.}}{25}{figure.caption.110}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces 3-р туршилт --- фреймийн тоо ба RMSE}}{25}{figure.caption.111}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces 3-р туршилт --- фреймийн тоо ба эталон нягт цэгэн үүлний хэмжээ (сая цэг). 3A ба 3B/3C-ийн хооронд 18 дахин ялгаа байгаа нь шууд метрик харьцуулалтыг найдваргүй болгодог.}}{25}{figure.caption.112}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces 1-р туршилт --- matcher болон хослолын аргын Chamfer Distance харьцуулалт}}{34}{figure.caption.143}%
-\contentsline {figure}{\numberline {2}{\ignorespaces 1-р туршилт --- matcher болон хослолын аргын RMSE харьцуулалт}}{34}{figure.caption.144}%
-\contentsline {figure}{\numberline {3}{\ignorespaces 2-р туршилт --- Sequential overlap болон алдааны харьцаа. overlap=5-аас 10 руу шилжихэд чанар эрс сайжирч, 10-аас дээш ахиц бага.}}{35}{figure.caption.145}%
-\contentsline {figure}{\numberline {4}{\ignorespaces 3-р туршилт --- Фрейм сонголт болон алдаа (Lighthouse 4K видео). Эталон цэгэн үүлний 18 дахин ялгаанаас болж 3A болон 3B/3C шууд харьцуулахад тохиромжгүй.}}{35}{figure.caption.146}%
-\contentsline {figure}{\numberline {5}{\ignorespaces 3-р туршилт --- Эталон цэгэн үүлний хэмжээ. 3A болон 3B/3C хоорондын 18 дахин ялгаа нь шууд метрийн харьцуулалтыг хүчингүй болгодог.}}{35}{figure.caption.147}%
+\contentsline {figure}{\numberline {1}{\ignorespaces 1-р туршилт --- matcher болон хослолын аргын Chamfer Distance харьцуулалт}}{33}{figure.caption.143}%
+\contentsline {figure}{\numberline {2}{\ignorespaces 1-р туршилт --- matcher болон хослолын аргын RMSE харьцуулалт}}{33}{figure.caption.144}%
+\contentsline {figure}{\numberline {3}{\ignorespaces 2-р туршилт --- Sequential overlap болон алдааны харьцаа. overlap=5-аас 10 руу шилжихэд чанар эрс сайжирч, 10-аас дээш ахиц бага.}}{34}{figure.caption.145}%
+\contentsline {figure}{\numberline {4}{\ignorespaces 3-р туршилт --- Фрейм сонголт болон алдаа (Lighthouse 4K видео). Эталон цэгэн үүлний 18 дахин ялгаанаас болж 3A болон 3B/3C шууд харьцуулахад тохиромжгүй.}}{34}{figure.caption.146}%
+\contentsline {figure}{\numberline {5}{\ignorespaces 3-р туршилт --- Эталон цэгэн үүлний хэмжээ. 3A болон 3B/3C хоорондын 18 дахин ялгаа нь шууд метрийн харьцуулалтыг хүчингүй болгодог.}}{34}{figure.caption.147}%
