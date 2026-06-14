@@ -3,7 +3,7 @@
 \contentsline {chapter}{Abstract}{ii}{Doc-Start}%
 \contentsline {chapter}{Гарчиг}{iii}{dummy.1}%
 \contentsline {chapter}{Зураг болон Хүснэгтийн жагсаалт}{v}{dummy.3}%
-\contentsline {chapter}{Товчилсон үгийн жагсаалт}{vii}{chapter*.4}%
+\contentsline {chapter}{ТОВЧИЛСОН ҮГИЙН ЖАГСААЛТ}{vii}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}УДИРТГАЛ}{1}{chapter.5}%
 \contentsline {section}{\numberline {1.1}Судалгааны үндэслэл, ач холбогдол}{1}{section.6}%
 \contentsline {section}{\numberline {1.2}Судалгааны зорилго, зорилт}{1}{section.7}%
@@ -11,56 +11,57 @@
 \contentsline {subsection}{\numberline {1.2.2}Зорилтууд}{1}{subsection.9}%
 \contentsline {section}{\numberline {1.3}Судалгааны хамрах хүрээ}{2}{section.16}%
 \contentsline {section}{\numberline {1.4}Судалгааны шинэлэг тал}{2}{section.17}%
-\contentsline {chapter}{\numberline {2}ОНОЛЫН ҮНДЭСЛЭЛ}{3}{chapter.23}%
-\contentsline {section}{\numberline {2.1}3D Reconstruction – Үндсэн ойлголт}{3}{section.24}%
-\contentsline {subsection}{\numberline {2.1.1}Structure-from-Motion (SfM)}{3}{subsection.25}%
-\contentsline {subsection}{\numberline {2.1.2}Multi-View Stereo (MVS)}{3}{subsection.26}%
-\contentsline {section}{\numberline {2.2}Үндсэн алгоритмууд}{3}{section.27}%
-\contentsline {subsection}{\numberline {2.2.1}Feature Extraction}{3}{subsection.28}%
-\contentsline {subsection}{\numberline {2.2.2}Feature Matching}{4}{subsection.33}%
-\contentsline {subsection}{\numberline {2.2.3}Depth Estimation}{4}{subsection.34}%
-\contentsline {subsection}{\numberline {2.2.4}Bundle Adjustment}{5}{subsection.38}%
-\contentsline {subsection}{\numberline {2.2.5}Mesh Generation}{5}{subsection.39}%
-\contentsline {subsection}{\numberline {2.2.6}Texture Mapping}{5}{subsection.40}%
-\contentsline {section}{\numberline {2.3}Холбогдох судалгааны тойм}{5}{section.41}%
-\contentsline {subsection}{\numberline {2.3.1}Уламжлалт SfM болон MVS аргууд}{5}{subsection.42}%
-\contentsline {subsection}{\numberline {2.3.2}Нягт реконструкцийн аргууд}{6}{subsection.43}%
-\contentsline {subsection}{\numberline {2.3.3}Гүн сургалтад суурилсан аргууд}{6}{subsection.44}%
-\contentsline {subsection}{\numberline {2.3.4}Аргуудын харьцуулалт}{6}{subsection.45}%
-\contentsline {section}{\numberline {2.4}Бүлгийн дүгнэлт}{6}{section.47}%
-\contentsline {chapter}{\numberline {3}СУДАЛГААНЫ АРГА ЗҮЙ}{7}{chapter.48}%
-\contentsline {section}{\numberline {3.1}Системийн ерөнхий тойм}{7}{section.49}%
-\contentsline {subsection}{\numberline {3.1.1}Системийн Flow Diagram}{7}{subsection.50}%
-\contentsline {subsection}{\numberline {3.1.2}Өгөгдөл цуглуулах арга}{8}{subsection.52}%
-\contentsline {subsection}{\numberline {3.1.3}Урьдчилсан боловсруулалт}{8}{subsection.54}%
-\contentsline {subsection}{\numberline {3.1.4}Фичер илрүүлэлт ба тохиролт (SIFT)}{8}{subsection.55}%
-\contentsline {subsection}{\numberline {3.1.5}Камерын параметр тооцоолол}{8}{subsection.56}%
-\contentsline {subsection}{\numberline {3.1.6}Structure-from-Motion (SfM)}{9}{subsection.58}%
-\contentsline {subsection}{\numberline {3.1.7}Multi-View Stereo (MVS)}{9}{subsection.59}%
-\contentsline {subsection}{\numberline {3.1.8}Point Cloud цэвэрлэгээ ба шүүлт}{9}{subsection.60}%
-\contentsline {subsection}{\numberline {3.1.9}Mesh Reconstruction}{10}{subsection.61}%
-\contentsline {subsection}{\numberline {3.1.10}Гүйцэтгэл ба үнэлгээний арга}{10}{subsection.62}%
-\contentsline {subsection}{\numberline {3.1.11}Туршилтын орчин}{10}{subsection.64}%
-\contentsline {subsection}{\numberline {3.1.12}Програм хангамжийн архитектур}{11}{subsection.65}%
-\contentsline {chapter}{\numberline {4}ҮР ДҮН}{14}{chapter.69}%
-\contentsline {section}{\numberline {4.1}Pipeline болон GUI програмын үр дүн}{14}{section.70}%
-\contentsline {section}{\numberline {4.2}Өгөгдлийн цуглуулгын үр дүн}{14}{section.80}%
-\contentsline {section}{\numberline {4.3}Multi-View Stereo (MVS)-ийн үр дүн}{15}{section.83}%
-\contentsline {section}{\numberline {4.4}Гараар хийсэн болон автомат pipeline-ийн гаралтын харьцуулалт}{17}{section.87}%
-\contentsline {section}{\numberline {4.5}Туршилтын үр дүн: Matching параметрүүдийн нарийвчлалд үзүүлэх нөлөө}{18}{section.90}%
-\contentsline {subsection}{\numberline {4.5.1}1-р туршилт: Matcher болон зургийн хослолын аргын харьцуулалт}{18}{subsection.91}%
-\contentsline {subsection}{\numberline {4.5.2}2-р туршилт: Sequential matching-ийн overlap параметрийн нарийвчлалд үзүүлэх нөлөө}{20}{subsection.98}%
-\contentsline {subsection}{\numberline {4.5.3}3-р туршилт: Видео дахь фреймийн сонголтын давтамж болон реконструкцийн чанарын хамаарал}{23}{subsection.105}%
-\contentsline {paragraph}{Арга зүйн тайлбар.}{26}{paragraph*.113}%
-\contentsline {chapter}{\numberline {5}ДҮГНЭЛТ}{27}{chapter.114}%
-\contentsline {section}{\numberline {5.1}Судалгааны үр дүнгийн нэгтгэл}{27}{section.115}%
-\contentsline {subsection}{\numberline {5.1.1}Техникийн үр дүн}{27}{subsection.116}%
-\contentsline {subsection}{\numberline {5.1.2}Төхөөрөмжийн үр дүн}{27}{subsection.118}%
-\contentsline {subsection}{\numberline {5.1.3}Зорилтын биелэлт}{28}{subsection.120}%
-\contentsline {section}{\numberline {5.2}Шинэлэг хувь нэмэр}{28}{section.122}%
-\contentsline {section}{\numberline {5.3}Хязгаарлалт}{28}{section.126}%
-\contentsline {section}{\numberline {5.4}Цаашдын судалгааны чиглэл}{29}{section.131}%
-\contentsline {section}{\numberline {5.5}Төгсгөлийн үг}{29}{section.136}%
-\contentsline {chapter}{Ном зүй}{30}{chapter*.137}%
-\contentsline {chapter}{Талархал}{30}{dummy.138}%
-\contentsline {chapter}{Товчлол}{32}{dummy.140}%
+\contentsline {chapter}{\numberline {2}ОНОЛЫН ҮНДЭСЛЭЛ}{3}{chapter.22}%
+\contentsline {section}{\numberline {2.1}3D Reconstruction – Үндсэн ойлголт}{3}{section.23}%
+\contentsline {subsection}{\numberline {2.1.1}Structure-from-Motion (SfM)}{3}{subsection.24}%
+\contentsline {subsection}{\numberline {2.1.2}Multi-View Stereo (MVS)}{3}{subsection.25}%
+\contentsline {section}{\numberline {2.2}Үндсэн алгоритмууд}{3}{section.26}%
+\contentsline {subsection}{\numberline {2.2.1}Feature Extraction}{3}{subsection.27}%
+\contentsline {subsection}{\numberline {2.2.2}Feature Matching}{4}{subsection.32}%
+\contentsline {subsection}{\numberline {2.2.3}Depth Estimation}{4}{subsection.33}%
+\contentsline {subsection}{\numberline {2.2.4}Bundle Adjustment}{5}{subsection.37}%
+\contentsline {subsection}{\numberline {2.2.5}Mesh Generation}{5}{subsection.38}%
+\contentsline {subsection}{\numberline {2.2.6}Texture Mapping}{5}{subsection.39}%
+\contentsline {section}{\numberline {2.3}Холбогдох судалгааны тойм}{5}{section.40}%
+\contentsline {subsection}{\numberline {2.3.1}Уламжлалт SfM болон MVS аргууд}{5}{subsection.41}%
+\contentsline {subsection}{\numberline {2.3.2}Нягт реконструкцийн аргууд}{6}{subsection.42}%
+\contentsline {subsection}{\numberline {2.3.3}Гүн сургалтад суурилсан аргууд}{6}{subsection.43}%
+\contentsline {subsection}{\numberline {2.3.4}Аргуудын харьцуулалт}{6}{subsection.44}%
+\contentsline {section}{\numberline {2.4}Бүлгийн дүгнэлт}{6}{section.46}%
+\contentsline {chapter}{\numberline {3}СУДАЛГААНЫ АРГА ЗҮЙ}{7}{chapter.47}%
+\contentsline {section}{\numberline {3.1}Системийн ерөнхий тойм}{7}{section.48}%
+\contentsline {subsection}{\numberline {3.1.1}Системийн Flow Diagram}{7}{subsection.49}%
+\contentsline {subsection}{\numberline {3.1.2}Өгөгдөл цуглуулах арга}{8}{subsection.51}%
+\contentsline {subsection}{\numberline {3.1.3}Урьдчилсан боловсруулалт}{8}{subsection.53}%
+\contentsline {subsection}{\numberline {3.1.4}Фичер илрүүлэлт ба тохиролт (SIFT)}{8}{subsection.54}%
+\contentsline {subsection}{\numberline {3.1.5}Камерын параметр тооцоолол}{8}{subsection.55}%
+\contentsline {subsection}{\numberline {3.1.6}Structure-from-Motion (SfM)}{9}{subsection.57}%
+\contentsline {subsection}{\numberline {3.1.7}Multi-View Stereo (MVS)}{9}{subsection.58}%
+\contentsline {subsection}{\numberline {3.1.8}Point Cloud цэвэрлэгээ ба шүүлт}{9}{subsection.59}%
+\contentsline {subsection}{\numberline {3.1.9}Mesh Reconstruction}{10}{subsection.60}%
+\contentsline {subsection}{\numberline {3.1.10}Гүйцэтгэл ба үнэлгээний арга}{10}{subsection.61}%
+\contentsline {subsection}{\numberline {3.1.11}Туршилтын орчин}{10}{subsection.63}%
+\contentsline {subsection}{\numberline {3.1.12}Програм хангамжийн архитектур}{11}{subsection.64}%
+\contentsline {chapter}{\numberline {4}ҮР ДҮН}{14}{chapter.68}%
+\contentsline {section}{\numberline {4.1}Pipeline болон GUI програмын үр дүн}{14}{section.69}%
+\contentsline {section}{\numberline {4.2}Өгөгдлийн цуглуулгын үр дүн}{14}{section.79}%
+\contentsline {section}{\numberline {4.3}Multi-View Stereo (MVS)-ийн үр дүн}{15}{section.82}%
+\contentsline {section}{\numberline {4.4}Гараар хийсэн болон автомат pipeline-ийн гаралтын харьцуулалт}{17}{section.86}%
+\contentsline {section}{\numberline {4.5}Туршилтын үр дүн: Matching параметрүүдийн нарийвчлалд үзүүлэх нөлөө}{18}{section.89}%
+\contentsline {subsection}{\numberline {4.5.1}1-р туршилт: Matcher болон зургийн хослолын аргын харьцуулалт}{18}{subsection.90}%
+\contentsline {subsection}{\numberline {4.5.2}2-р туршилт: Sequential matching-ийн overlap параметрийн нарийвчлалд үзүүлэх нөлөө}{20}{subsection.97}%
+\contentsline {subsection}{\numberline {4.5.3}3-р туршилт: Видео дахь фреймийн сонголтын давтамж болон реконструкцийн чанарын хамаарал}{23}{subsection.104}%
+\contentsline {paragraph}{Арга зүйн тайлбар.}{26}{paragraph*.112}%
+\contentsline {chapter}{\numberline {5}ДҮГНЭЛТ}{27}{chapter.113}%
+\contentsline {section}{\numberline {5.1}Судалгааны үр дүнгийн нэгтгэл}{27}{section.114}%
+\contentsline {subsection}{\numberline {5.1.1}Техникийн үр дүн}{27}{subsection.115}%
+\contentsline {subsection}{\numberline {5.1.2}Төхөөрөмжийн үр дүн}{27}{subsection.117}%
+\contentsline {subsection}{\numberline {5.1.3}Зорилтын биелэлт}{28}{subsection.119}%
+\contentsline {section}{\numberline {5.2}Шинэлэг хувь нэмэр}{28}{section.121}%
+\contentsline {section}{\numberline {5.3}Хязгаарлалт}{28}{section.125}%
+\contentsline {section}{\numberline {5.4}Цаашдын судалгааны чиглэл}{29}{section.130}%
+\contentsline {section}{\numberline {5.5}Төгсгөлийн үг}{29}{section.135}%
+\contentsline {chapter}{Ном зүй}{30}{chapter*.136}%
+\contentsline {chapter}{Талархал}{30}{dummy.137}%
+\contentsline {chapter}{Товчлол}{32}{dummy.139}%
+\contentsline {chapter}{Summary (English)}{36}{dummy.153}%
